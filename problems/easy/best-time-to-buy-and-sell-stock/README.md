@@ -4,10 +4,10 @@ Platform: LeetCode
 Problem URL: [https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
 Difficulty: Easy
 Pattern: Array Scan / Running State
-Status: In Progress
+Status: Solved
 
 Started: August 27, 2026
-Solved:
+Solved: August 28, 2026
 
 Worksheet: [`../problem.md`](/home/iago/workspace/algorithm-solutions/problems/problem.md)
 
