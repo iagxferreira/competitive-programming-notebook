@@ -1,6 +1,9 @@
 package algorithms.problems.easy.valid_palindrome
 
 fun isPalindrome(s: String): Boolean {
+    if (s.isEmpty()) {
+        return true
+    }
     var left = 0
     var right = s.lastIndex
 
@@ -20,6 +23,5 @@ fun isPalindrome(s: String): Boolean {
         left++
         right--
     }
-
     return true
 }
