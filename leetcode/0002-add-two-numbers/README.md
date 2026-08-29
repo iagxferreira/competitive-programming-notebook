@@ -34,7 +34,7 @@ A dummy head node removes the "is this the first node" branch you wrote.
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-08-29   confidence: ?/5   (dummy head, carry loop — set your own confidence)
 
 ## Origin
 

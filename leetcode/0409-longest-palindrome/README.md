@@ -28,7 +28,7 @@ time O(?)   space O(?)
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-08-29   confidence: ?/5   (set pairing — set your own confidence)
 
 ## Origin
 

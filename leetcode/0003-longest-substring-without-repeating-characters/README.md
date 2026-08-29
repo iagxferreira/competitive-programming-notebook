@@ -31,7 +31,7 @@ right, storing index+1 so the comparison stays a clean `>`.
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-08-29   confidence: ?/5   (128-entry last-seen table — set your own confidence)
 
 ## Origin
 
