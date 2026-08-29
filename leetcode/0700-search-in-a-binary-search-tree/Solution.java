@@ -2,8 +2,10 @@ import java.util.*;
 
 class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
-        // TODO: solve
-        return null;
+        if(root == null) return null;
+        if(val > root.val) return searchBST(root.right, val);
+        if (val < root.val) return searchBST(root.left, val);
+        return root;
     }
 }
 
