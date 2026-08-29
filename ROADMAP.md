@@ -38,7 +38,7 @@ Zero algorithmic content. The point is to make the template, `Locale.US`, and fa
 
 Low-thought reps to get Java's array and string idioms under your fingers. Do these fast - if one takes more than ten minutes, the card will tell you what you are missing.
 
-- [ ] [`codeforces/0004a-watermelon`](./codeforces/0004a-watermelon/)  `*` sorted and merged; the binary search is the entire reason it is Hard
+- [ ] [`codeforces/0004a-watermelon`](./codeforces/0004a-watermelon/)
 - [ ] [`hackerrank/simple-array-sum`](./hackerrank/simple-array-sum/)
 - [ ] [`hackerrank/compare-the-triplets`](./hackerrank/compare-the-triplets/)
 - [ ] [`hackerrank/reverse-array`](./hackerrank/reverse-array/)
@@ -243,7 +243,7 @@ If you only do eighteen problems, do these. Fourteen are ones where your
 old solution passed but sidestepped the lesson; four you never solved at
 all. This is the highest-value work in the repo.
 
-- [ ] [`codeforces/0004a-watermelon`](./codeforces/0004a-watermelon/) - sorted and merged; the binary search is the entire reason it is Hard
+- [ ] [`leetcode/0004-median-of-two-sorted-arrays`](./leetcode/0004-median-of-two-sorted-arrays/) - sorted and merged; the binary search is the entire reason it is Hard
 - [ ] [`leetcode/0012-integer-to-roman`](./leetcode/0012-integer-to-roman/) - table lookup; the greedy subtractive walk is what generalises
 - [ ] [`leetcode/0035-search-insert-position`](./leetcode/0035-search-insert-position/) - linear scan where O(log n) was explicitly required
 - [ ] [`leetcode/0046-permutations`](./leetcode/0046-permutations/) - iterative insertion instead of backtracking
