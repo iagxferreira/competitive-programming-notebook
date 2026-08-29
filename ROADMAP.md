@@ -1,6 +1,6 @@
 # Roadmap
 
-A recommended order for the 117 solvable problems. Pattern-first, not
+A recommended order for every problem in this repo. Pattern-first, not
 number-first: each phase installs one idea and the next depends on it.
 
 Tick a box when you have solved it **without** reading past the card's
@@ -236,14 +236,14 @@ Save these. 0005 is expand-around-centre with fiddly index recovery. 0004 is the
 
 *1 problems*
 
-Problems added since the plan was written, deliberately left unclassified - naming the pattern here would give away the answer. Once you have solved one, move it into the phase it belongs to.
+Problems added since the plan was written, deliberately left unclassified — naming the pattern here would give away the answer. Once you have solved one, move it up into the phase it belongs to.
 
 - [ ] [`leetcode/0383-ransom-note`](./leetcode/0383-ransom-note/)
 
 ---
 
-**118 problems.** One (`leetcode/2884-modify-columns`) is a Pandas
-problem with no Java form and is not in this list.
+One problem (`leetcode/2884-modify-columns`) is a LeetCode Pandas
+exercise with no meaningful Java form, and is not in this list.
 
 ## The short version
 
@@ -292,7 +292,7 @@ This archive is interview-style DSA, not competitive programming. The two
 overlap in fundamentals and diverge after that: contests want speed under
 time pressure, problems stated as stories, and topics barely represented
 here - number theory, graphs, geometry, combinatorics. There is not a single
-graph traversal in these 117 problems.
+graph traversal anywhere in this repo.
 
 So run a second track in parallel. Do Codeforces Div. 2 A and B on the
 actual clock, starting now rather than after Phase 14. This repo builds the

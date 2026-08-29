@@ -1,6 +1,6 @@
 # competitive-programming-notebook
 
-Java notebook for competitive programming and DSA. 118 problems across
+Java notebook for competitive programming and DSA. 119 problems across
 four platforms, each one an annotated card plus an empty file to solve
 into.
 
@@ -21,19 +21,9 @@ Kotlin or Rust. Read the card, close it, then solve from scratch.
 
 Nothing here is pre-solved. That is deliberate.
 
-**Start here: [`ROADMAP.md`](./ROADMAP.md)** — the 117 problems in a
+**Start here: [`ROADMAP.md`](./ROADMAP.md)** — every problem in a
 recommended order, pattern by pattern, with the eighteen highest-value
-ones called out.
-
-`roadmap.html` is the same plan as a tickable page (progress saves in
-your browser). Both are generated:
-
-```bash
-python3 tools/gen-roadmap.py        # PHASES table -> ROADMAP.md
-python3 tools/gen-roadmap-page.py   # ROADMAP.md   -> roadmap.html
-```
-
-Edit the `PHASES` table in `tools/gen-roadmap.py`, never the outputs.
+ones called out. Tick the boxes as you go.
 
 ## The archive
 
@@ -52,7 +42,7 @@ to diff your new solution against what you wrote the first time.
 
 | Directory | Problems |
 |---|---|
-| `leetcode/` | 94 |
+| `leetcode/` | 95 |
 | `beecrowd/` | 14 |
 | `hackerrank/` | 9 |
 | `codeforces/` | 1 |
@@ -67,7 +57,7 @@ LeetCode ids are zero-padded to four digits so they sort correctly.
 make run    DIR=beecrowd/1000-hello-world
 make run    DIR=... IN=in.txt           # feed a test file
 make syntax DIR=leetcode/0015-3sum      # compile only (leetcode has no main)
-make check                              # compile all 117 problems
+make check                              # compile every problem
 
 tools/run.sh beecrowd/1000-hello-world  # run against all in*.txt, diff vs out*.txt
 tools/stress.sh codeforces/0004a-watermelon 1000
@@ -131,7 +121,7 @@ even when you are confident.
 
 ## Status
 
-All 118 cards are written. All 117 solutions are empty.
+All 119 cards are written. All 118 solutions are empty.
 
 Four of them (`0049`, `0167`, `0238`, `0424`) were never solved in the
 first place — they were `TODO` scaffolds in the old Kotlin lab, and their
