@@ -2,16 +2,16 @@ import java.util.*;
 
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        var left = 0;
-        var max = 0;
-        var seen = new HashSet<Character>();
+        var seen = new int[128];
+        Arrays.fill(seen, -1);
+        var left = 0; var max = 0;
 
         for(int right = 0; right < s.length(); right++){
-            while(seen.contains(s.charAt(right))){
-                seen.remove(s.charAt(left));
-                left++;
+            var value = s.charAt(right);
+            if(seen[value] >= left){
+                left = seen[value] + 1;
             }
-            seen.add(s.charAt(right));
+            seen[value] = right;
             max = Math.max(max, right - left + 1);
         }
         return max;
