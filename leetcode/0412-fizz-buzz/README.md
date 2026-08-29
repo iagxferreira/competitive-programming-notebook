@@ -29,7 +29,7 @@ Branch order is the entire problem. Your Go version tests
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-08-29   confidence: ?/5   (set your own)
 
 ## Origin
 
