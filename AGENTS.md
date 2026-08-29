@@ -1,7 +1,7 @@
 # Repo Instructions
 
-Java competitive programming notebook. 118 annotated problems, all
-unsolved by design.
+Java competitive programming notebook. Every problem is an annotated
+card plus an empty solution file, unsolved by design.
 
 ## Core Goal
 
