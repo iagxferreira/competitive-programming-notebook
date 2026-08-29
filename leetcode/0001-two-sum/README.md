@@ -32,7 +32,7 @@ element against itself.
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-08-28   confidence: ?/5   (solved in C++, ported to Java)
 
 ## Origin
 
