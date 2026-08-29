@@ -31,8 +31,13 @@ else
         "$root/Template.java" > "$dir/Main.java"
 fi
 
+# Card heading: strip the zero-padding (0146 -> 146) and title-case the
+# slug, to match the existing cards. Fix acronyms by hand.
+heading_id="$(echo "$id" | sed 's/^0*\([0-9]\)/\1/')"
+heading_name="$(echo "${slug//-/ }" | sed 's/\b\(.\)/\u\1/g')"
+
 cat > "$dir/README.md" <<TPL
-# $id. ${slug//-/ }
+# $heading_id. $heading_name
 
 $platform | ? | ?
 
