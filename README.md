@@ -1,63 +1,88 @@
-# algorithm-solutions
+# competitive-programming-notebook
 
-This repository is being refocused into a Kotlin/JVM laboratory for mastering data structures, algorithms, competitive programming, and JVM performance.
+C++ notebook for competitive programming and DSA. 118 problems across
+four platforms, each one an annotated card plus an empty file to solve
+into.
 
-The old multi-language solution archive now lives under [`legacy/`](./legacy), preserving the Git history while making room for a cleaner long-term structure.
+## How this works
 
-## Current Focus
+Every problem is a directory:
 
-- Kotlin/JVM as the primary implementation language
-- deep understanding of invariants, complexity, and trade-offs
-- reusable explanations for patterns, not just isolated solutions
-- lightweight tooling: Gradle, Kotlin, JUnit, and later JMH
-
-## What This Milestone Introduced
-
-- a Kotlin/JVM Gradle build
-- a `mise` project config for the local toolchain
-- a new documentation structure
-- an initial curriculum roadmap
-- a small metadata model for future problem tracking
-- test infrastructure for JUnit 5
-
-## Run It Easily
-
-From the repository root:
-
-```bash
-mise install
-mise run test
+```
+leetcode/0015-3sum/
+    README.md      what the problem teaches, and where you went wrong
+    solution.cpp   empty. you write this.
 ```
 
-If you prefer `mise` task shortcuts:
+The README is not a solution write-up. It is a **recall card**: the key
+insight, the invariant that makes it work, the complexity, and the
+specific pitfall — written from your own earlier attempt in Go, Python,
+Kotlin or Rust. Read the card, close it, then solve from scratch.
+
+Nothing here is pre-solved. That is deliberate.
+
+## The archive
+
+These problems were originally solved between 2023 and 2026 in four
+languages. The code is not in the working tree, but none of it is lost —
+every card ends with the command to retrieve the original:
 
 ```bash
-mise run setup
-mise run test
+git show legacy-archive:legacy/go/leetcode/15-three-sum.go
 ```
 
-## Near-Term Scope
+`legacy-archive` is a tag on the last commit before the C++ rewrite. Use
+it to diff your new solution against what you wrote the first time.
 
-The first learning milestone is to prepare the repository for:
+## Layout
 
-- complexity
-- arrays
-- strings
-- hashing
-- two pointers
-- sliding window
+| Directory | Problems |
+|---|---|
+| `leetcode/` | 94 |
+| `beecrowd/` | 14 |
+| `hackerrank/` | 9 |
+| `codeforces/` | 1 |
+| `lib/` | reusable snippets |
+| `tools/` | run, stress-test, scaffold |
 
-That is the current boundary. The next step is to add the first real Kotlin implementations and pattern notes in those areas.
+LeetCode ids are zero-padded to four digits so they sort correctly.
 
-## Repository Layout
+## Running
 
-- `docs/` learning roadmap and reference notes
-- `notes/` pattern and mistake journals
-- `problems/` organized problem library
-- `src/main/kotlin/algorithms/problems/` executable Kotlin implementations
-- `src/test/kotlin/algorithms/problems/` executable Kotlin tests
-- `src/main/kotlin/` reusable Kotlin implementation space
-- `src/test/kotlin/` tests and invariants
-- `benchmarks/` future JMH work
-- `templates/` reusable problem and note templates
-- `legacy/` archived solutions from the previous multi-language structure
+```bash
+make run DIR=leetcode/0015-3sum            # build and run
+make run DIR=leetcode/0015-3sum IN=in.txt  # feed a test file
+make check                                 # syntax-check every solution
+
+tools/run.sh leetcode/0015-3sum            # run against all in*.txt, diff vs out*.txt
+tools/stress.sh leetcode/0015-3sum 1000    # brute vs fast on random input
+tools/new.sh leetcode 0146 lru-cache       # scaffold a new problem
+```
+
+Builds use `-std=c++20 -O2 -Wall -Wextra -Wshadow` with address and
+undefined-behaviour sanitizers on. The sanitizers catch the class of bug
+that costs you a contest — turn them off only when timing.
+
+## Stress testing
+
+For any problem where you are unsure, write three files and let the
+machine find your counterexample:
+
+- `brute.cpp` — obviously correct, too slow
+- `solution.cpp` — the real one
+- `gen.cpp` — random input, seeded from `argv[1]`
+
+Then `tools/stress.sh <dir>`. This is the single highest-leverage habit
+in competitive programming and it is why `brute.cpp` is worth writing
+even when you are confident.
+
+## Status
+
+All 118 cards are written. All 118 solutions are empty.
+
+Four of them (`0049`, `0167`, `0238`, `0424`) were never solved in the
+first place — they were `TODO` scaffolds in the old Kotlin lab, and their
+cards say so.
+
+One (`2884`) is a LeetCode Pandas problem with no meaningful C++ form; it
+has a card but intentionally no `solution.cpp`.
