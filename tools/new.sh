@@ -5,9 +5,12 @@
 set -euo pipefail
 
 platform="${1:?usage: tools/new.sh <platform> <id> <slug>}"
-id="${2:?}"
+id="${2?usage: tools/new.sh <platform> <id> <slug>}"
 slug="${3:?}"
-dir="$platform/$id-$slug"
+
+# HackerRank problems have no numeric id; pass "" and the dash is dropped
+# rather than producing a directory called "-some-slug".
+dir="$platform/${id:+$id-}$slug"
 root="$(cd "$(dirname "$0")/.." && pwd)"
 
 [[ -d "$dir" ]] && { echo "$dir already exists"; exit 1; }
@@ -35,9 +38,10 @@ fi
 # slug, to match the existing cards. Fix acronyms by hand.
 heading_id="$(echo "$id" | sed 's/^0*\([0-9]\)/\1/')"
 heading_name="$(echo "${slug//-/ }" | sed 's/\b\(.\)/\u\1/g')"
+heading="${heading_id:+$heading_id. }$heading_name"
 
 cat > "$dir/README.md" <<TPL
-# $heading_id. $heading_name
+# $heading
 
 $platform | ? | ?
 
