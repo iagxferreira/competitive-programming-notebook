@@ -1,27 +1,38 @@
 #!/usr/bin/env bash
-# Differential test: run brute.cpp against solution.cpp on random input
-# until they disagree. gen.cpp takes a seed argument on argv[1].
-#   tools/stress.sh leetcode/0015-three-sum [iterations]
+# Differential test: run Brute against the real solution on random input
+# until they disagree. Gen takes a seed on argv[0].
+#
+# Needs three extra files in the problem directory:
+#   Brute.java  - obviously correct, too slow
+#   Gen.java    - random input generator, seeded from args[0]
+#   Main.java   - the real solution (or Solution.java with a main)
+#
+#   tools/stress.sh codeforces/0004a-watermelon [iterations]
 set -euo pipefail
 
 dir="${1:?usage: tools/stress.sh <problem-dir> [iters]}"
 iters="${2:-1000}"
-tmp="$(mktemp -d)"
+out="$(mktemp -d)"
 
-for f in gen solution brute; do
-    [[ -f "$dir/$f.cpp" ]] || { echo "missing $dir/$f.cpp"; exit 1; }
-    g++ -std=c++20 -O2 "$dir/$f.cpp" -o "$tmp/$f"
+for f in Gen Brute; do
+    [[ -f "$dir/$f.java" ]] || { echo "missing $dir/$f.java"; exit 1; }
 done
 
+javac -d "$out" "$dir"/*.java
+
+main=$(grep -lE 'static void main' "$dir"/Main.java "$dir"/Solution.java 2>/dev/null | head -1 || true)
+[[ -n "$main" ]] || { echo "no Main.java or Solution.java with a main in $dir"; exit 1; }
+cls=$(basename "$main" .java)
+
 for ((i = 1; i <= iters; i++)); do
-    "$tmp/gen" "$i" > "$tmp/in.txt"
-    "$tmp/solution" < "$tmp/in.txt" > "$tmp/fast.txt"
-    "$tmp/brute"    < "$tmp/in.txt" > "$tmp/slow.txt"
-    if ! diff -q "$tmp/fast.txt" "$tmp/slow.txt" >/dev/null; then
+    java -cp "$out" Gen "$i"            > "$out/in.txt"
+    java -cp "$out" "$cls" < "$out/in.txt" > "$out/fast.txt"
+    java -cp "$out" Brute  < "$out/in.txt" > "$out/slow.txt"
+    if ! diff -q "$out/fast.txt" "$out/slow.txt" >/dev/null; then
         echo "MISMATCH on iteration $i (seed $i)"
-        echo "--- input ---";    cat "$tmp/in.txt"
-        echo "--- solution ---"; cat "$tmp/fast.txt"
-        echo "--- brute ---";    cat "$tmp/slow.txt"
+        echo "--- input ---";    cat "$out/in.txt"
+        echo "--- solution ---"; cat "$out/fast.txt"
+        echo "--- brute ---";    cat "$out/slow.txt"
         exit 1
     fi
     (( i % 100 == 0 )) && echo "ok $i/$iters"

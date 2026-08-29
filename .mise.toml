@@ -1,0 +1,10 @@
+[tools]
+java = "temurin-21"
+
+[tasks.check]
+description = "Compile every problem"
+run = "make check"
+
+[tasks.run]
+description = "Run one problem: mise run run <dir>"
+run = "make run DIR=$1"
