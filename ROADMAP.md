@@ -288,15 +288,28 @@ minutes instead of twenty.
 A problem you re-solve correctly from a cold start is worth more than three
 you read the solution to.
 
-## One honest caveat
+## This repo is not enough on its own
 
-This archive is interview-style DSA, not competitive programming. The two
-overlap in fundamentals and diverge after that: contests want speed under
-time pressure, problems stated as stories, and topics barely represented
-here - number theory, graphs, geometry, combinatorics. There is not a single
-graph traversal anywhere in this repo.
+Say it plainly: this archive is interview-style DSA, not competitive
+programming. The two share fundamentals and then diverge hard. Contests
+want speed under a clock, problems stated as stories you have to decode,
+and whole topics that barely appear here — graphs, number theory,
+combinatorics, geometry. **There is not a single graph traversal anywhere
+in this repo.** No BFS on a grid, no shortest path, no union-find. Those
+are table stakes for Div. 2 C and above.
 
-So run a second track in parallel. Do Codeforces Div. 2 A and B on the
-actual clock, starting now rather than after Phase 14. This repo builds the
-foundation; contests build the thing you said you wanted. Neither substitutes
-for the other.
+So this is the training block, not the sport. Two tracks, in parallel:
+
+**Track 1 — this repo.** Rebuild the fundamentals in Java until the
+language is invisible. Follow the phases above.
+
+**Track 2 — actual contests, starting now.** Codeforces Div. 2, virtual
+if the timing is bad, but on the real clock. Do not wait for Phase 14 —
+the whole point of Track 1 is to make Track 2 go better, and you only
+find out what is missing by competing. Expect the early ones to hurt.
+Rating is the only honest feedback signal here; the tick boxes above are
+not.
+
+When a contest exposes a gap — you could not model it as a graph, you
+did not know the sieve — that becomes a new problem directory in here.
+That is the loop. The rock gets heavier and so do you.
