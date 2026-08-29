@@ -119,7 +119,7 @@ Only two problems, but 0424 contains the subtlest argument in the whole set - wh
 
 ## Phase 6 - Prefix and suffix products
 
-*1 problems*
+*2 problems*
 
 One problem, but the prefix/suffix decomposition it teaches shows up constantly. Note the division shortcut is banned for a reason.
 
@@ -239,6 +239,7 @@ Save these. 0005 is expand-around-centre with fiddly index recovery. 0004 is the
 Problems added since the plan was written, deliberately left unclassified — naming the pattern here would give away the answer. Once you have solved one, move it up into the phase it belongs to.
 
 - [ ] [`leetcode/0383-ransom-note`](./leetcode/0383-ransom-note/)
+- [ ] [`leetcode/0409-longest-palindrome`](./leetcode/0409-longest-palindrome/)
 
 ---
 
