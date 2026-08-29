@@ -110,7 +110,7 @@ You have already done 0001. The rest drill the same trade - space for time - plu
 
 ## Phase 5 - Sliding window
 
-*2 problems*
+*3 problems*
 
 Only two problems, but 0424 contains the subtlest argument in the whole set - why a stale `maxCount` is safe. Do not move on until you can defend it, or stress-test it against an honest version.
 
@@ -240,6 +240,7 @@ Problems added since the plan was written, deliberately left unclassified — na
 
 - [x] [`leetcode/0383-ransom-note`](./leetcode/0383-ransom-note/)
 - [x] [`leetcode/0409-longest-palindrome`](./leetcode/0409-longest-palindrome/)
+- [ ] [`leetcode/0078-subsets`](./leetcode/0078-subsets/)
 
 ---
 
