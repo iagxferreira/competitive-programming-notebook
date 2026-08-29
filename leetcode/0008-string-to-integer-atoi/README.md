@@ -32,7 +32,7 @@ Your Go version has a real precedence bug:
 not guard the `'+'` branch. It only survives because the empty string
 returns earlier. Port it with explicit parentheses.
 
-Clamp to INT_MAX / INT_MIN, do not return 0 on overflow — that is the
+Clamp to `Integer.MAX_VALUE` / `MIN_VALUE`, do not return 0 — that is the
 difference from problem 7.
 
 ## Review

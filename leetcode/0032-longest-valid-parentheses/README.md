@@ -28,7 +28,7 @@ computes one short. Understanding *why* a popped-empty stack means "this
 `)` is unmatched, restart from here" is the difference between recalling
 this solution and being able to rebuild it.
 
-Your Go version also redefines a local `max` helper; C++ has `std::max`.
+Your Go version also redefines a local `max` helper; Java has `Math.max`.
 
 ## Review
 

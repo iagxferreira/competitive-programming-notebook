@@ -23,7 +23,9 @@ time O(n + m)   space O(1) iterative, O(n + m) recursive
 
 Your Go version is recursive, which is elegant but O(n+m) stack — a
 stack overflow risk on long lists. The iterative version with a dummy
-head is O(1) space and is the one to write in C++.
+head is O(1) space and is the one to write. Java's default stack
+overflows around depth 10^4, well under this problem's 200-node limit,
+but the habit matters for the deep-recursion problems later.
 
 Do not forget to attach the non-empty remainder at the end.
 

@@ -9,7 +9,7 @@ Read radius R. Print `VOLUME = ` followed by (4/3) * pi * R^3,
 
 ## Key insight
 
-Write the fraction as `4.0 / 3.0`. In C++ `4 / 3` is integer division
+Write the fraction as `4.0 / 3.0`. In Java `4 / 3` is integer division
 and evaluates to 1, quietly producing a 25% error.
 
 ## Invariant

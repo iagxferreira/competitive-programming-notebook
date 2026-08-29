@@ -29,7 +29,14 @@ lower-bound binary search is the single most reused primitive in
 competitive programming.
 
 Use `lo < hi` with `hi = n` (not `n - 1`), so the insert-at-end case
-falls out naturally. `std::lower_bound` is the library version.
+falls out naturally.
+
+Java's `Arrays.binarySearch` does exist, but it returns
+`-(insertion point) - 1` when the target is absent, so you would write
+`int i = Arrays.binarySearch(nums, target); return i < 0 ? -i - 1 : i;`.
+That encoding is worth memorising — it is exactly this problem's answer
+and it comes up constantly. But write the loop by hand here; lower-bound
+binary search is the primitive you need to own outright.
 
 ## Review
 

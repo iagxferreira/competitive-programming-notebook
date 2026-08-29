@@ -27,9 +27,13 @@ time O(log n)   space O(1)
 good (mid definitely is not). Writing `right = mid - 1` here skips the
 answer.
 
-`(left + right) / 2` overflows when n is near INT_MAX — and this problem
-uses exactly that bound. Use `left + (right - left) / 2`. Your Go version
-has the overflow-prone form; Go's 64-bit int hid it.
+`(left + right) / 2` overflows when n is near `Integer.MAX_VALUE` — and
+this problem uses exactly that bound, deliberately. In Java it wraps to a
+negative midpoint and you index out of range. Use
+`left + (right - left) / 2`, or `(left + right) >>> 1` — the unsigned
+shift is the idiom Java's own library uses in `Arrays.binarySearch`.
+
+Your Go version has the overflow-prone form; Go's 64-bit int hid it.
 
 ## Review
 

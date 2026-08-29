@@ -25,10 +25,10 @@ Your Python version mapped then called `.sort()`. Correct, but the sort
 is unnecessary work on a two-valued array — this is counting sort's
 simplest case and worth recognising as such.
 
-In C++, `%` on a negative number yields a negative remainder, so
-`n % 2 == 1` is FALSE for negative odd values. Use `n % 2 != 0`, or
-better `n & 1`. This is a real difference from Python, where `-3 % 2`
-is 1.
+In Java, `%` on a negative number yields a negative remainder, so
+`n % 2 == 1` is FALSE for negative odd values — `-3 % 2` is -1. Use
+`n % 2 != 0`, or better `(n & 1) == 1`. This is a real difference from
+Python, where `-3 % 2` is 1.
 
 ## Review
 

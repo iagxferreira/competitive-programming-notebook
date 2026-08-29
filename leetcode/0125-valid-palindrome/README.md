@@ -25,9 +25,13 @@ time O(n)   space O(1)
 Your Go version wrapped every character in a `string(...)` and compared
 with `strings.ToLower` — an allocation per character, and the range test
 `value >= "A" && value <= "Z"` is doing lexicographic STRING comparison
-where a byte comparison was meant. In C++ use `isalnum` and `tolower` on
-the char directly. Cast to `unsigned char` first: passing a negative
-char to those functions is undefined behaviour.
+where a byte comparison was meant. In Java use
+`Character.isLetterOrDigit` and `Character.toLowerCase` on the char
+directly — no cast needed, since Java's `char` is unsigned 16-bit and
+these methods are total. This is genuinely simpler than the C or C++
+equivalent.
+
+Use `s.charAt(i)`, not `s.toCharArray()`, to avoid copying the string.
 
 The empty string is a palindrome. The `flag` variable in the Go version
 is dead weight — return true directly.

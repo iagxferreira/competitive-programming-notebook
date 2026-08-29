@@ -22,9 +22,10 @@ time O(n)   space O(1)
 ## Pitfall
 
 Your Kotlin used `reduce`, which throws on an empty list because it has
-no seed. `std::accumulate(all(v), 0LL)` takes an explicit initial value
-and handles empty naturally — and the `0LL` also prevents the sum from
-overflowing `int`.
+no seed. In Java either loop with `long sum = 0`, or
+`Arrays.stream(a).asLongStream().sum()` — the `asLongStream` is what
+stops the total overflowing `int`. Plain `Arrays.stream(a).sum()`
+returns an int and wraps.
 
 ## Review
 

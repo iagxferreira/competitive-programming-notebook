@@ -31,8 +31,9 @@ distant ancestor — the constraint is global, not local.
 Strictly increasing: equal adjacent values are invalid. Your `>=` test is
 correct.
 
-Bounds must be `long long` (or use optional), since a node may legitimately
-hold INT_MIN or INT_MAX.
+Bounds must be `long` (or nullable `Integer`), since a node may
+legitimately hold `Integer.MIN_VALUE` or `MAX_VALUE` — seeding the
+recursion with those as sentinels then rejects a valid tree.
 
 ## Review
 

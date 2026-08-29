@@ -33,8 +33,11 @@ The empty input must be handled before indexing `lists[0]`. An odd count
 per round leaves one list unpaired; your version handles it with the
 `i + 1 < len` guard.
 
-For the heap version, C++ `priority_queue` is a MAX-heap — pass
-`greater<>` or the comparison is inverted.
+For the heap version, Java's `PriorityQueue` is a MIN-heap by default,
+which is what you want here — the opposite of C++. Construct it with
+`new PriorityQueue<>((a, b) -> a.val - b.val)`, or better
+`Comparator.comparingInt(n -> n.val)` since the subtraction form
+overflows on extreme values.
 
 ## Review
 

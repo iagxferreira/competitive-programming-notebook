@@ -23,8 +23,8 @@ time O(1)   space O(1)
 ## Pitfall
 
 The product code is read and thrown away, like the name in 1009. Your
-Kotlin version destructured it to `_` — in C++ just read into a scratch
-variable.
+Kotlin version destructured it to `_` — in Java just read into a scratch
+variable and ignore it.
 
 ## Review
 

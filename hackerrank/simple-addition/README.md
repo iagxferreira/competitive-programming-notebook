@@ -21,8 +21,8 @@ time O(1)   space O(1)
 ## Pitfall
 
 If the operands can reach the `int` limit, the sum overflows before it
-is ever returned. Widen to `long long` at the parameter, not at the
-return.
+is ever returned. Widen to `long` at the parameter, not at the return —
+`long r = a + b` with both int still overflows before the assignment.
 
 ## Review
 

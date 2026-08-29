@@ -25,12 +25,15 @@ time O(n * k)   space O(k)
 
 ## Pitfall
 
-`(t - r + k) % k` — the `+ k` is mandatory. In C++ `%` on a negative
-left operand yields a negative result, so omitting it indexes the array
-out of bounds. This is a real difference from Python's `%`, and one of
-the top sources of C++-specific bugs in modular problems.
+`(t - r + k) % k` — the `+ k` is mandatory. Java's `%` truncates toward
+zero, so a negative left operand yields a NEGATIVE remainder, and
+omitting the `+ k` throws ArrayIndexOutOfBoundsException.
 
-Reset the dp array for each t.
+This is a real difference from Python, where `-1 % 5` is 4. Java (like
+C++, Go and Kotlin) gives -1. Since your archive is half Python, this is
+the modular-arithmetic habit most likely to trip you up.
+
+Reset the dp array for each t — `Arrays.fill(dp, 0)`.
 
 ## Review
 

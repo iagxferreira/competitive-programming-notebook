@@ -23,7 +23,8 @@ time O(max(n, m))   space O(max(n, m)) for the output
 
 ## Pitfall
 
-The loop condition must be `l1 || l2 || carry`. Dropping the carry test
+The loop condition must be `l1 != null || l2 != null || carry != 0`.
+Dropping the carry test
 loses the final digit of 5 + 5. Your Go version got this right.
 
 That file also defines an unused `reverse` helper — leftover from a first

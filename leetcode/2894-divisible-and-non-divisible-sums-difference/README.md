@@ -23,8 +23,8 @@ loop O(n)   closed form O(1)   space O(1)
 ## Pitfall
 
 Nothing subtle at these bounds. If n were large, `n(n+1)/2` would need
-`long long` — divide by 2 after multiplying, and note that n(n+1) is
-always even so no precision is lost.
+`long` — divide by 2 after multiplying, and note that n(n+1) is always
+even so no precision is lost.
 
 ## Review
 

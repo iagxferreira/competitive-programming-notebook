@@ -22,9 +22,9 @@ time O(n)   space O(1)
 
 ## Pitfall
 
-Accumulate in `long long` — n elements near the int limit overflow a
-32-bit sum before you ever take the modulus, and the result is then
-garbage.
+Accumulate in `long` — n elements near the int limit overflow a 32-bit
+sum before you ever take the modulus, and Java wraps silently rather
+than trapping, so the result is plausible-looking garbage.
 
 ## Review
 

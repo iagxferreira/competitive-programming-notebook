@@ -24,9 +24,10 @@ time O(n)   space O(h), h = height
 ## Pitfall
 
 Your Go version passes the accumulator by value and reassigns it
-(`arr = inOrder(...)`), which works because it returns the slice — but in
-C++ pass the vector by reference or you copy the whole thing at every
-node, turning O(n) into O(n^2).
+(`arr = inOrder(...)`), which works because it returns the slice. In Java
+this concern disappears: a `List` parameter is already a reference, so
+passing it down and calling `add` mutates the one list. Just do not
+reassign the parameter and expect the caller to see it.
 
 Do the iterative version too; it is the one interviews actually ask for.
 

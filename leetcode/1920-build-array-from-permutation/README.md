@@ -28,7 +28,9 @@ The encoding trick only works because every value is < n, so the two
 numbers never collide. Read the old value with `% n` — reading it
 directly gives you an already-encoded slot.
 
-Encoded values can exceed int range for large n; use `long long`.
+Encoded values can exceed int range for large n; use `long`, or note
+that at this problem's bound (n <= 1000) `old + n * new` stays under
+10^6 and int is safe. Check the bound before assuming.
 
 ## Review
 

@@ -26,7 +26,7 @@ robust version reverses only the second half and stops when
 `rev >= x` — it also halves the work.
 
 Your Go version reversed everything, which is safe in Go's 64-bit int but
-not in C++'s 32-bit one.
+not in Java's 32-bit one — it wraps silently.
 
 ## Review
 

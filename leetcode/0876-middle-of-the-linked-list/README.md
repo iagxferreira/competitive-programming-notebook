@@ -22,9 +22,10 @@ time O(n)   space O(1)
 ## Pitfall
 
 The loop condition selects WHICH middle you get on even-length lists.
-`while (fast && fast->next)` returns the second middle, which is what
-this problem wants. `while (fast->next && fast->next->next)` returns the
-first — that variant is what you need for splitting a list in merge sort.
+`while (fast != null && fast.next != null)` returns the second middle,
+which is what this problem wants. `while (fast.next != null &&
+fast.next.next != null)` returns the first — that variant is what you
+need for splitting a list in merge sort.
 
 Knowing which condition gives which is worth more than the problem
 itself.

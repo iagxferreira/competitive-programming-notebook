@@ -22,13 +22,13 @@ time O(n)   space O(1)
 
 ## Pitfall
 
-Save `current->next->next` FIRST. Every other order strands the rest of
+Save `current.next.next` FIRST. Every other order strands the rest of
 the list.
 
-The loop guard must be `current && current->next` — an odd trailing node
-is left in place, and testing only `current` dereferences null.
+The loop guard must be `current != null && current.next != null` — an odd
+trailing node is left in place, and testing only `current` throws an NPE.
 
-Return `dummy->next`, not head: head is the second node after the first
+Return `dummy.next`, not head: head is the second node after the first
 swap. Your Python version gets all of this right.
 
 ## Review

@@ -14,7 +14,7 @@ The intended lesson is the branchless identity
 
 Apply it to A and B, then to that result and C. Your Kotlin version did
 exactly this, which is why it is worth keeping rather than replacing
-with `std::max`.
+with `Math.max`.
 
 ## Invariant
 
@@ -29,7 +29,7 @@ time O(1)   space O(1)
 
 The identity relies on exact integer arithmetic — `a + b` can overflow
 for large inputs even when the true max fits. In real code just use
-`std::max({a, b, c})`.
+`Math.max(a, Math.max(b, c))` — Java has no varargs max for primitives.
 
 ## Review
 

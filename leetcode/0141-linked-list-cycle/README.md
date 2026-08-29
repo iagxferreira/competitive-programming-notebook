@@ -24,13 +24,14 @@ time O(n)   space O(1)
 
 ## Pitfall
 
-Guard BOTH `fast` and `fast->next` before the double advance, or you
-dereference null on an even-length acyclic list.
+Guard BOTH `fast` and `fast.next` before the double advance, or you throw
+a NullPointerException on an even-length acyclic list.
 
 A hash set of visited nodes also works but uses O(n) space, which the
 problem's follow-up rules out.
 
-Compare pointers, not values — duplicate values are not a cycle.
+Compare references with `==`, not `.equals` or values — duplicate
+values are not a cycle.
 
 ## Review
 

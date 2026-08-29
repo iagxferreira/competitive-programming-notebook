@@ -27,11 +27,15 @@ After splicing, advance to the ORIGINAL next node, not the node you just
 inserted — otherwise you compute gcds of gcds forever. Your Go version
 steps `node1 = node2` correctly, skipping past the insertion.
 
-That version allocates `gcdNode` as a stack value and stores its address
-(`&gcdNode`). In Go the escape analysis heap-allocates it and it is safe.
-In C++ this is a dangling pointer the moment the loop iterates — you MUST
-use `new ListNode(...)`. This is the most dangerous line to port
-literally in the whole archive.
+Your Go version allocates `gcdNode` as a stack value and stores its
+address (`&gcdNode`), relying on escape analysis to heap-allocate it.
+That line is a dangling-pointer bug in C++ — but in Java the whole
+hazard disappears: every object is heap-allocated and reachable nodes
+are never collected. `new ListNode(gcd)` inside the loop is simply
+correct.
+
+Worth noting because it is the one place the language choice removes a
+real trap rather than adding one.
 
 Handle the single-node list, which has no pairs.
 

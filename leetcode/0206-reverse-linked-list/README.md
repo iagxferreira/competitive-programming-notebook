@@ -10,7 +10,7 @@ Reverse a singly linked list.
 
 Three pointers: prev, curr, and a saved next. Flip curr's link to prev,
 then shuffle all three forward. The saved next is mandatory — overwriting
-`curr->next` destroys your only route to the rest of the list.
+`curr.next` destroys your only route to the rest of the list.
 
 ## Invariant
 

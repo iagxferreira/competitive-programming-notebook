@@ -25,8 +25,14 @@ A specification problem — every clause is graded. The easiest to miss:
 digits are ALLOWED but count as neither vowel nor consonant, so a word of
 only digits fails on both flags.
 
-Case-insensitive vowel test. In C++ cast to `unsigned char` before
-`isalpha` / `tolower` to avoid undefined behaviour on negative chars.
+Case-insensitive vowel test. Java's `Character.isLetter` and
+`isDigit` take a `char` directly with no cast or undefined-behaviour
+concern.
+
+But watch that `Character.isLetter` accepts any Unicode letter, and
+`isDigit` any Unicode digit — this problem means ASCII. If the
+constraints allow only ASCII input it does not matter; if they do not,
+test the ranges explicitly.
 
 ## Review
 

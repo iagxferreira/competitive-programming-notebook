@@ -23,8 +23,9 @@ time O(n + m)   space O(n + m)
 
 ## Pitfall
 
-Your Go version reads `hashmap2[key] != 0` on a map — in C++ that
-default-inserts. Use `count()` or `find()`.
+Your Go version reads `hashmap2[key] != 0` on a map, relying on the zero
+value for a missing key. Java's `map.get` returns `null` there, and
+comparing or unboxing that throws. Use `getOrDefault(key, 0)`.
 
 Its accumulation is also subtly wrong in shape: it adds `hashmap2[key]`
 per distinct key of nums1, which happens to give the right total but

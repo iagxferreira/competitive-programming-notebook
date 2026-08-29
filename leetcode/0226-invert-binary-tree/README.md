@@ -24,9 +24,14 @@ Your Go version wrote `root.Left, root.Right = invertTree(root.Right),
 invertTree(root.Left)` — Go's tuple assignment evaluates the right side
 completely before assigning, so this is safe there.
 
-C++ has NO such guarantee for a comma-separated assignment. You must save
-one pointer in a temporary, or call `std::swap` first and then recurse.
-Translating this line literally is a genuine bug.
+Java has no tuple assignment at all, so you must write two statements —
+and the naive pair is WRONG:
+
+    root.left = invertTree(root.right);
+    root.right = invertTree(root.left);   // reads the NEW left
+
+The second line sees the value just assigned. Save one child in a
+temporary first, or swap the two references and then recurse.
 
 ## Review
 

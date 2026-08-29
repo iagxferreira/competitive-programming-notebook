@@ -29,8 +29,9 @@ end or spins pointlessly.
 
 Empty list must return early; `k % 0` is a crash.
 
-Sever the ring. Forgetting `temp->next = nullptr` leaves a circular list
-that hangs whatever traverses it next.
+Sever the ring. Forgetting `temp.next = null` leaves a circular list that
+hangs whatever traverses it next — including LeetCode's own serializer,
+which will time out rather than report a wrong answer.
 
 ## Review
 

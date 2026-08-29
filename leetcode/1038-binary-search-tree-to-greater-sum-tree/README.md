@@ -29,9 +29,13 @@ sum of SMALLER values instead.
 
 Your Python version threads the accumulator through return values, which
 is correct but genuinely hard to read — `node.val += dfs(node.right,
-count)` mutates and returns in the same expression. In C++ carry the
-total by reference (`int& sum`) or as a member; it is far clearer and
-avoids the ordering subtleties of argument evaluation.
+count)` mutates and returns in the same expression. Java has no
+by-reference ints, so carry the running total as a FIELD on the solution
+class (or a one-element `int[]`); that is far clearer than threading it
+through return values.
+
+Be aware a field persists between calls if the judge reuses the
+instance — reset it at the top of the public method.
 
 ## Review
 

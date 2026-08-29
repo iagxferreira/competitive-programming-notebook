@@ -8,8 +8,8 @@ Is the tree a mirror of itself?
 
 ## Key insight
 
-Compare two nodes at mirrored positions: `left->left` against
-`right->right`, and `left->right` against `right->left`. This is
+Compare two nodes at mirrored positions: `left.left` against
+`right.right`, and `left.right` against `right.left`. This is
 problem 100 with one of the child pairings crossed.
 
 ## Invariant

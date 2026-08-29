@@ -21,10 +21,13 @@ time O(n)   space O(1)
 ## Pitfall
 
 Your Go version routed this through `float64` and `math.Abs`, then cast
-back to int. Character codes are integers — use `abs(s[i] - s[i+1])` on
-ints. Floating point here is a pointless precision risk and slower.
+back to int. Character codes are integers — use
+`Math.abs(s.charAt(i) - s.charAt(i + 1))`. Floating point here is a
+pointless precision risk and slower.
 
-Loop to `n - 1`, and guard n == 0 since `n - 1` on an unsigned size wraps.
+Loop to `n - 1`. Java's `length()` is a signed int, so n == 0 gives a
+bound of -1 and the loop just does not run — no wraparound to guard
+against, unlike in C++.
 
 ## Review
 

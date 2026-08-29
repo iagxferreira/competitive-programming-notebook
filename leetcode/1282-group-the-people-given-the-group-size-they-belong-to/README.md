@@ -25,10 +25,14 @@ time O(n)   space O(n)
 
 ## Pitfall
 
-CLEAR the bucket after emitting. Your Python version used `hashmap.pop`,
-which removes and returns in one step; in C++ you must copy the vector
-out and then `clear()` it, or you keep appending to a group you already
-emitted.
+CLEAR the bucket after emitting. Java's `map.remove(key)` returns the
+removed value, exactly like Python's `pop`, so the same one-liner works:
+`answer.add(map.remove(size))`.
+
+If you instead keep the list and clear it, you must add a COPY to the
+answer first — `answer.add(list); list.clear();` empties the list you
+just handed over, since both names point at the same object. That
+aliasing bug is the Java-specific way to get this wrong.
 
 Any valid answer is accepted, so there is nothing to optimise — the
 greedy first-fit is provably correct here.

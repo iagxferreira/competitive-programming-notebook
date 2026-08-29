@@ -24,14 +24,15 @@ time O(log x)   space O(1)
 
 This is an overflow problem wearing a digits costume. Your Go version
 computed the full result in 64-bit `int` and range-checked afterwards —
-that works in Go, but in C++ `int` IS 32 bits and the overflow is
-undefined behaviour before you can test for it. You must check BEFORE
-multiplying:
+that works in Go, but Java's `int` IS 32 bits. Overflow is not undefined
+here — it wraps silently, which is arguably worse, because the wrapped
+value looks like a legitimate answer. Check BEFORE multiplying:
 
-    if (res > INT_MAX / 10 || res < INT_MIN / 10) return 0;
+    if (res > Integer.MAX_VALUE / 10 || res < Integer.MIN_VALUE / 10) return 0;
 
-Also `-INT_MIN` overflows, so negating up front (as the Go version does)
-is itself unsafe in C++. Work with the negative side, or use long long.
+Also `-Integer.MIN_VALUE` is still `Integer.MIN_VALUE`, so negating up
+front (as the Go version does) is unsafe. Work with the negative side,
+or accumulate in `long` and range-check at the end.
 
 ## Review
 
