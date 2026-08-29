@@ -1,0 +1,1437 @@
+<title>117 Problems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root {
+  --ground:#F3F4F8; --surface:#FFFFFF; --surface-2:#F8F9FC;
+  --text:#15161F; --muted:#5D6076; --faint:#8B8EA3;
+  --line:#DEE0EA; --line-strong:#C8CBD9;
+  --accent:#3B3F94; --accent-soft:#EAEBF7;
+  --done:#2E7D5B; --done-soft:#E3F1EA;
+  --redo:#9C6717; --redo-soft:#F7EEDE;
+  --never:#A63D5A; --never-soft:#F8E6EB;
+  --shadow:0 1px 2px rgba(21,22,31,.05), 0 4px 16px rgba(21,22,31,.04);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground:#131420; --surface:#1B1D2B; --surface-2:#20222F;
+    --text:#E7E8F0; --muted:#9A9DB2; --faint:#6E7189;
+    --line:#2C2F40; --line-strong:#3C4055;
+    --accent:#9296F0; --accent-soft:#24263C;
+    --done:#5CBE93; --done-soft:#1B2E27;
+    --redo:#D9A155; --redo-soft:#302719;
+    --never:#DE7A94; --never-soft:#311E25;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 4px 20px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"] {
+  --ground:#131420; --surface:#1B1D2B; --surface-2:#20222F;
+  --text:#E7E8F0; --muted:#9A9DB2; --faint:#6E7189;
+  --line:#2C2F40; --line-strong:#3C4055;
+  --accent:#9296F0; --accent-soft:#24263C;
+  --done:#5CBE93; --done-soft:#1B2E27;
+  --redo:#D9A155; --redo-soft:#302719;
+  --never:#DE7A94; --never-soft:#311E25;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 4px 20px rgba(0,0,0,.28);
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; background:var(--ground); color:var(--text);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+.wrap { max-width:1000px; margin:0 auto; padding:0 24px 96px; }
+
+/* ---- sticky bar ---- */
+.bar {
+  position:sticky; top:0; z-index:20; background:var(--ground);
+  border-bottom:1px solid var(--line); margin-bottom:40px;
+}
+.barin {
+  max-width:1000px; margin:0 auto; padding:12px 24px;
+  display:flex; align-items:center; gap:20px; flex-wrap:wrap;
+}
+.barname {
+  font-family:"IBM Plex Sans Condensed",sans-serif; font-weight:700;
+  font-size:15px; letter-spacing:.01em; margin-right:auto;
+}
+.track { flex:1 1 220px; min-width:160px; height:6px; background:var(--line); border-radius:3px; overflow:hidden; }
+.fill { height:100%; width:0%; background:var(--accent); border-radius:3px; transition:width .3s ease; }
+.tally { font-family:"IBM Plex Mono",monospace; font-size:13px; font-variant-numeric:tabular-nums; color:var(--muted); }
+.tally b { color:var(--text); font-weight:600; }
+.reset {
+  font:500 12px/1 "IBM Plex Sans",sans-serif; color:var(--muted);
+  background:none; border:1px solid var(--line-strong); border-radius:5px;
+  padding:6px 10px; cursor:pointer;
+}
+.reset:hover { color:var(--text); border-color:var(--muted); }
+.reset:focus-visible, a:focus-visible, label:focus-within { outline:2px solid var(--accent); outline-offset:2px; }
+
+/* ---- masthead ---- */
+.mast { padding:44px 0 8px; }
+.eyebrow {
+  font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:500;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 14px;
+}
+h1 {
+  font-family:"IBM Plex Sans Condensed",sans-serif; font-weight:700;
+  font-size:clamp(34px,6vw,54px); line-height:1.04; letter-spacing:-.015em;
+  margin:0 0 18px; text-wrap:balance;
+}
+.lede { font-size:17px; color:var(--muted); max-width:60ch; margin:0 0 8px; }
+.lede strong { color:var(--text); font-weight:500; }
+
+/* ---- phase index ---- */
+.index { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:8px; margin:36px 0 56px; }
+.navcard {
+  display:flex; align-items:baseline; gap:9px; text-decoration:none; color:inherit;
+  background:var(--surface); border:1px solid var(--line); border-radius:7px;
+  padding:11px 13px; transition:border-color .15s, transform .15s;
+}
+.navcard:hover { border-color:var(--accent); transform:translateY(-1px); }
+.navnum { font-family:"IBM Plex Mono",monospace; font-size:11px; font-weight:600; color:var(--accent); }
+.navtitle { flex:1; font-size:13px; font-weight:500; line-height:1.3; }
+.navcount { font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--faint); font-variant-numeric:tabular-nums; }
+
+/* ---- priority ---- */
+.prio { background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:26px 28px; margin-bottom:64px; box-shadow:var(--shadow); }
+.prio h2 { font-family:"IBM Plex Sans Condensed",sans-serif; font-size:23px; margin:0 0 8px; letter-spacing:-.01em; }
+.prio > p { color:var(--muted); max-width:62ch; margin:0 0 22px; font-size:14.5px; }
+.plist { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; }
+.prow { display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:start; padding:11px 0; border-top:1px solid var(--line); }
+.prow:first-child { border-top:none; }
+
+/* ---- phases ---- */
+.phase { margin-bottom:56px; scroll-margin-top:72px; }
+.phead { display:grid; grid-template-columns:auto 1fr auto; gap:16px; align-items:start; padding-bottom:14px; border-bottom:2px solid var(--line-strong); margin-bottom:4px; }
+.pnum {
+  font-family:"IBM Plex Mono",monospace; font-size:12px; font-weight:600;
+  color:var(--accent); background:var(--accent-soft); border-radius:5px;
+  padding:5px 9px; line-height:1; margin-top:5px;
+}
+.pheadtext h2 { font-family:"IBM Plex Sans Condensed",sans-serif; font-size:26px; margin:0 0 6px; letter-spacing:-.012em; }
+.why { color:var(--muted); font-size:14.5px; margin:0; max-width:66ch; }
+.pcount { font-family:"IBM Plex Mono",monospace; font-size:12px; color:var(--faint); font-variant-numeric:tabular-nums; margin-top:8px; white-space:nowrap; }
+
+.rows { list-style:none; margin:0; padding:0; }
+.row { border-bottom:1px solid var(--line); }
+.rowmain { display:flex; align-items:center; gap:12px; padding:10px 6px; cursor:pointer; }
+.rowmain:hover { background:var(--surface-2); }
+.rowmain input { position:absolute; opacity:0; width:0; height:0; }
+.box {
+  flex:none; width:17px; height:17px; border:1.5px solid var(--line-strong);
+  border-radius:4px; background:var(--surface); position:relative; transition:.15s;
+}
+input:checked + .box { background:var(--done); border-color:var(--done); }
+input:checked + .box::after {
+  content:""; position:absolute; left:5px; top:1.5px; width:4px; height:9px;
+  border:solid #fff; border-width:0 2px 2px 0; transform:rotate(42deg);
+}
+.pid { font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--faint); font-variant-numeric:tabular-nums; flex:none; min-width:44px; }
+.rtitle { flex:1; font-size:14.5px; font-weight:500; }
+input:checked ~ .rtitle { color:var(--faint); text-decoration:line-through; text-decoration-color:var(--line-strong); }
+.rmeta { display:flex; align-items:center; gap:7px; flex:none; }
+.plat { font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--faint); }
+.diff { font-family:"IBM Plex Mono",monospace; font-size:11px; padding:2px 6px; border-radius:4px; background:var(--surface-2); color:var(--muted); border:1px solid var(--line); }
+.d-hard { color:var(--never); border-color:var(--never); background:var(--never-soft); }
+.d-medium { color:var(--redo); border-color:var(--redo); background:var(--redo-soft); }
+.chip { font-family:"IBM Plex Mono",monospace; font-size:10.5px; font-weight:500; padding:3px 7px; border-radius:4px; white-space:nowrap; }
+.chip-redo { color:var(--redo); background:var(--redo-soft); }
+.chip-never { color:var(--never); background:var(--never-soft); }
+.chip-done { color:var(--done); background:var(--done-soft); }
+.note { margin:-4px 0 10px; padding-left:73px; font-size:13px; color:var(--muted); max-width:70ch; }
+.prow .note { padding-left:0; margin:2px 0 0; }
+
+footer { border-top:1px solid var(--line); padding-top:26px; color:var(--muted); font-size:14px; max-width:66ch; }
+footer h3 { font-family:"IBM Plex Sans Condensed",sans-serif; font-size:17px; color:var(--text); margin:0 0 8px; }
+footer p { margin:0 0 14px; }
+code { font-family:"IBM Plex Mono",monospace; font-size:.9em; background:var(--surface-2); border:1px solid var(--line); border-radius:4px; padding:1px 5px; }
+@media (max-width:640px) {
+  .rmeta .plat { display:none; }
+  .note { padding-left:0; }
+  .phead, .prow { grid-template-columns:auto 1fr; }
+  .pcount { grid-column:2; }
+}
+@media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+</style>
+
+<div class="bar"><div class="barin">
+  <span class="barname">117 Problems</span>
+  <span class="track"><span class="fill" id="fill"></span></span>
+  <span class="tally"><b id="ndone">0</b> / 117</span>
+  <button class="reset" id="reset">Reset</button>
+</div></div>
+
+<div class="wrap">
+<header class="mast">
+  <p class="eyebrow">competitive-programming-notebook</p>
+  <h1>Rebuild the fundamentals, one pattern at a time.</h1>
+  <p class="lede">Every problem you have solved since 2023, re-ordered so each phase installs one idea the next depends on. <strong>Pattern-first, not number-first.</strong> Tick a box when you have solved it without reading past the card's Task section.</p>
+</header>
+
+<nav class="index"><a class="navcard" href="#p0"><span class="navnum">0</span><span class="navtitle">Toolchain and I/O</span><span class="navcount" data-phase="0">0/15</span></a>
+<a class="navcard" href="#p1"><span class="navnum">1</span><span class="navtitle">Array and string fluency</span><span class="navcount" data-phase="1">0/24</span></a>
+<a class="navcard" href="#p2"><span class="navnum">2</span><span class="navtitle">Binary search</span><span class="navcount" data-phase="2">0/3</span></a>
+<a class="navcard" href="#p3"><span class="navnum">3</span><span class="navtitle">Two pointers</span><span class="navcount" data-phase="3">0/8</span></a>
+<a class="navcard" href="#p4"><span class="navnum">4</span><span class="navtitle">Hashing and counting</span><span class="navcount" data-phase="4">0/13</span></a>
+<a class="navcard" href="#p5"><span class="navnum">5</span><span class="navtitle">Sliding window</span><span class="navcount" data-phase="5">0/2</span></a>
+<a class="navcard" href="#p6"><span class="navnum">6</span><span class="navtitle">Prefix and suffix products</span><span class="navcount" data-phase="6">0/1</span></a>
+<a class="navcard" href="#p7"><span class="navnum">7</span><span class="navtitle">Stacks and queues</span><span class="navcount" data-phase="7">0/4</span></a>
+<a class="navcard" href="#p8"><span class="navnum">8</span><span class="navtitle">Linked lists</span><span class="navcount" data-phase="8">0/12</span></a>
+<a class="navcard" href="#p9"><span class="navnum">9</span><span class="navtitle">Trees</span><span class="navcount" data-phase="9">0/14</span></a>
+<a class="navcard" href="#p10"><span class="navnum">10</span><span class="navtitle">Greedy and heaps</span><span class="navcount" data-phase="10">0/3</span></a>
+<a class="navcard" href="#p11"><span class="navnum">11</span><span class="navtitle">Dynamic programming</span><span class="navcount" data-phase="11">0/4</span></a>
+<a class="navcard" href="#p12"><span class="navnum">12</span><span class="navtitle">Backtracking and bits</span><span class="navcount" data-phase="12">0/3</span></a>
+<a class="navcard" href="#p13"><span class="navnum">13</span><span class="navtitle">Math, strings and simulation</span><span class="navcount" data-phase="13">0/9</span></a>
+<a class="navcard" href="#p14"><span class="navnum">14</span><span class="navtitle">The two hard ones left</span><span class="navcount" data-phase="14">0/2</span></a></nav>
+
+<section class="prio">
+  <h2>If you only do eighteen</h2>
+  <p>Fourteen of these you solved before, but in a way that sidestepped what the problem was teaching. Four you never solved at all. This is the highest-value work in the repository.</p>
+  <ul class="plist"><li class="prow">
+<span class="pid">3110</span>
+<div><span class="rtitle">3110. Score of a String</span>
+<p class="note">floating point for an integer problem</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0058</span>
+<div><span class="rtitle">58. Length of Last Word</span>
+<p class="note">trimmed and split the whole string to read its tail</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">3467</span>
+<div><span class="rtitle">3467. Transform Array by Parity</span>
+<p class="note">sorted a two-valued array instead of counting</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0704</span>
+<div><span class="rtitle">704. Binary Search</span>
+<p class="note">recursive, with the overflow-prone (lo+hi)/2 midpoint</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0035</span>
+<div><span class="rtitle">35. Search Insert Position</span>
+<p class="note">linear scan where O(log n) was explicitly required</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0167</span>
+<div><span class="rtitle">167. Two Sum II - Input Array Is Sorted</span>
+<p class="note">never solved</p></div>
+<span class="chip chip-never">never solved</span>
+</li>
+<li class="prow">
+<span class="pid">0189</span>
+<div><span class="rtitle">189. Rotate Array</span>
+<p class="note">allocated a second array; the O(1) triple-reversal is the point</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">3668</span>
+<div><span class="rtitle">3668. Restore Finishing Order</span>
+<p class="note">membership test against a list - quietly quadratic</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0049</span>
+<div><span class="rtitle">49. Group Anagrams</span>
+<p class="note">never solved</p></div>
+<span class="chip chip-never">never solved</span>
+</li>
+<li class="prow">
+<span class="pid">0424</span>
+<div><span class="rtitle">424. Longest Repeating Character Replacement</span>
+<p class="note">never solved</p></div>
+<span class="chip chip-never">never solved</span>
+</li>
+<li class="prow">
+<span class="pid">0238</span>
+<div><span class="rtitle">238. Product of Array Except Self</span>
+<p class="note">never solved</p></div>
+<span class="chip chip-never">never solved</span>
+</li>
+<li class="prow">
+<span class="pid">0225</span>
+<div><span class="rtitle">225. Implement Stack using Queues</span>
+<p class="note">backed the stack with a slice - never honored the queue-only constraint</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0160</span>
+<div><span class="rtitle">160. Intersection of Two Linked Lists</span>
+<p class="note">hash set; the O(1)-space pointer switch is the lesson</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0347</span>
+<div><span class="rtitle">347. Top K Frequent Elements</span>
+<p class="note">full sort, the one complexity the problem asks you to beat</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0509</span>
+<div><span class="rtitle">509. Fibonacci Number</span>
+<p class="note">memoised into global mutable state</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0046</span>
+<div><span class="rtitle">46. Permutations</span>
+<p class="note">iterative insertion instead of backtracking</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0012</span>
+<div><span class="rtitle">12. Integer to Roman</span>
+<p class="note">table lookup; the greedy subtractive walk is what generalises</p></div>
+<span class="chip chip-redo">redo</span>
+</li>
+<li class="prow">
+<span class="pid">0004</span>
+<div><span class="rtitle">4. Median of Two Sorted Arrays</span>
+<p class="note">sorted and merged; the binary search is the entire reason it is Hard</p></div>
+<span class="chip chip-redo">redo</span>
+</li></ul>
+</section>
+
+<section class="phase" id="p0">
+<header class="phead">
+<span class="pnum">0</span>
+<div class="pheadtext"><h2>Toolchain and I/O</h2>
+<p class="why">Zero algorithmic content. The point is to make the template, `Locale.US`, and fast reading automatic before anything hard depends on them. If you fumble I/O later you will not know whether your algorithm or your reader is wrong.</p></div>
+<span class="pcount" data-phase="0">0/15</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1000-hello-world">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1000</span>
+<span class="rtitle">1000. Hello World!</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1001-extremely-basic">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1001</span>
+<span class="rtitle">1001. Extremely Basic</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1002-area-of-a-circle">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1002</span>
+<span class="rtitle">1002. Area of a Circle</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1003-simple-sum">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1003</span>
+<span class="rtitle">1003. Simple Sum</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1004-simple-product">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1004</span>
+<span class="rtitle">1004. Simple Product</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1005-average-1">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1005</span>
+<span class="rtitle">1005. Average 1</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1006-average-2">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1006</span>
+<span class="rtitle">1006. Average 2</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1007-difference">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1007</span>
+<span class="rtitle">1007. Difference</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1008-salary">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1008</span>
+<span class="rtitle">1008. Salary</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1009-salary-with-bonus">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1009</span>
+<span class="rtitle">1009. Salary with Bonus</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1010-simple-calculate">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1010</span>
+<span class="rtitle">1010. Simple Calculate</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1011-sphere">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1011</span>
+<span class="rtitle">1011. Sphere</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1012-area">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1012</span>
+<span class="rtitle">1012. Area</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="beecrowd/1013-the-greatest">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1013</span>
+<span class="rtitle">1013. The Greatest</span>
+<span class="rmeta"><span class="plat">beecrowd</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+<li class="row" data-diff="trivial">
+<label class="rowmain">
+<input type="checkbox" data-key="hackerrank/simple-addition">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">simple</span>
+<span class="rtitle">Simple Addition</span>
+<span class="rmeta"><span class="plat">hackerrank</span><span class="diff d-trivial">trivial</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p1">
+<header class="phead">
+<span class="pnum">1</span>
+<div class="pheadtext"><h2>Array and string fluency</h2>
+<p class="why">Low-thought reps to get Java&#x27;s array and string idioms under your fingers. Do these fast - if one takes more than ten minutes, the card will tell you what you are missing.</p></div>
+<span class="pcount" data-phase="1">0/24</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="800">
+<label class="rowmain">
+<input type="checkbox" data-key="codeforces/0004a-watermelon">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0004a</span>
+<span class="rtitle">4A. Watermelon</span>
+<span class="rmeta"><span class="plat">codeforces</span><span class="diff d-800">800</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="hackerrank/simple-array-sum">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">simple</span>
+<span class="rtitle">Simple Array Sum</span>
+<span class="rmeta"><span class="plat">hackerrank</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="hackerrank/compare-the-triplets">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">compare</span>
+<span class="rtitle">Compare the Triplets</span>
+<span class="rmeta"><span class="plat">hackerrank</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="hackerrank/reverse-array">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">reverse</span>
+<span class="rtitle">Arrays - DS (Reverse Array)</span>
+<span class="rmeta"><span class="plat">hackerrank</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="hackerrank/plus-minus">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">plus</span>
+<span class="rtitle">Plus Minus</span>
+<span class="rmeta"><span class="plat">hackerrank</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="hackerrank/mini-max-sum">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">mini</span>
+<span class="rtitle">Mini-Max Sum</span>
+<span class="rmeta"><span class="plat">hackerrank</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="hackerrank/diagonal-difference">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">diagonal</span>
+<span class="rtitle">Diagonal Difference</span>
+<span class="rmeta"><span class="plat">hackerrank</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="hackerrank/staircase">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">staircase</span>
+<span class="rtitle">Staircase</span>
+<span class="rmeta"><span class="plat">hackerrank</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/1929-concatenation-of-array">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1929</span>
+<span class="rtitle">1929. Concatenation of Array</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/1920-build-array-from-permutation">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1920</span>
+<span class="rtitle">1920. Build Array from Permutation</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/1470-shuffle-the-array">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1470</span>
+<span class="rtitle">1470. Shuffle the Array</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0066-plus-one">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0066</span>
+<span class="rtitle">66. Plus One</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0412-fizz-buzz">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0412</span>
+<span class="rtitle">412. Fizz Buzz</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/2011-final-value-of-variable-after-performing-operations">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">2011</span>
+<span class="rtitle">2011. Final Value of Variable After Performing Operations</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/2769-find-the-maximum-achievable-number">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">2769</span>
+<span class="rtitle">2769. Find the Maximum Achievable Number</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/2469-convert-the-temperature">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">2469</span>
+<span class="rtitle">2469. Convert the Temperature</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/2894-divisible-and-non-divisible-sums-difference">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">2894</span>
+<span class="rtitle">2894. Divisible and Non-Divisible Sums Difference</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/3190-find-minimum-operations-to-make-all-elements-divisible-by-three">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">3190</span>
+<span class="rtitle">3190. Find Minimum Operations to Make All Elements Divisible by Three</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/3512-minimum-operations-to-make-array-sum-divisible-by-k">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">3512</span>
+<span class="rtitle">3512. Minimum Operations to Make Array Sum Divisible by K</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/3110-score-of-a-string">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">3110</span>
+<span class="rtitle">3110. Score of a String</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span><span class="chip chip-redo" title="floating point for an integer problem">redo</span></span>
+</label><p class="note">floating point for an integer problem</p></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/2942-find-words-containing-character">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">2942</span>
+<span class="rtitle">2942. Find Words Containing Character</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/3136-valid-word">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">3136</span>
+<span class="rtitle">3136. Valid Word</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0058-length-of-last-word">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0058</span>
+<span class="rtitle">58. Length of Last Word</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span><span class="chip chip-redo" title="trimmed and split the whole string to read its tail">redo</span></span>
+</label><p class="note">trimmed and split the whole string to read its tail</p></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/3467-transform-array-by-parity">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">3467</span>
+<span class="rtitle">3467. Transform Array by Parity</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span><span class="chip chip-redo" title="sorted a two-valued array instead of counting">redo</span></span>
+</label><p class="note">sorted a two-valued array instead of counting</p></li>
+</ul>
+</section>
+<section class="phase" id="p2">
+<header class="phead">
+<span class="pnum">2</span>
+<div class="pheadtext"><h2>Binary search</h2>
+<p class="why">First real primitive, and the one you will reuse most. Own lower-bound binary search outright - not `Arrays.binarySearch`, the loop. Get the boundary convention and the overflow-safe midpoint into muscle memory here and they stay correct forever.</p></div>
+<span class="pcount" data-phase="2">0/3</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0704-binary-search">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0704</span>
+<span class="rtitle">704. Binary Search</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span><span class="chip chip-redo" title="recursive, with the overflow-prone (lo+hi)/2 midpoint">redo</span></span>
+</label><p class="note">recursive, with the overflow-prone (lo+hi)/2 midpoint</p></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0035-search-insert-position">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0035</span>
+<span class="rtitle">35. Search Insert Position</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span><span class="chip chip-redo" title="linear scan where O(log n) was explicitly required">redo</span></span>
+</label><p class="note">linear scan where O(log n) was explicitly required</p></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0278-first-bad-version">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0278</span>
+<span class="rtitle">278. First Bad Version</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p3">
+<header class="phead">
+<span class="pnum">3</span>
+<div class="pheadtext"><h2>Two pointers</h2>
+<p class="why">The second primitive. Every one of these rests on the same exchange argument: moving a pointer discards only candidates that provably cannot be the answer. If you cannot state why a move is safe, you have memorised it rather than understood it.</p></div>
+<span class="pcount" data-phase="3">0/8</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0125-valid-palindrome">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0125</span>
+<span class="rtitle">125. Valid Palindrome</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0026-remove-duplicates-from-sorted-array">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0026</span>
+<span class="rtitle">26. Remove Duplicates from Sorted Array</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0027-remove-element">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0027</span>
+<span class="rtitle">27. Remove Element</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0088-merge-sorted-array">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0088</span>
+<span class="rtitle">88. Merge Sorted Array</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0167-two-sum-ii-input-array-is-sorted">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0167</span>
+<span class="rtitle">167. Two Sum II - Input Array Is Sorted</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span><span class="chip chip-never">never solved</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0011-container-with-most-water">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0011</span>
+<span class="rtitle">11. Container With Most Water</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0015-3sum">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0015</span>
+<span class="rtitle">15. 3Sum</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0189-rotate-array">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0189</span>
+<span class="rtitle">189. Rotate Array</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span><span class="chip chip-redo" title="allocated a second array; the O(1) triple-reversal is the point">redo</span></span>
+</label><p class="note">allocated a second array; the O(1) triple-reversal is the point</p></li>
+</ul>
+</section>
+<section class="phase" id="p4">
+<header class="phead">
+<span class="pnum">4</span>
+<div class="pheadtext"><h2>Hashing and counting</h2>
+<p class="why">You have already done 0001. The rest drill the same trade - space for time - plus Java&#x27;s specific traps: `get` returning null, boxing costs, and when a plain `int[]` beats a HashMap.</p></div>
+<span class="pcount" data-phase="4">0/13</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0001-two-sum">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0001</span>
+<span class="rtitle">1. Two Sum</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span><span class="chip chip-done">done</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0217-contains-duplicate">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0217</span>
+<span class="rtitle">217. Contains Duplicate</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0242-valid-anagram">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0242</span>
+<span class="rtitle">242. Valid Anagram</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0349-intersection-of-two-arrays">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0349</span>
+<span class="rtitle">349. Intersection of Two Arrays</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0387-first-unique-character-in-a-string">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0387</span>
+<span class="rtitle">387. First Unique Character in a String</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/1512-number-of-good-pairs">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1512</span>
+<span class="rtitle">1512. Number of Good Pairs</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/2956-find-common-elements-between-two-arrays">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">2956</span>
+<span class="rtitle">2956. Find Common Elements Between Two Arrays</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/3668-restore-finishing-order">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">3668</span>
+<span class="rtitle">3668. Restore Finishing Order</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span><span class="chip chip-redo" title="membership test against a list - quietly quadratic">redo</span></span>
+</label><p class="note">membership test against a list - quietly quadratic</p></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/3760-count-distinct-characters">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">3760</span>
+<span class="rtitle">3760. Count Distinct Characters</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/2325-decode-the-message">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">2325</span>
+<span class="rtitle">2325. Decode the Message</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/3541-find-most-frequent-vowel-and-consonant">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">3541</span>
+<span class="rtitle">3541. Find Most Frequent Vowel and Consonant</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0049-group-anagrams">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0049</span>
+<span class="rtitle">49. Group Anagrams</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span><span class="chip chip-never">never solved</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/1282-group-the-people-given-the-group-size-they-belong-to">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1282</span>
+<span class="rtitle">1282. Group the People Given the Group Size They Belong To</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p5">
+<header class="phead">
+<span class="pnum">5</span>
+<div class="pheadtext"><h2>Sliding window</h2>
+<p class="why">Only two problems, but 0424 contains the subtlest argument in the whole set - why a stale `maxCount` is safe. Do not move on until you can defend it, or stress-test it against an honest version.</p></div>
+<span class="pcount" data-phase="5">0/2</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0003-longest-substring-without-repeating-characters">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0003</span>
+<span class="rtitle">3. Longest Substring Without Repeating Characters</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0424-longest-repeating-character-replacement">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0424</span>
+<span class="rtitle">424. Longest Repeating Character Replacement</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span><span class="chip chip-never">never solved</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p6">
+<header class="phead">
+<span class="pnum">6</span>
+<div class="pheadtext"><h2>Prefix and suffix products</h2>
+<p class="why">One problem, but the prefix/suffix decomposition it teaches shows up constantly. Note the division shortcut is banned for a reason.</p></div>
+<span class="pcount" data-phase="6">0/1</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0238-product-of-array-except-self">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0238</span>
+<span class="rtitle">238. Product of Array Except Self</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span><span class="chip chip-never">never solved</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p7">
+<header class="phead">
+<span class="pnum">7</span>
+<div class="pheadtext"><h2>Stacks and queues</h2>
+<p class="why">0020 is the base case; 0232 teaches amortised analysis; 0225 you never actually solved; 0032 is a Hard that falls out of a stack of indices plus one sentinel.</p></div>
+<span class="pcount" data-phase="7">0/4</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0020-valid-parentheses">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0020</span>
+<span class="rtitle">20. Valid Parentheses</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0232-implement-queue-using-stacks">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0232</span>
+<span class="rtitle">232. Implement Queue using Stacks</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0225-implement-stack-using-queues">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0225</span>
+<span class="rtitle">225. Implement Stack using Queues</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span><span class="chip chip-redo" title="backed the stack with a slice - never honored the queue-only constraint">redo</span></span>
+</label><p class="note">backed the stack with a slice - never honored the queue-only constraint</p></li>
+<li class="row" data-diff="hard">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0032-longest-valid-parentheses">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0032</span>
+<span class="rtitle">32. Longest Valid Parentheses</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-hard">hard</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p8">
+<header class="phead">
+<span class="pnum">8</span>
+<div class="pheadtext"><h2>Linked lists</h2>
+<p class="why">Start with 0206 - reverse is the primitive the rest are built from. Then the two-pointer trio, then splicing. 0023 at the end is a Hard that needs the heap or divide-and-conquer you will have by then.</p></div>
+<span class="pcount" data-phase="8">0/12</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0206-reverse-linked-list">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0206</span>
+<span class="rtitle">206. Reverse Linked List</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0876-middle-of-the-linked-list">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0876</span>
+<span class="rtitle">876. Middle of the Linked List</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0141-linked-list-cycle">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0141</span>
+<span class="rtitle">141. Linked List Cycle</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0021-merge-two-sorted-lists">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0021</span>
+<span class="rtitle">21. Merge Two Sorted Lists</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0019-remove-nth-node-from-end-of-list">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0019</span>
+<span class="rtitle">19. Remove Nth Node From End of List</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0024-swap-nodes-in-pairs">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0024</span>
+<span class="rtitle">24. Swap Nodes in Pairs</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0002-add-two-numbers">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0002</span>
+<span class="rtitle">2. Add Two Numbers</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0061-rotate-list">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0061</span>
+<span class="rtitle">61. Rotate List</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0160-intersection-of-two-linked-lists">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0160</span>
+<span class="rtitle">160. Intersection of Two Linked Lists</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span><span class="chip chip-redo" title="hash set; the O(1)-space pointer switch is the lesson">redo</span></span>
+</label><p class="note">hash set; the O(1)-space pointer switch is the lesson</p></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/1290-convert-binary-number-in-a-linked-list-to-integer">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1290</span>
+<span class="rtitle">1290. Convert Binary Number in a Linked List to Integer</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/2807-insert-greatest-common-divisors-in-linked-list">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">2807</span>
+<span class="rtitle">2807. Insert Greatest Common Divisors in Linked List</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="hard">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0023-merge-k-sorted-lists">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0023</span>
+<span class="rtitle">23. Merge k Sorted Lists</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-hard">hard</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p9">
+<header class="phead">
+<span class="pnum">9</span>
+<div class="pheadtext"><h2>Trees</h2>
+<p class="why">The largest block. Recursion first (0104 through 0110), then BFS with the level-size snapshot, then the ordering-dependent ones. 0111 is the trap - it is not the mirror of 0104.</p></div>
+<span class="pcount" data-phase="9">0/14</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0104-maximum-depth-of-binary-tree">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0104</span>
+<span class="rtitle">104. Maximum Depth of Binary Tree</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0100-same-tree">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0100</span>
+<span class="rtitle">100. Same Tree</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0226-invert-binary-tree">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0226</span>
+<span class="rtitle">226. Invert Binary Tree</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0101-symmetric-tree">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0101</span>
+<span class="rtitle">101. Symmetric Tree</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0110-balanced-binary-tree">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0110</span>
+<span class="rtitle">110. Balanced Binary Tree</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0094-binary-tree-inorder-traversal">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0094</span>
+<span class="rtitle">94. Binary Tree Inorder Traversal</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0102-binary-tree-level-order-traversal">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0102</span>
+<span class="rtitle">102. Binary Tree Level Order Traversal</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="hackerrank/tree-level-order-traversal">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">tree</span>
+<span class="rtitle">Tree: Level Order Traversal</span>
+<span class="rmeta"><span class="plat">hackerrank</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0111-minimum-depth-of-binary-tree">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0111</span>
+<span class="rtitle">111. Minimum Depth of Binary Tree</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0098-validate-binary-search-tree">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0098</span>
+<span class="rtitle">98. Validate Binary Search Tree</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0108-convert-sorted-array-to-binary-search-tree">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0108</span>
+<span class="rtitle">108. Convert Sorted Array to Binary Search Tree</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0938-range-sum-of-bst">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0938</span>
+<span class="rtitle">938. Range Sum of BST</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/1038-binary-search-tree-to-greater-sum-tree">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1038</span>
+<span class="rtitle">1038. Binary Search Tree to Greater Sum Tree</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/1367-linked-list-in-binary-tree">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1367</span>
+<span class="rtitle">1367. Linked List in Binary Tree</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p10">
+<header class="phead">
+<span class="pnum">10</span>
+<div class="pheadtext"><h2>Greedy and heaps</h2>
+<p class="why">Greedy needs an exchange argument, not intuition. For each, write down why the greedy choice cannot be beaten before you code it. Java&#x27;s PriorityQueue is a min-heap by default, which is what both heap problems want.</p></div>
+<span class="pcount" data-phase="10">0/3</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0121-best-time-to-buy-and-sell-stock">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0121</span>
+<span class="rtitle">121. Best Time to Buy and Sell Stock</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0347-top-k-frequent-elements">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0347</span>
+<span class="rtitle">347. Top K Frequent Elements</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span><span class="chip chip-redo" title="full sort, the one complexity the problem asks you to beat">redo</span></span>
+</label><p class="note">full sort, the one complexity the problem asks you to beat</p></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/1353-maximum-number-of-events-that-can-be-attended">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1353</span>
+<span class="rtitle">1353. Maximum Number of Events That Can Be Attended</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p11">
+<header class="phead">
+<span class="pnum">11</span>
+<div class="pheadtext"><h2>Dynamic programming</h2>
+<p class="why">Your weakest area by volume - four problems is not much DP. Do these, then go get more elsewhere. State the recurrence and the base case in words before writing any array.</p></div>
+<span class="pcount" data-phase="11">0/4</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0070-climbing-stairs">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0070</span>
+<span class="rtitle">70. Climbing Stairs</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0509-fibonacci-number">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0509</span>
+<span class="rtitle">509. Fibonacci Number</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span><span class="chip chip-redo" title="memoised into global mutable state">redo</span></span>
+</label><p class="note">memoised into global mutable state</p></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0096-unique-binary-search-trees">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0096</span>
+<span class="rtitle">96. Unique Binary Search Trees</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/3202-find-the-maximum-length-of-valid-subsequence-ii">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">3202</span>
+<span class="rtitle">3202. Find the Maximum Length of Valid Subsequence II</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p12">
+<header class="phead">
+<span class="pnum">12</span>
+<div class="pheadtext"><h2>Backtracking and bits</h2>
+<p class="why">0046 is your only backtracking problem, so make it count - the undo step is the whole discipline. The bit problems are short but the counting argument in 1863 is worth deriving rather than accepting.</p></div>
+<span class="pcount" data-phase="12">0/3</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0046-permutations">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0046</span>
+<span class="rtitle">46. Permutations</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span><span class="chip chip-redo" title="iterative insertion instead of backtracking">redo</span></span>
+</label><p class="note">iterative insertion instead of backtracking</p></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0136-single-number">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0136</span>
+<span class="rtitle">136. Single Number</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/1863-sum-of-all-subset-xor-totals">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">1863</span>
+<span class="rtitle">1863. Sum of All Subset XOR Totals</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p13">
+<header class="phead">
+<span class="pnum">13</span>
+<div class="pheadtext"><h2>Math, strings and simulation</h2>
+<p class="why">The leftovers, and mostly specification-reading exercises. 0007 and 0008 are really overflow problems; treat them as such.</p></div>
+<span class="pcount" data-phase="13">0/9</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0009-palindrome-number">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0009</span>
+<span class="rtitle">9. Palindrome Number</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0007-reverse-integer">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0007</span>
+<span class="rtitle">7. Reverse Integer</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0008-string-to-integer-atoi">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0008</span>
+<span class="rtitle">8. String to Integer (atoi)</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0013-roman-to-integer">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0013</span>
+<span class="rtitle">13. Roman to Integer</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0012-integer-to-roman">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0012</span>
+<span class="rtitle">12. Integer to Roman</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span><span class="chip chip-redo" title="table lookup; the greedy subtractive walk is what generalises">redo</span></span>
+</label><p class="note">table lookup; the greedy subtractive walk is what generalises</p></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0014-longest-common-prefix">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0014</span>
+<span class="rtitle">14. Longest Common Prefix</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="easy">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0028-find-the-index-of-the-first-occurrence-in-a-string">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0028</span>
+<span class="rtitle">28. Find the Index of the First Occurrence in a String</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-easy">easy</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0006-zigzag-conversion">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0006</span>
+<span class="rtitle">6. Zigzag Conversion</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0048-rotate-image">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0048</span>
+<span class="rtitle">48. Rotate Image</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+</ul>
+</section>
+<section class="phase" id="p14">
+<header class="phead">
+<span class="pnum">14</span>
+<div class="pheadtext"><h2>The two hard ones left</h2>
+<p class="why">Save these. 0005 is expand-around-centre with fiddly index recovery. 0004 is the single biggest gap in the archive - you solved it by sorting, which ignores the only reason it exists. Do it with the partition binary search.</p></div>
+<span class="pcount" data-phase="14">0/2</span>
+</header>
+<ul class="rows">
+<li class="row" data-diff="medium">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0005-longest-palindromic-substring">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0005</span>
+<span class="rtitle">5. Longest Palindromic Substring</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-medium">medium</span></span>
+</label></li>
+<li class="row" data-diff="hard">
+<label class="rowmain">
+<input type="checkbox" data-key="leetcode/0004-median-of-two-sorted-arrays">
+<span class="box" aria-hidden="true"></span>
+<span class="pid">0004</span>
+<span class="rtitle">4. Median of Two Sorted Arrays</span>
+<span class="rmeta"><span class="plat">leetcode</span><span class="diff d-hard">hard</span><span class="chip chip-redo" title="sorted and merged; the binary search is the entire reason it is Hard">redo</span></span>
+</label><p class="note">sorted and merged; the binary search is the entire reason it is Hard</p></li>
+</ul>
+</section>
+
+<footer>
+  <h3>Using the Review line</h3>
+  <p>Every card ends with <code>last: never &nbsp; confidence: 0/5</code>. Set the date and a confidence when you solve it. Revisit anything at 3 or below after a week, anything at 1 or 2 after two days. That is the whole system — the cards exist so a revisit costs two minutes instead of twenty.</p>
+  <p>A problem you re-solve cold is worth more than three you read the solution to.</p>
+  <h3>One caveat</h3>
+  <p>This archive is interview-style DSA, not competitive programming. The two share fundamentals and diverge after that — contests want speed under pressure, and topics barely represented here. There is not a single graph traversal in these 117 problems.</p>
+  <p>So run a second track in parallel: Codeforces Div. 2 A and B, on the clock, starting now rather than after Phase 14. This repository builds the foundation. Contests build the thing you actually said you wanted.</p>
+</footer>
+</div>
+
+<script>
+(function () {
+  var KEY = "cpn-roadmap-v1";
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('input[type=checkbox]'));
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { state = {}; }
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
+  function paint() {
+    var done = 0;
+    boxes.forEach(function (b) { if (b.checked) done++; });
+    document.getElementById("ndone").textContent = done;
+    document.getElementById("fill").style.width = (done / boxes.length * 100) + "%";
+    document.querySelectorAll(".phase").forEach(function (sec, i) {
+      var bs = sec.querySelectorAll('input[type=checkbox]');
+      var d = 0;
+      bs.forEach(function (b) { if (b.checked) d++; });
+      var txt = d + "/" + bs.length;
+      sec.querySelector('.pcount').textContent = txt;
+      var nc = document.querySelector('.navcount[data-phase="' + i + '"]');
+      if (nc) { nc.textContent = txt; nc.style.color = (d === bs.length) ? "var(--done)" : ""; }
+    });
+  }
+  boxes.forEach(function (b) {
+    if (state[b.dataset.key]) b.checked = true;
+    b.addEventListener("change", function () {
+      if (b.checked) state[b.dataset.key] = 1; else delete state[b.dataset.key];
+      save(); paint();
+    });
+  });
+  document.getElementById("reset").addEventListener("click", function () {
+    boxes.forEach(function (b) { b.checked = false; });
+    state = {}; save(); paint();
+  });
+  paint();
+})();
+</script>
