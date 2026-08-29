@@ -65,7 +65,7 @@ Low-thought reps to get Java's array and string idioms under your fingers. Do th
 
 ## Phase 2 - Binary search
 
-*3 problems*
+*4 problems*
 
 First real primitive, and the one you will reuse most. Own lower-bound binary search outright - not `Arrays.binarySearch`, the loop. Get the boundary convention and the overflow-safe midpoint into muscle memory here and they stay correct forever.
 
@@ -241,6 +241,7 @@ Problems added since the plan was written, deliberately left unclassified — na
 - [x] [`leetcode/0383-ransom-note`](./leetcode/0383-ransom-note/)
 - [x] [`leetcode/0409-longest-palindrome`](./leetcode/0409-longest-palindrome/)
 - [ ] [`leetcode/0078-subsets`](./leetcode/0078-subsets/)
+- [ ] [`leetcode/2236-root-equals-sum-of-children`](./leetcode/2236-root-equals-sum-of-children/)
 
 ---
 
