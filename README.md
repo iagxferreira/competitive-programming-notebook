@@ -25,6 +25,16 @@ Nothing here is pre-solved. That is deliberate.
 recommended order, pattern by pattern, with the eighteen highest-value
 ones called out.
 
+`roadmap.html` is the same plan as a tickable page (progress saves in
+your browser). Both are generated:
+
+```bash
+python3 tools/gen-roadmap.py        # PHASES table -> ROADMAP.md
+python3 tools/gen-roadmap-page.py   # ROADMAP.md   -> roadmap.html
+```
+
+Edit the `PHASES` table in `tools/gen-roadmap.py`, never the outputs.
+
 ## The archive
 
 These problems were originally solved between 2023 and 2026 in four
