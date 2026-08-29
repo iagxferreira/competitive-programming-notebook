@@ -50,7 +50,7 @@ Low-thought reps to get Java's array and string idioms under your fingers. Do th
 - [ ] [`leetcode/1920-build-array-from-permutation`](./leetcode/1920-build-array-from-permutation/)
 - [ ] [`leetcode/1470-shuffle-the-array`](./leetcode/1470-shuffle-the-array/)
 - [ ] [`leetcode/0066-plus-one`](./leetcode/0066-plus-one/)
-- [ ] [`leetcode/0412-fizz-buzz`](./leetcode/0412-fizz-buzz/)
+- [x] [`leetcode/0412-fizz-buzz`](./leetcode/0412-fizz-buzz/)
 - [ ] [`leetcode/2011-final-value-of-variable-after-performing-operations`](./leetcode/2011-final-value-of-variable-after-performing-operations/)
 - [ ] [`leetcode/2769-find-the-maximum-achievable-number`](./leetcode/2769-find-the-maximum-achievable-number/)
 - [ ] [`leetcode/2469-convert-the-temperature`](./leetcode/2469-convert-the-temperature/)
