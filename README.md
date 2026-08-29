@@ -50,18 +50,36 @@ LeetCode ids are zero-padded to four digits so they sort correctly.
 ## Running
 
 ```bash
-make run DIR=leetcode/0015-3sum            # build and run
-make run DIR=leetcode/0015-3sum IN=in.txt  # feed a test file
-make check                                 # syntax-check every solution
+make syntax DIR=leetcode/0015-3sum      # compile-check (leetcode has no main)
+make run    DIR=beecrowd/1000-hello-world
+make run    DIR=... IN=in.txt           # feed a test file
+make run    DIR=... SAN=1               # with sanitizers
+make check                              # syntax-check all 117 solutions
 
-tools/run.sh leetcode/0015-3sum            # run against all in*.txt, diff vs out*.txt
-tools/stress.sh leetcode/0015-3sum 1000    # brute vs fast on random input
-tools/new.sh leetcode 0146 lru-cache       # scaffold a new problem
+tools/run.sh leetcode/0015-3sum         # run against all in*.txt, diff vs out*.txt
+tools/stress.sh leetcode/0015-3sum 1000 # brute vs fast on random input
+tools/new.sh leetcode 0146 lru-cache    # scaffold a new problem
 ```
 
-Builds use `-std=c++20 -O2 -Wall -Wextra -Wshadow` with address and
-undefined-behaviour sanitizers on. The sanitizers catch the class of bug
-that costs you a contest — turn them off only when timing.
+Two problem shapes, and they build differently:
+
+- **stdin/stdout** (beecrowd, codeforces, hackerrank) — `solution.cpp`
+  has a `main`, so `make run` works directly.
+- **`class Solution`** (leetcode) — no `main`, so there is nothing to
+  link. Use `make syntax`, or drop a `main.cpp` harness in the problem
+  directory and it gets linked in automatically.
+
+Builds use `-std=c++20 -O2 -Wall -Wextra -Wshadow`. Sanitizers are
+opt-in via `SAN=1`, because GCC needs the `libasan` and `libubsan`
+packages installed separately:
+
+```bash
+sudo dnf install libasan libubsan   # then: make run DIR=... SAN=1
+CXX=clang++ make run DIR=... SAN=1  # or just use clang, it bundles them
+```
+
+Turn sanitizers on while developing — they catch the class of bug that
+costs you a contest — and off when timing.
 
 ## Stress testing
 
