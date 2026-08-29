@@ -1,16 +1,35 @@
 #!/usr/bin/env bash
-# Scaffold a new problem directory from the template.
-#   tools/new.sh leetcode 0217 contains-duplicate
+# Scaffold a new problem directory.
+#   tools/new.sh leetcode 0146 lru-cache        -> Solution.java (no main)
+#   tools/new.sh codeforces 1900a some-problem  -> Main.java from the template
 set -euo pipefail
 
 platform="${1:?usage: tools/new.sh <platform> <id> <slug>}"
 id="${2:?}"
 slug="${3:?}"
 dir="$platform/$id-$slug"
+root="$(cd "$(dirname "$0")/.." && pwd)"
 
 [[ -d "$dir" ]] && { echo "$dir already exists"; exit 1; }
 mkdir -p "$dir"
-cp template.cpp "$dir/solution.cpp"
+
+if [[ "$platform" == "leetcode" ]]; then
+    cat > "$dir/Solution.java" <<'TPL'
+import java.util.*;
+
+class Solution {
+    public int solve() {
+        // TODO: solve
+        return 0;
+    }
+}
+TPL
+else
+    sed -e 's/^public class Template {/public class Main {/' \
+        -e 's/Template::run/Main::run/' \
+        -e 's|^// Contest template.*|// Solution.|' \
+        "$root/Template.java" > "$dir/Main.java"
+fi
 
 cat > "$dir/README.md" <<TPL
 # $id. ${slug//-/ }

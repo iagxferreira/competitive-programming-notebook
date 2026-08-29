@@ -1,53 +1,52 @@
 # Build and run any problem in the tree.
 #
-#   make syntax DIR=leetcode/0015-3sum     # compile-check only
 #   make run    DIR=beecrowd/1000-hello-world
 #   make run    DIR=... IN=in.txt          # feed a test file
-#   make run    DIR=... SAN=1              # with sanitizers
-#   make practice DIR=...                  # build practice.cpp instead
-#   make check                             # syntax-check everything
+#   make check                             # compile every problem
+#   make syntax DIR=leetcode/0015-3sum     # compile one problem only
 #
 # Two problem shapes:
-#   stdin/stdout (beecrowd, codeforces, hackerrank) - solution.cpp has a
-#     main, so `make run` works directly.
-#   class Solution (leetcode) - no main, so `make run` needs a harness.
-#     Drop a main.cpp in the problem directory and it is linked in
-#     automatically. Without one, use `make syntax`.
-#
-# SAN=1 needs a sanitizer runtime. GCC needs the libasan/libubsan
-# packages (dnf install libasan libubsan); clang ships its own, so
-# CXX=clang++ SAN=1 always works.
+#   stdin/stdout (beecrowd, codeforces, hackerrank) - Main.java or
+#     Solution.java has a main, so `make run` works directly.
+#   class Solution (leetcode) - no main, nothing to run. Use `make syntax`,
+#     or add a Main.java harness in the directory and `make run` picks it up.
 
-CXX      ?= g++
-WARN     := -std=c++20 -O2 -Wall -Wextra -Wshadow
-SANFLAGS := -fsanitize=address,undefined -fno-omit-frame-pointer -g
-CXXFLAGS ?= $(WARN) $(if $(SAN),$(SANFLAGS))
-SRC      ?= solution.cpp
-BIN      := /tmp/cp-build
+JAVAC ?= javac
+JAVA  ?= java
+OUT   := /tmp/cp-build
+
+# Bigger stack for deep recursion, matching the template.
+JAVAFLAGS ?= -Xss256m
 
 need-dir:
 	@test -n "$(DIR)" || { echo "usage: make $(MAKECMDGOALS) DIR=<problem-dir>"; exit 1; }
-	@test -f "$(DIR)/$(SRC)" || { echo "no $(SRC) in $(DIR)"; exit 1; }
+	@test -d "$(DIR)" || { echo "no such directory: $(DIR)"; exit 1; }
 
 syntax: need-dir
-	$(CXX) $(WARN) -fsyntax-only $(DIR)/$(SRC)
+	@mkdir -p $(OUT)
+	$(JAVAC) -d $(OUT) $(DIR)/*.java
 
-build: need-dir
-	@mkdir -p $(BIN)
-	@extra=""; [ -f "$(DIR)/main.cpp" ] && extra="$(DIR)/main.cpp"; \
-	 set -x; $(CXX) $(CXXFLAGS) $(DIR)/$(SRC) $$extra -o $(BIN)/a.out
-
-run: build
-	@if [ -n "$(IN)" ]; then $(BIN)/a.out < $(DIR)/$(IN); else $(BIN)/a.out; fi
-
-practice:
-	@$(MAKE) run DIR=$(DIR) SRC=practice.cpp IN=$(IN)
+# Runs whichever class in the directory declares a main.
+run: syntax
+	@main=$$(grep -lE 'static void main' $(DIR)/*.java | head -1); \
+	 if [ -z "$$main" ]; then \
+	   echo "no main in $(DIR) - leetcode problems have none, use 'make syntax'"; exit 1; \
+	 fi; \
+	 cls=$$(basename $$main .java); \
+	 if [ -n "$(IN)" ]; then \
+	   $(JAVA) $(JAVAFLAGS) -cp $(OUT) $$cls < $(DIR)/$(IN); \
+	 else \
+	   $(JAVA) $(JAVAFLAGS) -cp $(OUT) $$cls; \
+	 fi
 
 check:
-	@find leetcode beecrowd hackerrank codeforces -name solution.cpp | sort | \
-	  xargs -P $$(nproc) -I{} sh -c '$(CXX) -std=c++20 -fsyntax-only "{}" || echo "FAIL: {}"' \
-	  > /tmp/cp-check.log 2>&1; \
-	if grep -q FAIL /tmp/cp-check.log; then grep FAIL /tmp/cp-check.log; exit 1; \
-	else echo "all solutions compile"; fi
+	@mkdir -p $(OUT)
+	@fail=0; \
+	 for d in $$(find leetcode beecrowd hackerrank codeforces -mindepth 1 -maxdepth 1 -type d | sort); do \
+	   ls $$d/*.java >/dev/null 2>&1 || continue; \
+	   $(JAVAC) -nowarn -d $(OUT)/$$(basename $$d) $$d/*.java 2>/tmp/cp-javac.err || { \
+	     echo "FAIL: $$d"; head -3 /tmp/cp-javac.err; fail=1; }; \
+	 done; \
+	 if [ $$fail -eq 0 ]; then echo "all problems compile"; else exit 1; fi
 
-.PHONY: need-dir syntax build run practice check
+.PHONY: need-dir syntax run check
