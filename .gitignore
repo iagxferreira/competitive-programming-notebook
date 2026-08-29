@@ -1,10 +1,11 @@
-.gradle/
-build/
-out/
-*.class
-*.log
-*.iml
-.idea/
-.kotlin/
-legacy/**/build/
+# build artifacts
+*.o
+*.out
+*.exe
+a.out
+/build/
 
+# editor
+.idea/
+.vscode/
+*.swp
