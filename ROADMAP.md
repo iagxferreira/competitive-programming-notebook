@@ -203,7 +203,7 @@ Your weakest area by volume - four problems is not much DP. Do these, then go ge
 
 0046 is your only backtracking problem, so make it count - the undo step is the whole discipline. The bit problems are short but the counting argument in 1863 is worth deriving rather than accepting.
 
-- [ ] [`leetcode/0046-permutations`](./leetcode/0046-permutations/)  `*` iterative insertion instead of backtracking
+- [x] [`leetcode/0046-permutations`](./leetcode/0046-permutations/)  `*` iterative insertion instead of backtracking
 - [ ] [`leetcode/0136-single-number`](./leetcode/0136-single-number/)
 - [ ] [`leetcode/1863-sum-of-all-subset-xor-totals`](./leetcode/1863-sum-of-all-subset-xor-totals/)
 
@@ -240,10 +240,10 @@ Problems added since the plan was written, deliberately left unclassified — na
 
 - [x] [`leetcode/0383-ransom-note`](./leetcode/0383-ransom-note/)
 - [x] [`leetcode/0409-longest-palindrome`](./leetcode/0409-longest-palindrome/)
-- [ ] [`leetcode/0078-subsets`](./leetcode/0078-subsets/)
-- [ ] [`leetcode/2236-root-equals-sum-of-children`](./leetcode/2236-root-equals-sum-of-children/)
-- [ ] [`leetcode/0700-search-in-a-binary-search-tree`](./leetcode/0700-search-in-a-binary-search-tree/)
-- [ ] [`leetcode/1379-find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree`](./leetcode/1379-find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/)
+- [x] [`leetcode/0078-subsets`](./leetcode/0078-subsets/)
+- [x] [`leetcode/2236-root-equals-sum-of-children`](./leetcode/2236-root-equals-sum-of-children/)
+- [x] [`leetcode/0700-search-in-a-binary-search-tree`](./leetcode/0700-search-in-a-binary-search-tree/)
+- [x] [`leetcode/1379-find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree`](./leetcode/1379-find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/)
 
 ---
 
