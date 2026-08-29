@@ -1,20 +1,23 @@
 # Repo Instructions
 
-Java competitive programming notebook. Every problem is an annotated
-card plus an empty solution file, unsolved by design.
+Java competitive programming notebook. Every problem Iago has solved
+before, being rebuilt from scratch in Java.
 
 ## Core Goal
 
-Rebuild understanding by re-solving. The READMEs are recall aids written
-from earlier solutions in Go, Python, Kotlin and Rust; the `.cpp` files
-are deliberately empty.
+Make Java his competition language. The archive is the training set: each
+problem starts as an empty file plus a recall card written from his
+earlier Go, Python, Kotlin or Rust attempt. He re-solves it in Java.
+
+This is deliberate practice aimed at competing, not a portfolio. Treat
+the empty files as work in progress, not as a permanent gimmick.
 
 ## The One Rule
 
 **Do not write solutions unless asked to.**
 
-Filling in a `Solution.java` destroys the point of this repository. When
-helping with a problem:
+He is here to get strong at this, and a solution he did not write teaches
+him nothing. When helping with a problem:
 
 - ask what the brute force is
 - ask where the bottleneck is

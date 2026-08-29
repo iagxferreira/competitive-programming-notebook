@@ -1,14 +1,17 @@
 # competitive-programming-notebook
 
-Java notebook for competitive programming and DSA. Every problem I have
-solved across LeetCode, Beecrowd, HackerRank and Codeforces — with the
-solution then deleted.
+Every algorithm problem I have solved — across LeetCode, Beecrowd,
+HackerRank and Codeforces — being rebuilt from scratch in Java.
 
-What remains is a card: the key insight, the invariant, the complexity,
-and the specific way I got it wrong the first time. The `.java` file next
-to it is empty.
+The goal is not a solutions archive. It is to make Java the language I
+compete in: fast enough under a clock, familiar enough that I am thinking
+about the problem and never about the syntax.
 
-The rock goes back to the bottom of the hill. That is the point.
+Each problem starts as an empty file and an annotated card — the key
+insight, the invariant, the complexity, and the specific way I got it
+wrong the first time. I solve it again, in Java, properly.
+
+Sisyphus got strong pushing that rock. That is the point.
 
 ## How this works
 
@@ -25,7 +28,7 @@ insight, the invariant that makes it work, the complexity, and the
 specific pitfall — written from your own earlier attempt in Go, Python,
 Kotlin or Rust. Read the card, close it, then solve from scratch.
 
-Nothing here is pre-solved. That is deliberate.
+Nothing arrives pre-solved. Every one gets earned in Java.
 
 **Start here: [`ROADMAP.md`](./ROADMAP.md)** — every problem in a
 recommended order, pattern by pattern, with the eighteen highest-value
@@ -127,8 +130,9 @@ even when you are confident.
 
 ## Status
 
-Every card is written. Almost every solution is empty, and the ones that
-are not will be emptied again if I ever want the rep back.
+Every card is written. Most solutions are still empty — that is the work
+in front of me, not a permanent state. Solved ones stay solved, and the
+Review line on each card tracks when to come back to it.
 
 Four problems (`0049`, `0167`, `0238`, `0424`) were never solved in the
 first place — they were `TODO` scaffolds in the old Kotlin lab, and their
