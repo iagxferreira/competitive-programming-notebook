@@ -24,6 +24,12 @@ helping with a problem:
 
 The card's `## Key insight` is a spoiler. Do not quote it unprompted.
 
+## Study Order
+
+[`ROADMAP.md`](./ROADMAP.md) has the recommended order and is the source
+of truth for what to work on next. When the user asks what to do, read it
+and pick the first unticked box rather than choosing arbitrarily.
+
 ## Problem Layout
 
 ```
