@@ -1,11 +1,11 @@
 # build artifacts
-*.o
-*.out
-*.exe
-a.out
+*.class
+/out/
+/target/
 /build/
 
 # editor
 .idea/
 .vscode/
+*.iml
 *.swp
