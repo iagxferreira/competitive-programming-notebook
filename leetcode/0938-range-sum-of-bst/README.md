@@ -8,8 +8,8 @@ Sum of all node values in [low, high].
 
 ## Key insight
 
-Prune using the BST ordering. If `node->val <= low` the entire left
-subtree is below the range and can be skipped; if `node->val >= high` the
+Prune using the BST ordering. If `node.val <= low` the entire left
+subtree is below the range and can be skipped; if `node.val >= high` the
 right subtree is above it. This is what makes the traversal better than
 visiting every node.
 

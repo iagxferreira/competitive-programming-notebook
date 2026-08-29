@@ -25,9 +25,13 @@ time O(n + m)   space O(1) — 26 entries
 
 The "only on first appearance" rule is the whole problem. Your Go version
 tests `rainbowTable[char] == 0`, relying on Go's zero value for a missing
-key. In C++ `map[key]` INSERTS a default-constructed entry on read, so
-the same idiom silently grows the map — use a `array<char, 26>` seeded
-with 0, or `count()` before inserting.
+key. Java's `map.get(k)` returns `null` for a missing key rather than
+inserting, so the map does not grow — but assigning that to a primitive
+`char` or `int` throws a NullPointerException on unboxing. Use
+`containsKey`, or `getOrDefault(k, (char) 0)`.
+
+Simpler still: a `char[26]` indexed by `c - 'a'`, which sidesteps boxing
+and null entirely.
 
 Skip spaces when assigning letters but preserve them when decoding.
 

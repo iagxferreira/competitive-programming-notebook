@@ -27,7 +27,9 @@ time O(n)   space O(n) for the queue (O(width) at peak)
 Two things. Push children only if non-null, or you dequeue null and
 dereference it. And your Go version used `queue = queue[1:]` to pop,
 which never releases the underlying array — fine at this size, but
-`std::queue` is the right tool and pops in O(1) without the leak.
+`ArrayDeque` is the right tool and pops in O(1) without the leak.
+Never use `java.util.Stack` or `LinkedList` for this; `ArrayDeque` beats
+both.
 
 Building the BST is half the problem: values go left when strictly less,
 right otherwise, which is what puts duplicates on the right.

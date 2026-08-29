@@ -23,11 +23,14 @@ naive O(n * m)   KMP O(n + m)   space O(m)
 
 ## Pitfall
 
-The loop bound is `i <= n - m`. In C++ that subtraction is on `size_t`,
-so when m > n it wraps to a huge unsigned value and the loop runs off the
-end. Cast to `int` or check `m > n` first. Your Go version was safe
-because Go's `len` returns a signed int — this is exactly the kind of bug
-the language change introduces.
+The loop bound is `i <= n - m`. This is one of the few places Java is
+SAFER than the alternatives: `String.length()` returns a signed `int`, so
+when m > n the bound goes negative and the loop simply does not run,
+returning -1 correctly. In C++ the same expression is unsigned and wraps
+to a huge value, running off the end of the string.
+
+Worth knowing you are protected here, because the equivalent protection
+does not exist for array index arithmetic elsewhere.
 
 ## Review
 

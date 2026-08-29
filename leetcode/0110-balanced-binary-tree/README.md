@@ -26,8 +26,10 @@ The naive `isBalanced(node) = |h(l) - h(r)| <= 1 && isBalanced(l) &&
 isBalanced(r)` is O(n log n) at best and O(n^2) on a skewed tree. Your
 Python version correctly bundles both results into one return.
 
-In C++ return a `pair<bool, int>`, or use -1 as a sentinel height meaning
-"already unbalanced" and short-circuit on it.
+In Java the clean version returns a single `int` height with -1 as the
+sentinel for "already unbalanced", short-circuiting on it. That avoids
+allocating a wrapper per node — an `int[]{ok, height}` or a boxed pair
+would allocate n objects for no reason.
 
 Balance is required at EVERY node, not just the root.
 

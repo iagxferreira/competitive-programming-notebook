@@ -23,9 +23,17 @@ time O(1)   space O(1)
 ## Pitfall
 
 Two traps. `A=` has NO space before the number here (unlike 1001's
-`X = `), and you need exactly 4 decimals: `printf("A=%.4f\n", area)`.
-Your Kotlin version reached for BigDecimal to get this rounding; in C++
-`printf` does it natively.
+`X = `), and you need exactly 4 decimals.
+
+In Java, ALWAYS pass an explicit locale:
+
+    System.out.printf(Locale.US, "A=%.4f%n", area);
+
+Without it the JVM uses the system default, and on a pt_BR machine
+`%.4f` prints `12,5664` with a comma. Beecrowd compares bytes, so that
+is an instant wrong answer that looks completely correct on your screen.
+This is the single most common way Brazilian users lose these problems.
+Your Kotlin version dodged it by going through BigDecimal.toString().
 
 ## Review
 

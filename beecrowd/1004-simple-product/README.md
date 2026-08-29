@@ -21,7 +21,7 @@ time O(1)   space O(1)
 ## Pitfall
 
 Check the stated bounds before using `int` — a product overflows far
-sooner than a sum does. When in doubt, `long long`.
+sooner than a sum does. When in doubt, `long`.
 
 ## Review
 

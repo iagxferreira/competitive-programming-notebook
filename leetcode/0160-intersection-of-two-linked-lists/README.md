@@ -30,7 +30,7 @@ Switch each pointer to the OTHER head exactly once. Restarting on its own
 list loops forever when there is no intersection; the cross-over is what
 makes both hit null simultaneously.
 
-Compare node addresses, never values.
+Compare node references with `==`, never values or `.equals`.
 
 ## Review
 

@@ -24,7 +24,10 @@ time O(1)   space O(1)
 
 Divide in floating point. If both weights and the divisor were integers
 you would get truncation — here 3.5/7.5 force promotion, but do not rely
-on that habit. `printf("MEDIA = %.5f\n", avg)`.
+on that habit.
+
+`System.out.printf(Locale.US, "MEDIA = %.5f%n", avg)` — the locale
+argument is mandatory, see 1002.
 
 ## Review
 

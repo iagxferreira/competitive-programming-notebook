@@ -22,9 +22,10 @@ time O(n)   space O(1) for a bounded alphabet
 ## Pitfall
 
 Your Go version used `map[rune]struct{}` — the idiomatic zero-byte set.
-The C++ equivalent is `unordered_set`, but for lowercase letters a
-32-bit mask with `__builtin_popcount` is dramatically faster and is the
-form worth internalising for contests.
+The Java equivalent is `HashSet<Character>`, but for lowercase letters an
+`int` bitmask with `Integer.bitCount(mask)` is dramatically faster and
+is the form worth internalising for contests: set bit `c - 'a'`, then
+count bits once at the end.
 
 Verify the problem number against the archive filename before trusting
 this card's title.

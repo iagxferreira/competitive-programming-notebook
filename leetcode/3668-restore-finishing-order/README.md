@@ -28,8 +28,9 @@ It passes at these constraints and is quietly quadratic. Converting to a
 set first is a one-word change in Python and the difference between
 passing and TLE at larger bounds.
 
-In C++ use `vector<bool>` indexed by value; it beats `unordered_set` when
-the value range is small.
+In Java use a `boolean[]` indexed by value; it beats `HashSet<Integer>`
+comfortably when the value range is small, and avoids boxing every
+lookup.
 
 ## Review
 

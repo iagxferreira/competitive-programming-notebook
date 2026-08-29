@@ -1,6 +1,6 @@
 # competitive-programming-notebook
 
-C++ notebook for competitive programming and DSA. 118 problems across
+Java notebook for competitive programming and DSA. 118 problems across
 four platforms, each one an annotated card plus an empty file to solve
 into.
 
@@ -10,8 +10,8 @@ Every problem is a directory:
 
 ```
 leetcode/0015-3sum/
-    README.md      what the problem teaches, and where you went wrong
-    solution.cpp   empty. you write this.
+    README.md       what the problem teaches, and where you went wrong
+    Solution.java   empty. you write this.
 ```
 
 The README is not a solution write-up. It is a **recall card**: the key
@@ -31,8 +31,8 @@ every card ends with the command to retrieve the original:
 git show legacy-archive:legacy/go/leetcode/15-three-sum.go
 ```
 
-`legacy-archive` is a tag on the last commit before the C++ rewrite. Use
-it to diff your new solution against what you wrote the first time.
+`legacy-archive` is a tag on the last commit before the rewrite. Use it
+to diff your new solution against what you wrote the first time.
 
 ## Layout
 
@@ -50,57 +50,78 @@ LeetCode ids are zero-padded to four digits so they sort correctly.
 ## Running
 
 ```bash
-make syntax DIR=leetcode/0015-3sum      # compile-check (leetcode has no main)
 make run    DIR=beecrowd/1000-hello-world
 make run    DIR=... IN=in.txt           # feed a test file
-make run    DIR=... SAN=1               # with sanitizers
-make check                              # syntax-check all 117 solutions
+make syntax DIR=leetcode/0015-3sum      # compile only (leetcode has no main)
+make check                              # compile all 117 problems
 
-tools/run.sh leetcode/0015-3sum         # run against all in*.txt, diff vs out*.txt
-tools/stress.sh leetcode/0015-3sum 1000 # brute vs fast on random input
+tools/run.sh beecrowd/1000-hello-world  # run against all in*.txt, diff vs out*.txt
+tools/stress.sh codeforces/0004a-watermelon 1000
 tools/new.sh leetcode 0146 lru-cache    # scaffold a new problem
 ```
 
 Two problem shapes, and they build differently:
 
-- **stdin/stdout** (beecrowd, codeforces, hackerrank) — `solution.cpp`
-  has a `main`, so `make run` works directly.
-- **`class Solution`** (leetcode) — no `main`, so there is nothing to
-  link. Use `make syntax`, or drop a `main.cpp` harness in the problem
-  directory and it gets linked in automatically.
+- **stdin/stdout** (beecrowd, codeforces, hackerrank) — `Main.java` or
+  `Solution.java` has a `main`, so `make run` works directly.
+- **`class Solution`** (leetcode) — no `main`, nothing to execute. Use
+  `make syntax`, or add a `Main.java` harness to the directory and
+  `make run` will find and use it.
 
-Builds use `-std=c++20 -O2 -Wall -Wextra -Wshadow`. Sanitizers are
-opt-in via `SAN=1`, because GCC needs the `libasan` and `libubsan`
-packages installed separately:
+No Gradle, no Maven. Every problem is one self-contained file, exactly
+what you paste into the judge.
 
-```bash
-sudo dnf install libasan libubsan   # then: make run DIR=... SAN=1
-CXX=clang++ make run DIR=... SAN=1  # or just use clang, it bundles them
-```
+## Java in contests
 
-Turn sanitizers on while developing — they catch the class of bug that
-costs you a contest — and off when timing.
+Java is a first-class contest language — Codeforces, AtCoder, ICPC,
+LeetCode, HackerRank and Beecrowd all take it. Four things cost people
+problems, and all four are handled in `Template.java`:
+
+**Scanner is too slow.** It is the most common cause of a Java TLE on a
+solution that is algorithmically correct. Use `BufferedReader` +
+`StringTokenizer` (what the template does), and build output into a
+`StringBuilder` rather than calling `println` in a loop.
+
+**`Arrays.sort(int[])` is hackable.** It is dual-pivot quicksort with
+adversarial O(n²) inputs, and people on Codeforces construct them
+deliberately. Shuffle before sorting, or sort a boxed `Integer[]`, which
+uses TimSort. The template has a `sort` helper that shuffles.
+
+**Recursion overflows early.** The default stack dies around depth 10⁴,
+which a DFS over 10⁵ nodes will hit. Run your work on a thread with a
+bigger stack — the template starts one with 256MB.
+
+**No extra time limit.** Most judges, Codeforces included, apply the same
+limit to every language, and Java runs roughly 1.5–2.5× slower than C++.
+Setters normally ensure the intended solution passes in Java, but you
+have less headroom, so constant factors matter: prefer primitive arrays
+over boxed collections, and `ArrayDeque` over `Stack` or `LinkedList`.
+
+One more, specific to the Beecrowd set: **always pass `Locale.US`** to
+`printf` / `String.format`. On a pt_BR system `%.2f` prints a decimal
+comma, which is an instant wrong answer that looks perfectly correct on
+screen.
 
 ## Stress testing
 
 For any problem where you are unsure, write three files and let the
 machine find your counterexample:
 
-- `brute.cpp` — obviously correct, too slow
-- `solution.cpp` — the real one
-- `gen.cpp` — random input, seeded from `argv[1]`
+- `Brute.java` — obviously correct, too slow
+- `Gen.java` — random input, seeded from `args[0]`
+- `Main.java` — the real one
 
 Then `tools/stress.sh <dir>`. This is the single highest-leverage habit
-in competitive programming and it is why `brute.cpp` is worth writing
+in competitive programming and it is why `Brute.java` is worth writing
 even when you are confident.
 
 ## Status
 
-All 118 cards are written. All 118 solutions are empty.
+All 118 cards are written. All 117 solutions are empty.
 
 Four of them (`0049`, `0167`, `0238`, `0424`) were never solved in the
 first place — they were `TODO` scaffolds in the old Kotlin lab, and their
 cards say so.
 
-One (`2884`) is a LeetCode Pandas problem with no meaningful C++ form; it
-has a card but intentionally no `solution.cpp`.
+One (`2884`) is a LeetCode Pandas problem with no meaningful Java form;
+it has a card but intentionally no `Solution.java`.

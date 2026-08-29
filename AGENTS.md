@@ -1,6 +1,6 @@
 # Repo Instructions
 
-C++ competitive programming notebook. 118 annotated problems, all
+Java competitive programming notebook. 118 annotated problems, all
 unsolved by design.
 
 ## Core Goal
@@ -13,7 +13,7 @@ are deliberately empty.
 
 **Do not write solutions unless asked to.**
 
-Filling in a `solution.cpp` destroys the point of this repository. When
+Filling in a `Solution.java` destroys the point of this repository. When
 helping with a problem:
 
 - ask what the brute force is
@@ -28,12 +28,13 @@ The card's `## Key insight` is a spoiler. Do not quote it unprompted.
 
 ```
 <platform>/<id>-<slug>/
-    README.md      the recall card
-    solution.cpp   empty, the user's to write
-    brute.cpp      optional, for stress testing
-    gen.cpp        optional, random input generator
-    in*.txt        optional test input
-    out*.txt       optional expected output
+    README.md       the recall card
+    Solution.java   leetcode: class Solution, no main
+    Main.java       stdin/stdout problems, and leetcode harnesses
+    Brute.java      optional, for stress testing
+    Gen.java        optional, random input generator
+    in*.txt         optional test input
+    out*.txt        optional expected output
 ```
 
 ## Card Format
@@ -51,22 +52,32 @@ user actually did.
 Update `## Review` with the date and a 0-5 confidence when a problem is
 re-solved.
 
-## C++ Expectations
+## Java Expectations
 
-- `-std=c++20`, sanitizers on while developing
-- `long long` for any accumulation that could exceed 2^31
-- `%` on negatives yields a negative result — differs from Python
-- `map[key]` INSERTS on read; use `count()` or `find()` to test
-- prefer fixed-size arrays over hash maps for small bounded alphabets
-- `priority_queue` is a MAX-heap by default
-- watch unsigned wraparound on `size() - 1` and `n - m`
+- Java 21, one self-contained file per problem, no build system
+- never `Scanner` — `BufferedReader` + `StringTokenizer`, output via
+  `StringBuilder`
+- `Arrays.sort(int[])` is hackable quicksort; shuffle first or box
+- default stack overflows near depth 10^4; run deep recursion on a
+  thread with a larger stack
+- `long` for any accumulation that could exceed 2^31; `int` wraps
+  SILENTLY rather than trapping
+- `%` on negatives yields a negative result — same as C++/Go, differs
+  from Python
+- `map.get` returns null, not a zero value; unboxing that throws NPE.
+  Use `getOrDefault`
+- `PriorityQueue` is a MIN-heap by default — the opposite of C++
+- prefer primitive arrays over boxed collections; `ArrayDeque` over
+  `Stack` and `LinkedList`
+- pass `Locale.US` to `printf` / `String.format` for any decimal output
 
 ## Tooling
 
 ```bash
-make run DIR=<dir> [IN=in.txt]
+make run    DIR=<dir> [IN=in.txt]
+make syntax DIR=<dir>
 make check
-tools/run.sh <dir> [src]
+tools/run.sh <dir>
 tools/stress.sh <dir> [iters]
 tools/new.sh <platform> <id> <slug>
 ```

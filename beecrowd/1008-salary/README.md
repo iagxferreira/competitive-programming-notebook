@@ -21,8 +21,11 @@ time O(1)   space O(1)
 
 ## Pitfall
 
-The `$` needs no escaping in a C++ string literal (it did in Kotlin's
+The `$` needs no escaping in a Java string literal (it did in Kotlin's
 template strings). Watch the exact spacing in `U$ `.
+
+Note `%` is the format-specifier escape, so a literal percent sign would
+need `%%`. Use `Locale.US` here too.
 
 ## Review
 

@@ -24,8 +24,10 @@ time O(n)   space O(1)
 ## Pitfall
 
 Five values near the int limit overflow a 32-bit total. Accumulate in
-`long long` — your Go version was right to use int64 for the sum while
-keeping the elements int32.
+`long` — your Go version was right to use int64 for the sum while
+keeping the elements int32. In Java `int + int` stays int and wraps
+silently, so widen the ACCUMULATOR, not just the result:
+`long sum = 0;` not `long sum = a + b;`.
 
 Your Go version also sorted the array and then computed min/max in the
 loop anyway. The sort was dead work; drop it.

@@ -24,9 +24,13 @@ time O(n)   space O(n)
 Return early. Building the whole set and comparing sizes at the end also
 works but does needless work on the common case.
 
-`unordered_set` is the direct translation, but sorting and scanning for
-adjacent equals is O(n log n) time with O(1) space — know which trade you
-are making rather than reaching for the map reflexively.
+`HashSet<Integer>` is the direct translation, but note it boxes every
+element — for a tight time limit a `long`-encoded open-addressing set or
+a sort is measurably faster.
+
+If you take the sort route, remember `Arrays.sort(int[])` is dual-pivot
+quicksort with adversarial O(n^2) cases that get hacked on Codeforces.
+Shuffle first, or sort a boxed `Integer[]` which uses TimSort.
 
 ## Review
 

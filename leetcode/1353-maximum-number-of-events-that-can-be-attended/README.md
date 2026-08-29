@@ -26,8 +26,12 @@ time O(n log n)   space O(n)
 
 ## Pitfall
 
-Discard expired events (`top < today`) BEFORE attending, or you attend an
-event whose window has closed.
+Discard expired events (`peek() < today`) BEFORE attending, or you attend
+an event whose window has closed.
+
+Java's `PriorityQueue` is a MIN-heap by default, which is exactly the
+earliest-deadline-first order you need — no comparator required. (C++'s
+`priority_queue` is the opposite, a max-heap.)
 
 Your Go version loops days 1..100000 unconditionally — safe given the
 constraints, but it does fixed work regardless of input size. Jumping to
