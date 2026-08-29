@@ -1,8 +1,14 @@
 # competitive-programming-notebook
 
-Java notebook for competitive programming and DSA. 119 problems across
-four platforms, each one an annotated card plus an empty file to solve
-into.
+Java notebook for competitive programming and DSA. Every problem I have
+solved across LeetCode, Beecrowd, HackerRank and Codeforces — with the
+solution then deleted.
+
+What remains is a card: the key insight, the invariant, the complexity,
+and the specific way I got it wrong the first time. The `.java` file next
+to it is empty.
+
+The rock goes back to the bottom of the hill. That is the point.
 
 ## How this works
 
@@ -40,12 +46,12 @@ to diff your new solution against what you wrote the first time.
 
 ## Layout
 
-| Directory | Problems |
+| Directory | Holds |
 |---|---|
-| `leetcode/` | 95 |
-| `beecrowd/` | 14 |
-| `hackerrank/` | 9 |
-| `codeforces/` | 1 |
+| `leetcode/` | the bulk of it |
+| `beecrowd/` | the I/O and formatting drills |
+| `hackerrank/` | early warmups |
+| `codeforces/` | contest problems |
 | `lib/` | reusable snippets |
 | `tools/` | run, stress-test, scaffold |
 
@@ -121,9 +127,10 @@ even when you are confident.
 
 ## Status
 
-All 119 cards are written. All 118 solutions are empty.
+Every card is written. Almost every solution is empty, and the ones that
+are not will be emptied again if I ever want the rep back.
 
-Four of them (`0049`, `0167`, `0238`, `0424`) were never solved in the
+Four problems (`0049`, `0167`, `0238`, `0424`) were never solved in the
 first place — they were `TODO` scaffolds in the old Kotlin lab, and their
 cards say so.
 
