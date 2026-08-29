@@ -164,6 +164,20 @@ PHASES = [
  ["leetcode/0005-longest-palindromic-substring","leetcode/0004-median-of-two-sorted-arrays"]),
 ]
 
+# Any problem directory not placed in PHASES above lands here rather than
+# breaking the build. Deliberately NOT pattern-classified: putting a new
+# problem in "Phase 4 - Hashing and counting" tells you the answer.
+_all = {str(x.parent.relative_to(R)) for x in R.glob("*/*/README.md")}
+_all.discard("leetcode/2884-modify-columns")
+_placed = {x for _, _, _, _, its in PHASES for x in its}
+_loose = sorted(_all - _placed)
+if _loose:
+    PHASES.append(("Unsorted", "Recently added", len(_loose),
+        "Problems added since the plan was written, deliberately left "
+        "unclassified - naming the pattern here would give away the answer. "
+        "Once you have solved one, move it into the phase it belongs to.",
+        _loose))
+
 def pid(d):
     m = re.match(r"^(\d+)", pathlib.Path(d).name)
     return m.group(1) if m else ""
@@ -265,6 +279,6 @@ listed = [x for _,_,_,_,its in PHASES for x in its]
 assert len(listed) == len(set(listed)), "DUPLICATE in roadmap"
 missing = allp - set(listed)
 extra = set(listed) - allp
-assert not missing, f"MISSING: {sorted(missing)}"
+assert not missing, f"MISSING (should be impossible now): {sorted(missing)}"
 assert not extra, f"BAD PATH: {sorted(extra)}"
 print("verified: all 117 covered exactly once, all paths exist")

@@ -4,7 +4,7 @@ md = (R / "ROADMAP.md").read_text().splitlines()
 
 phases, cur = [], None
 for ln in md:
-    m = re.match(r"^## (Phase \d+) - (.+)$", ln)
+    m = re.match(r"^## (Phase \d+|Unsorted) - (.+)$", ln)
     if m:
         cur = {"n": m.group(1), "title": m.group(2), "why": "", "items": []}
         phases.append(cur); continue
@@ -29,8 +29,8 @@ for ln in md:
         continue
     if ln.strip() and not cur["why"]: cur["why"] = ln.strip()
 
-total = sum(len(p["items"]) for p in phases)
-assert total == 117, total
+total = sum(len(p['items']) for p in phases)
+assert total > 0
 
 E = html.escape
 def rows(items):
@@ -55,15 +55,19 @@ def rows(items):
 </label>{note}</li>''')
     return "\n".join(out)
 
+def label(n):
+    parts = n.split()
+    return parts[1] if len(parts) > 1 else "+"
+
 nav = "\n".join(
-    f'<a class="navcard" href="#p{i}"><span class="navnum">{p["n"].split()[1]}</span>'
+    f'<a class="navcard" href="#p{i}"><span class="navnum">{label(p["n"])}</span>'
     f'<span class="navtitle">{E(p["title"])}</span>'
     f'<span class="navcount" data-phase="{i}">0/{len(p["items"])}</span></a>'
     for i, p in enumerate(phases))
 
 secs = "\n".join(f'''<section class="phase" id="p{i}">
 <header class="phead">
-<span class="pnum">{E(p["n"].split()[1])}</span>
+<span class="pnum">{E(label(p["n"]))}</span>
 <div class="pheadtext"><h2>{E(p["title"])}</h2>
 <p class="why">{E(p["why"])}</p></div>
 <span class="pcount" data-phase="{i}">0/{len(p["items"])}</span>
@@ -243,7 +247,7 @@ code {{ font-family:"IBM Plex Mono",monospace; font-size:.9em; background:var(--
 <div class="bar"><div class="barin">
   <span class="barname">117 Problems</span>
   <span class="track"><span class="fill" id="fill"></span></span>
-  <span class="tally"><b id="ndone">0</b> / 117</span>
+  <span class="tally"><b id="ndone">0</b> / {total}</span>
   <button class="reset" id="reset">Reset</button>
 </div></div>
 
