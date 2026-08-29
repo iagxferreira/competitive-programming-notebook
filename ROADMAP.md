@@ -94,7 +94,7 @@ The second primitive. Every one of these rests on the same exchange argument: mo
 
 You have already done 0001. The rest drill the same trade - space for time - plus Java's specific traps: `get` returning null, boxing costs, and when a plain `int[]` beats a HashMap.
 
-- [ ] [`leetcode/0001-two-sum`](./leetcode/0001-two-sum/) already solved, ported from your C++
+- [x] [`leetcode/0001-two-sum`](./leetcode/0001-two-sum/) already solved, ported from your C++
 - [ ] [`leetcode/0217-contains-duplicate`](./leetcode/0217-contains-duplicate/)
 - [ ] [`leetcode/0242-valid-anagram`](./leetcode/0242-valid-anagram/)
 - [ ] [`leetcode/0349-intersection-of-two-arrays`](./leetcode/0349-intersection-of-two-arrays/)
@@ -114,7 +114,7 @@ You have already done 0001. The rest drill the same trade - space for time - plu
 
 Only two problems, but 0424 contains the subtlest argument in the whole set - why a stale `maxCount` is safe. Do not move on until you can defend it, or stress-test it against an honest version.
 
-- [ ] [`leetcode/0003-longest-substring-without-repeating-characters`](./leetcode/0003-longest-substring-without-repeating-characters/)
+- [x] [`leetcode/0003-longest-substring-without-repeating-characters`](./leetcode/0003-longest-substring-without-repeating-characters/)
 - [ ] [`leetcode/0424-longest-repeating-character-replacement`](./leetcode/0424-longest-repeating-character-replacement/)  `(never solved)`
 
 ## Phase 6 - Prefix and suffix products
@@ -148,7 +148,7 @@ Start with 0206 - reverse is the primitive the rest are built from. Then the two
 - [ ] [`leetcode/0021-merge-two-sorted-lists`](./leetcode/0021-merge-two-sorted-lists/)
 - [ ] [`leetcode/0019-remove-nth-node-from-end-of-list`](./leetcode/0019-remove-nth-node-from-end-of-list/)
 - [ ] [`leetcode/0024-swap-nodes-in-pairs`](./leetcode/0024-swap-nodes-in-pairs/)
-- [ ] [`leetcode/0002-add-two-numbers`](./leetcode/0002-add-two-numbers/)
+- [x] [`leetcode/0002-add-two-numbers`](./leetcode/0002-add-two-numbers/)
 - [ ] [`leetcode/0061-rotate-list`](./leetcode/0061-rotate-list/)
 - [ ] [`leetcode/0160-intersection-of-two-linked-lists`](./leetcode/0160-intersection-of-two-linked-lists/)  `*` hash set; the O(1)-space pointer switch is the lesson
 - [ ] [`leetcode/1290-convert-binary-number-in-a-linked-list-to-integer`](./leetcode/1290-convert-binary-number-in-a-linked-list-to-integer/)
@@ -163,7 +163,7 @@ The largest block. Recursion first (0104 through 0110), then BFS with the level-
 
 - [ ] [`leetcode/0104-maximum-depth-of-binary-tree`](./leetcode/0104-maximum-depth-of-binary-tree/)
 - [ ] [`leetcode/0100-same-tree`](./leetcode/0100-same-tree/)
-- [ ] [`leetcode/0226-invert-binary-tree`](./leetcode/0226-invert-binary-tree/)
+- [x] [`leetcode/0226-invert-binary-tree`](./leetcode/0226-invert-binary-tree/)
 - [ ] [`leetcode/0101-symmetric-tree`](./leetcode/0101-symmetric-tree/)
 - [ ] [`leetcode/0110-balanced-binary-tree`](./leetcode/0110-balanced-binary-tree/)
 - [ ] [`leetcode/0094-binary-tree-inorder-traversal`](./leetcode/0094-binary-tree-inorder-traversal/)
@@ -238,8 +238,8 @@ Save these. 0005 is expand-around-centre with fiddly index recovery. 0004 is the
 
 Problems added since the plan was written, deliberately left unclassified — naming the pattern here would give away the answer. Once you have solved one, move it up into the phase it belongs to.
 
-- [ ] [`leetcode/0383-ransom-note`](./leetcode/0383-ransom-note/)
-- [ ] [`leetcode/0409-longest-palindrome`](./leetcode/0409-longest-palindrome/)
+- [x] [`leetcode/0383-ransom-note`](./leetcode/0383-ransom-note/)
+- [x] [`leetcode/0409-longest-palindrome`](./leetcode/0409-longest-palindrome/)
 
 ---
 
