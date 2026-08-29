@@ -21,6 +21,10 @@ Kotlin or Rust. Read the card, close it, then solve from scratch.
 
 Nothing here is pre-solved. That is deliberate.
 
+**Start here: [`ROADMAP.md`](./ROADMAP.md)** — the 117 problems in a
+recommended order, pattern by pattern, with the eighteen highest-value
+ones called out.
+
 ## The archive
 
 These problems were originally solved between 2023 and 2026 in four
