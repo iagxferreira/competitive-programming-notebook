@@ -140,3 +140,12 @@ cards say so.
 
 One (`2884`) is a LeetCode Pandas problem with no meaningful Java form;
 it has a card but intentionally no `Solution.java`.
+
+Seventy-two problems were added later and were never solved in any
+language, so their cards have no `## Origin` line — there is nothing to
+retrieve. Twelve moved in from `algorithm-studies`, which is now scoped to
+building and using data structures. The other sixty close gaps that the
+roadmap itself had flagged: no number theory, no union-find, no minimum
+spanning tree, no Fenwick tree, no monotonic deque, and a single
+Codeforces problem in a repo whose stated goal is competing. See
+**Contest gaps** in [`ROADMAP.md`](./ROADMAP.md).

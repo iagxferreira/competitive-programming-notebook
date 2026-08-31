@@ -370,6 +370,129 @@ version. Move each one up into its phase once you have solved it.
 - [ ] [`leetcode/1382-balance-a-binary-search-tree`](./leetcode/1382-balance-a-binary-search-tree/)
 - [ ] [`leetcode/2073-time-needed-to-buy-tickets`](./leetcode/2073-time-needed-to-buy-tickets/)
 
+## Contest gaps - added 2026-08-31
+
+*72 problems*
+
+Two things at once. Twelve moved in from `algorithm-studies`, which has
+been narrowed to building and using data structures and no longer holds
+anything judge-shaped. The other sixty fill holes that were visible from
+the section below: no number theory, no union-find, no minimum spanning
+tree, no Fenwick tree, no monotonic deque, and one single Codeforces
+problem on a repo whose stated goal is competing.
+
+Unclassified like the sections above, except the two I/O ladders, which
+simply continue Phase 0 and Phase 1 and have no technique to spoil.
+
+### Moved from algorithm-studies
+
+- [ ] [`leetcode/0022-generate-parentheses`](./leetcode/0022-generate-parentheses/)
+- [ ] [`leetcode/0025-reverse-nodes-in-k-group`](./leetcode/0025-reverse-nodes-in-k-group/)
+- [ ] [`leetcode/0045-jump-game-ii`](./leetcode/0045-jump-game-ii/)
+- [ ] [`leetcode/0051-n-queens`](./leetcode/0051-n-queens/)
+- [ ] [`leetcode/0072-edit-distance`](./leetcode/0072-edit-distance/)
+- [ ] [`leetcode/0134-gas-station`](./leetcode/0134-gas-station/)
+- [ ] [`leetcode/0567-permutation-in-string`](./leetcode/0567-permutation-in-string/)
+- [ ] [`leetcode/0739-daily-temperatures`](./leetcode/0739-daily-temperatures/)
+- [ ] [`leetcode/0743-network-delay-time`](./leetcode/0743-network-delay-time/)
+- [ ] [`leetcode/1004-max-consecutive-ones-iii`](./leetcode/1004-max-consecutive-ones-iii/)
+- [ ] [`leetcode/1046-last-stone-weight`](./leetcode/1046-last-stone-weight/)
+- [ ] [`leetcode/1094-car-pooling`](./leetcode/1094-car-pooling/)  the free stand-in for the premium Meeting Rooms II
+
+### Union-find, spanning trees and weighted grids
+
+The roadmap used to say there was no union-find and no shortest path in
+here. These close that.
+
+- [ ] [`leetcode/0210-course-schedule-ii`](./leetcode/0210-course-schedule-ii/)  207 asks whether; this asks which
+- [ ] [`leetcode/0547-number-of-provinces`](./leetcode/0547-number-of-provinces/)  `*` write union-find here first
+- [ ] [`leetcode/0684-redundant-connection`](./leetcode/0684-redundant-connection/)  union-find as a cycle detector
+- [ ] [`leetcode/1584-min-cost-to-connect-all-points`](./leetcode/1584-min-cost-to-connect-all-points/)  `*` the repo's first minimum spanning tree
+- [ ] [`leetcode/0778-swim-in-rising-water`](./leetcode/0778-swim-in-rising-water/)  Dijkstra with max in place of sum
+
+### Range queries and monotonic structures
+
+- [ ] [`leetcode/0560-subarray-sum-equals-k`](./leetcode/0560-subarray-sum-equals-k/)  `*` the single most reused counting trick
+- [ ] [`leetcode/0239-sliding-window-maximum`](./leetcode/0239-sliding-window-maximum/)  `*` monotonic deque
+- [ ] [`leetcode/0496-next-greater-element-i`](./leetcode/0496-next-greater-element-i/)  monotonic stack, gentlest form
+- [ ] [`leetcode/0304-range-sum-query-2d-immutable`](./leetcode/0304-range-sum-query-2d-immutable/)
+- [ ] [`leetcode/0307-range-sum-query-mutable`](./leetcode/0307-range-sum-query-mutable/)  `*` the repo's first Fenwick tree
+- [ ] [`leetcode/0315-count-of-smaller-numbers-after-self`](./leetcode/0315-count-of-smaller-numbers-after-self/)  Fenwick or merge-sort inversions
+
+### Number theory, sorting and binary search on the answer
+
+- [ ] [`leetcode/0204-count-primes`](./leetcode/0204-count-primes/)  `*` the sieve
+- [ ] [`leetcode/0050-powx-n`](./leetcode/0050-powx-n/)  `*` fast exponentiation, and modPow's twin
+- [ ] [`leetcode/0875-koko-eating-bananas`](./leetcode/0875-koko-eating-bananas/)  `*` binary search over the answer
+- [ ] [`leetcode/0912-sort-an-array`](./leetcode/0912-sort-an-array/)  `*` anti-quicksort tests, by design
+- [ ] [`leetcode/0179-largest-number`](./leetcode/0179-largest-number/)  the comparator contract
+- [ ] [`leetcode/0201-bitwise-and-of-numbers-range`](./leetcode/0201-bitwise-and-of-numbers-range/)
+- [ ] [`leetcode/0287-find-the-duplicate-number`](./leetcode/0287-find-the-duplicate-number/)  Floyd cycle detection on an array
+
+### Grid dp, knapsack counting and backtracking
+
+- [ ] [`leetcode/0064-minimum-path-sum`](./leetcode/0064-minimum-path-sum/)
+- [ ] [`leetcode/0221-maximal-square`](./leetcode/0221-maximal-square/)
+- [ ] [`leetcode/0518-coin-change-ii`](./leetcode/0518-coin-change-ii/)  `*` loop order decides combinations vs permutations
+- [ ] [`leetcode/0090-subsets-ii`](./leetcode/0090-subsets-ii/)
+- [ ] [`leetcode/0131-palindrome-partitioning`](./leetcode/0131-palindrome-partitioning/)
+- [ ] [`leetcode/0703-kth-largest-element-in-a-stream`](./leetcode/0703-kth-largest-element-in-a-stream/)
+
+### Codeforces ladder - rated 800 to 1300
+
+The biggest gap of the lot. Contest problems are stated as stories and
+judged on a clock, which is a different skill from anything on LeetCode.
+Each has its sample as `in1.txt` / `out1.txt`, so `tools/run.sh` works.
+
+- [ ] [`codeforces/0001a-theatre-square`](./codeforces/0001a-theatre-square/)  `*` long overflow and integer ceiling
+- [ ] [`codeforces/0004c-registration-system`](./codeforces/0004c-registration-system/)
+- [ ] [`codeforces/0025a-iq-test`](./codeforces/0025a-iq-test/)
+- [ ] [`codeforces/0050a-domino-piling`](./codeforces/0050a-domino-piling/)
+- [ ] [`codeforces/0071a-way-too-long-words`](./codeforces/0071a-way-too-long-words/)  char + int is addition, not concatenation
+- [ ] [`codeforces/0096a-football`](./codeforces/0096a-football/)
+- [ ] [`codeforces/0112a-petya-and-strings`](./codeforces/0112a-petya-and-strings/)
+- [ ] [`codeforces/0118a-string-task`](./codeforces/0118a-string-task/)
+- [ ] [`codeforces/0158a-next-round`](./codeforces/0158a-next-round/)
+- [ ] [`codeforces/0158b-taxi`](./codeforces/0158b-taxi/)  `*` a greedy whose leftovers need proving
+- [ ] [`codeforces/0231a-team`](./codeforces/0231a-team/)
+- [ ] [`codeforces/0282a-bit-plus-plus`](./codeforces/0282a-bit-plus-plus/)
+
+### HackerRank - the rest of the prep kit
+
+Continues Phase 1. Low-thought reps, except the last three.
+
+- [ ] [`hackerrank/time-conversion`](./hackerrank/time-conversion/)
+- [ ] [`hackerrank/birthday-cake-candles`](./hackerrank/birthday-cake-candles/)
+- [ ] [`hackerrank/grading-students`](./hackerrank/grading-students/)
+- [ ] [`hackerrank/apple-and-orange`](./hackerrank/apple-and-orange/)
+- [ ] [`hackerrank/number-line-jumps`](./hackerrank/number-line-jumps/)
+- [ ] [`hackerrank/breaking-the-records`](./hackerrank/breaking-the-records/)
+- [ ] [`hackerrank/sales-by-match`](./hackerrank/sales-by-match/)
+- [ ] [`hackerrank/counting-valleys`](./hackerrank/counting-valleys/)
+- [ ] [`hackerrank/jumping-on-the-clouds`](./hackerrank/jumping-on-the-clouds/)
+- [ ] [`hackerrank/repeated-string`](./hackerrank/repeated-string/)  long overflow at n = 1e12
+- [ ] [`hackerrank/2d-array-ds`](./hackerrank/2d-array-ds/)  the negative-initialisation trap
+- [ ] [`hackerrank/array-manipulation`](./hackerrank/array-manipulation/)  `*` the difference array
+
+### Beecrowd - the ladder past 1013
+
+Continues Phase 0. I/O and specification drills; every card carries a
+different formatting failure rather than repeating `Locale.US` twelve
+times.
+
+- [ ] [`beecrowd/1014-consumption`](./beecrowd/1014-consumption/)
+- [ ] [`beecrowd/1015-distance-between-two-points`](./beecrowd/1015-distance-between-two-points/)
+- [ ] [`beecrowd/1016-distance`](./beecrowd/1016-distance/)
+- [ ] [`beecrowd/1017-fuel-spent`](./beecrowd/1017-fuel-spent/)
+- [ ] [`beecrowd/1018-banknotes`](./beecrowd/1018-banknotes/)
+- [ ] [`beecrowd/1019-time-conversion`](./beecrowd/1019-time-conversion/)
+- [ ] [`beecrowd/1020-age-in-days`](./beecrowd/1020-age-in-days/)
+- [ ] [`beecrowd/1021-banknotes-and-coins`](./beecrowd/1021-banknotes-and-coins/)  `*` money in integer cents
+- [ ] [`beecrowd/1035-selection-test-1`](./beecrowd/1035-selection-test-1/)
+- [ ] [`beecrowd/1036-bhaskaras-formula`](./beecrowd/1036-bhaskaras-formula/)
+- [ ] [`beecrowd/1037-interval`](./beecrowd/1037-interval/)
+- [ ] [`beecrowd/1038-snack`](./beecrowd/1038-snack/)
+
 ## The short version
 
 If you only do eighteen problems, do these. Fourteen are ones where your
@@ -416,10 +539,11 @@ you read the solution to.
 Say it plainly: this archive is interview-style DSA, not competitive
 programming. The two share fundamentals and then diverge hard. Contests
 want speed under a clock, problems stated as stories you have to decode,
-and whole topics that barely appear here — graphs, number theory,
-combinatorics, geometry. **There is not a single graph traversal anywhere
-in this repo.** No BFS on a grid, no shortest path, no union-find. Those
-are table stakes for Div. 2 C and above.
+and whole topics that barely appear here. Graphs used to be the glaring
+one — that is now covered: grid BFS, topological order, Dijkstra,
+union-find and a minimum spanning tree all have directories. Number
+theory is down to two problems, and **combinatorics and geometry are
+still absent entirely**. Those are table stakes for Div. 2 C and above.
 
 So this is the training block, not the sport. Two tracks, in parallel:
 
