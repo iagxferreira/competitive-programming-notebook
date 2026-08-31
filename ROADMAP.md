@@ -285,7 +285,7 @@ once you have solved it.
 - [ ] [`leetcode/0124-binary-tree-maximum-path-sum`](./leetcode/0124-binary-tree-maximum-path-sum/)
 - [ ] [`leetcode/0127-word-ladder`](./leetcode/0127-word-ladder/)
 - [ ] [`leetcode/0128-longest-consecutive-sequence`](./leetcode/0128-longest-consecutive-sequence/)
-- [ ] [`leetcode/0133-clone-graph`](./leetcode/0133-clone-graph/)
+- [x] [`leetcode/0133-clone-graph`](./leetcode/0133-clone-graph/)
 - [ ] [`leetcode/0139-word-break`](./leetcode/0139-word-break/)
 - [ ] [`leetcode/0143-reorder-list`](./leetcode/0143-reorder-list/)
 - [ ] [`leetcode/0146-lru-cache`](./leetcode/0146-lru-cache/)
