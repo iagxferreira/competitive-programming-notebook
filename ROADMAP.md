@@ -366,7 +366,7 @@ version. Move each one up into its phase once you have solved it.
 - [ ] [`leetcode/0977-squares-of-a-sorted-array`](./leetcode/0977-squares-of-a-sorted-array/)
 - [ ] [`leetcode/1200-minimum-absolute-difference`](./leetcode/1200-minimum-absolute-difference/)
 - [ ] [`leetcode/1266-minimum-time-visiting-all-points`](./leetcode/1266-minimum-time-visiting-all-points/)
-- [ ] [`leetcode/1365-how-many-numbers-are-smaller-than-the-current-number`](./leetcode/1365-how-many-numbers-are-smaller-than-the-current-number/)
+- [x] [`leetcode/1365-how-many-numbers-are-smaller-than-the-current-number`](./leetcode/1365-how-many-numbers-are-smaller-than-the-current-number/)  `*` O(n^2) pairwise scan; the bounded value range makes it linear
 - [ ] [`leetcode/1382-balance-a-binary-search-tree`](./leetcode/1382-balance-a-binary-search-tree/)
 - [ ] [`leetcode/2073-time-needed-to-buy-tickets`](./leetcode/2073-time-needed-to-buy-tickets/)
 

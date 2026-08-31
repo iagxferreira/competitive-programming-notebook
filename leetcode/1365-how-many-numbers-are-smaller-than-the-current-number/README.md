@@ -13,27 +13,36 @@ the answer in an array.
 
 ## Key insight
 
-<!-- Fill in AFTER solving, in your own words. Name the technique and say
-     what it buys you over the brute force. -->
+Solved the direct way: for each element, scan the whole array and count
+the ones below it. At `n <= 500` that is 250k comparisons, comfortably
+inside the limit - the constraints are small enough that the obvious
+answer is a correct answer.
 
 ## Invariant
 
-<!-- What is true at every step of your loop or recursion? May be "none"
-     for a pure simulation - say so rather than inventing one. -->
+`count` holds the number of `j` seen so far with `nums[j] < nums[i]`, and
+`answer[i]` is final the moment the inner loop ends.
 
 ## Complexity
 
-time O(?)   space O(?)
+time O(n^2)   space O(1) beyond the output
 
 ## Pitfall
 
-<!-- Fill in AFTER solving: the specific way you got this wrong, or the
-     one you had to think hardest to avoid. Check the constraints for
-     overflow, empty input and the largest case before writing "none". -->
+The `i != j` guard is dead weight: `nums[i] > nums[i]` is false anyway,
+so an element can never count itself. Harmless, but it suggests the
+self-comparison felt like a hazard when it is not.
+
+The real one is what the constraints are hinting at, and the reason this
+problem exists. `0 <= nums[i] <= 100` bounds the VALUES, not just the
+length - a far tighter bound than `n`. Anything with a small, known value
+range can be counted into buckets rather than compared pairwise, which
+turns this into two linear passes and no nested loop. Worth redoing that
+way: the technique carries, the nested scan does not.
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-08-31   confidence: ?/5   (set your own)
 
 ## Origin
 
