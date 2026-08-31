@@ -30,14 +30,29 @@ counts, or an `array<int,26>` with a custom hash. Counts above 9 make a
 naive digit concatenation ambiguous, so use a separator or fixed-width
 encoding.
 
+Three notes on the solution as written, none of them bugs:
+
+`containsKey` then `put` then `get` hashes the key three times per word.
+`seen.computeIfAbsent(sorted, k -> new ArrayList<>()).add(s)` does it
+once, and is the idiom to reach for every time you build a map of lists.
+
+The `strs == null` guard is dead — the constraints promise
+`1 <= strs.length`. The `length == 0` half is also unreachable, though it
+would be correct if it were.
+
+`new ArrayList<>(seen.values())` returns groups in `HashMap` iteration
+order, which is unspecified. The judge accepts any order here, so this is
+fine — just do not build anything on top of it that assumes an order.
+
 ## Status
 
-NOT SOLVED. This was a scaffold in the Kotlin lab with a `TODO` body —
-it was never implemented. Nothing to compare against; solve it fresh.
+Solved fresh on 2026-08-31, with the sorted-characters key. There is no
+prior attempt to diff against: the Kotlin original was a `TODO` scaffold,
+so the Origin command below returns an empty body.
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-08-31   confidence: ?/5   (set your own)
 
 ## Origin
 
