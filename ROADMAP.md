@@ -105,7 +105,7 @@ You have already done 0001. The rest drill the same trade - space for time - plu
 - [ ] [`leetcode/3760-count-distinct-characters`](./leetcode/3760-count-distinct-characters/)
 - [ ] [`leetcode/2325-decode-the-message`](./leetcode/2325-decode-the-message/)
 - [ ] [`leetcode/3541-find-most-frequent-vowel-and-consonant`](./leetcode/3541-find-most-frequent-vowel-and-consonant/)
-- [ ] [`leetcode/0049-group-anagrams`](./leetcode/0049-group-anagrams/)  `(never solved)`
+- [x] [`leetcode/0049-group-anagrams`](./leetcode/0049-group-anagrams/)  `*` sorted key; the 26-count key drops the log factor
 - [ ] [`leetcode/1282-group-the-people-given-the-group-size-they-belong-to`](./leetcode/1282-group-the-people-given-the-group-size-they-belong-to/)
 
 ## Phase 5 - Sliding window
@@ -513,7 +513,7 @@ all. This is the highest-value work in the repo.
 - [ ] [`leetcode/3110-score-of-a-string`](./leetcode/3110-score-of-a-string/) - floating point for an integer problem
 - [ ] [`leetcode/3467-transform-array-by-parity`](./leetcode/3467-transform-array-by-parity/) - sorted a two-valued array instead of counting
 - [ ] [`leetcode/3668-restore-finishing-order`](./leetcode/3668-restore-finishing-order/) - membership test against a list - quietly quadratic
-- [ ] [`leetcode/0049-group-anagrams`](./leetcode/0049-group-anagrams/) - never solved
+- [x] [`leetcode/0049-group-anagrams`](./leetcode/0049-group-anagrams/) - solved fresh, sorted key
 - [ ] [`leetcode/0167-two-sum-ii-input-array-is-sorted`](./leetcode/0167-two-sum-ii-input-array-is-sorted/) - never solved
 - [ ] [`leetcode/0238-product-of-array-except-self`](./leetcode/0238-product-of-array-except-self/) - never solved
 - [ ] [`leetcode/0424-longest-repeating-character-replacement`](./leetcode/0424-longest-repeating-character-replacement/) - never solved

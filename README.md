@@ -134,9 +134,10 @@ Every card is written. Most solutions are still empty — that is the work
 in front of me, not a permanent state. Solved ones stay solved, and the
 Review line on each card tracks when to come back to it.
 
-Four problems (`0049`, `0167`, `0238`, `0424`) were never solved in the
-first place — they were `TODO` scaffolds in the old Kotlin lab, and their
-cards say so.
+Four problems (`0049`, `0167`, `0238`, `0424`) had no prior attempt at
+all — they were `TODO` scaffolds in the old Kotlin lab, so there is
+nothing to diff a new solution against, and their cards say so. `0049`
+has since been solved fresh.
 
 One (`2884`) is a LeetCode Pandas problem with no meaningful Java form;
 it has a card but intentionally no `Solution.java`.
