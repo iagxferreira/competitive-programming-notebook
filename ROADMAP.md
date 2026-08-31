@@ -328,7 +328,7 @@ once you have solved it.
 - [ ] [`leetcode/0721-accounts-merge`](./leetcode/0721-accounts-merge/)
 - [ ] [`leetcode/0733-flood-fill`](./leetcode/0733-flood-fill/)
 - [ ] [`leetcode/0973-k-closest-points-to-origin`](./leetcode/0973-k-closest-points-to-origin/)
-- [ ] [`leetcode/0981-time-based-key-value-store`](./leetcode/0981-time-based-key-value-store/)
+- [x] [`leetcode/0981-time-based-key-value-store`](./leetcode/0981-time-based-key-value-store/)
 - [ ] [`leetcode/0994-rotting-oranges`](./leetcode/0994-rotting-oranges/)
 - [ ] [`leetcode/1143-longest-common-subsequence`](./leetcode/1143-longest-common-subsequence/)
 - [ ] [`leetcode/1235-maximum-profit-in-job-scheduling`](./leetcode/1235-maximum-profit-in-job-scheduling/)
