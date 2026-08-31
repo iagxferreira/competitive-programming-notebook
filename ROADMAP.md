@@ -95,7 +95,7 @@ The second primitive. Every one of these rests on the same exchange argument: mo
 You have already done 0001. The rest drill the same trade - space for time - plus Java's specific traps: `get` returning null, boxing costs, and when a plain `int[]` beats a HashMap.
 
 - [x] [`leetcode/0001-two-sum`](./leetcode/0001-two-sum/) already solved, ported from your C++
-- [ ] [`leetcode/0217-contains-duplicate`](./leetcode/0217-contains-duplicate/)
+- [x] [`leetcode/0217-contains-duplicate`](./leetcode/0217-contains-duplicate/)
 - [ ] [`leetcode/0242-valid-anagram`](./leetcode/0242-valid-anagram/)
 - [ ] [`leetcode/0349-intersection-of-two-arrays`](./leetcode/0349-intersection-of-two-arrays/)
 - [ ] [`leetcode/0387-first-unique-character-in-a-string`](./leetcode/0387-first-unique-character-in-a-string/)
