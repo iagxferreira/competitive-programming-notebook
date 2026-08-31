@@ -2,16 +2,28 @@ import java.util.*;
 
 class TimeMap {
 
+    private Map<String, TreeMap<Integer, String>> store;
+
     public TimeMap() {
-        // TODO: solve
+        this.store = new HashMap<>();
     }
-    
+
     public void set(String key, String value, int timestamp) {
-        // TODO: solve
+        if (store.containsKey(key)) {
+            store.get(key).put(timestamp, value);
+            return;
+        }
+
+        TreeMap<Integer, String> tree = new TreeMap<>();
+        tree.put(timestamp, value);
+        store.put(key, tree);
     }
-    
+
     public String get(String key, int timestamp) {
-        // TODO: solve
-        return null;
+        if (store.containsKey(key)){
+           var entry = store.get(key).floorEntry(timestamp);
+           if(entry != null) return entry.getValue();
+        }
+        return "";
     }
 }
