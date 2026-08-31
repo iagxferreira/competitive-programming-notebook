@@ -96,7 +96,7 @@ You have already done 0001. The rest drill the same trade - space for time - plu
 
 - [x] [`leetcode/0001-two-sum`](./leetcode/0001-two-sum/) already solved, ported from your C++
 - [x] [`leetcode/0217-contains-duplicate`](./leetcode/0217-contains-duplicate/)
-- [ ] [`leetcode/0242-valid-anagram`](./leetcode/0242-valid-anagram/)
+- [x] [`leetcode/0242-valid-anagram`](./leetcode/0242-valid-anagram/)
 - [ ] [`leetcode/0349-intersection-of-two-arrays`](./leetcode/0349-intersection-of-two-arrays/)
 - [ ] [`leetcode/0387-first-unique-character-in-a-string`](./leetcode/0387-first-unique-character-in-a-string/)
 - [ ] [`leetcode/1512-number-of-good-pairs`](./leetcode/1512-number-of-good-pairs/)
