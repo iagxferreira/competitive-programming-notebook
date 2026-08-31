@@ -69,7 +69,7 @@ Low-thought reps to get Java's array and string idioms under your fingers. Do th
 
 First real primitive, and the one you will reuse most. Own lower-bound binary search outright - not `Arrays.binarySearch`, the loop. Get the boundary convention and the overflow-safe midpoint into muscle memory here and they stay correct forever.
 
-- [ ] [`leetcode/0704-binary-search`](./leetcode/0704-binary-search/)  `*` recursive, with the overflow-prone (lo+hi)/2 midpoint
+- [x] [`leetcode/0704-binary-search`](./leetcode/0704-binary-search/)  `*` recursive, with the overflow-prone (lo+hi)/2 midpoint
 - [ ] [`leetcode/0035-search-insert-position`](./leetcode/0035-search-insert-position/)  `*` linear scan where O(log n) was explicitly required
 - [ ] [`leetcode/0278-first-bad-version`](./leetcode/0278-first-bad-version/)
 
@@ -349,7 +349,7 @@ all. This is the highest-value work in the repo.
 - [ ] [`leetcode/0225-implement-stack-using-queues`](./leetcode/0225-implement-stack-using-queues/) - backed the stack with a slice - never honored the queue-only constraint
 - [ ] [`leetcode/0347-top-k-frequent-elements`](./leetcode/0347-top-k-frequent-elements/) - full sort, the one complexity the problem asks you to beat
 - [ ] [`leetcode/0509-fibonacci-number`](./leetcode/0509-fibonacci-number/) - memoised into global mutable state
-- [ ] [`leetcode/0704-binary-search`](./leetcode/0704-binary-search/) - recursive, with the overflow-prone (lo+hi)/2 midpoint
+- [x] [`leetcode/0704-binary-search`](./leetcode/0704-binary-search/) - recursive, with the overflow-prone (lo+hi)/2 midpoint
 - [ ] [`leetcode/3110-score-of-a-string`](./leetcode/3110-score-of-a-string/) - floating point for an integer problem
 - [ ] [`leetcode/3467-transform-array-by-parity`](./leetcode/3467-transform-array-by-parity/) - sorted a two-valued array instead of counting
 - [ ] [`leetcode/3668-restore-finishing-order`](./leetcode/3668-restore-finishing-order/) - membership test against a list - quietly quadratic
