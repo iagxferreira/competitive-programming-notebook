@@ -34,7 +34,7 @@ Shuffle first, or sort a boxed `Integer[]` which uses TimSort.
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-08-31   confidence: ?/5   (set your own)
 
 ## Origin
 
