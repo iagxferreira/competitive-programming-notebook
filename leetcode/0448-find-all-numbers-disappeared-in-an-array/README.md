@@ -15,27 +15,38 @@ returned list does not count as extra space.
 
 ## Key insight
 
-<!-- Fill in AFTER solving, in your own words. Name the technique and say
-     what it buys you over the brute force. -->
+Two passes, opposite directions. First put the values into a set, then
+walk the candidates `1..n` and report the ones the set does not hold. The
+set answers membership in O(1), so the second pass is linear instead of a
+scan per candidate.
 
 ## Invariant
 
-<!-- What is true at every step of your loop or recursion? May be "none"
-     for a pure simulation - say so rather than inventing one. -->
+`present` holds exactly the distinct values of `nums`, and `answer` holds
+every candidate below `i` that is not among them - already in ascending
+order, so no sort at the end.
 
 ## Complexity
 
-time O(?)   space O(?)
+time O(n)   space O(n)
 
 ## Pitfall
 
-<!-- Fill in AFTER solving: the specific way you got this wrong, or the
-     one you had to think hardest to avoid. Check the constraints for
-     overflow, empty input and the largest case before writing "none". -->
+Enumerate the candidates, not the entries. Asking whether `nums[i]` is in
+a set built from `nums` is true by construction and can never produce an
+answer - the things that might be missing are the numbers `1..n`.
+
+The second loop runs over values, so it is `1..n` inclusive, not the
+`0..n-1` of an index loop.
+
+`Arrays.asList(nums)` on an `int[]` does not build a list of numbers.
+`asList` is generic varargs and `int` is not a reference type, so the
+whole array binds as a single element: a `List<int[]>` of size one. It
+compiles, `contains` boxes to `Integer`, and every lookup is false.
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-08-31   confidence: ?/5   (set your own)
 
 ## Origin
 

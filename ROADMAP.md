@@ -355,7 +355,7 @@ version. Move each one up into its phase once you have solved it.
 - [ ] [`leetcode/0219-contains-duplicate-ii`](./leetcode/0219-contains-duplicate-ii/)
 - [ ] [`leetcode/0234-palindrome-linked-list`](./leetcode/0234-palindrome-linked-list/)
 - [ ] [`leetcode/0303-range-sum-query-immutable`](./leetcode/0303-range-sum-query-immutable/)
-- [ ] [`leetcode/0448-find-all-numbers-disappeared-in-an-array`](./leetcode/0448-find-all-numbers-disappeared-in-an-array/)
+- [x] [`leetcode/0448-find-all-numbers-disappeared-in-an-array`](./leetcode/0448-find-all-numbers-disappeared-in-an-array/)
 - [ ] [`leetcode/0450-delete-node-in-a-bst`](./leetcode/0450-delete-node-in-a-bst/)
 - [ ] [`leetcode/0530-minimum-absolute-difference-in-bst`](./leetcode/0530-minimum-absolute-difference-in-bst/)
 - [ ] [`leetcode/0653-two-sum-iv-input-is-a-bst`](./leetcode/0653-two-sum-iv-input-is-a-bst/)
