@@ -308,7 +308,7 @@ once you have solved it.
 - [ ] [`leetcode/0230-kth-smallest-element-in-a-bst`](./leetcode/0230-kth-smallest-element-in-a-bst/)
 - [ ] [`leetcode/0235-lowest-common-ancestor-of-a-binary-search-tree`](./leetcode/0235-lowest-common-ancestor-of-a-binary-search-tree/)
 - [ ] [`leetcode/0236-lowest-common-ancestor-of-a-binary-tree`](./leetcode/0236-lowest-common-ancestor-of-a-binary-tree/)
-- [ ] [`leetcode/0268-missing-number`](./leetcode/0268-missing-number/)
+- [x] [`leetcode/0268-missing-number`](./leetcode/0268-missing-number/)
 - [ ] [`leetcode/0295-find-median-from-data-stream`](./leetcode/0295-find-median-from-data-stream/)
 - [ ] [`leetcode/0297-serialize-and-deserialize-binary-tree`](./leetcode/0297-serialize-and-deserialize-binary-tree/)
 - [ ] [`leetcode/0300-longest-increasing-subsequence`](./leetcode/0300-longest-increasing-subsequence/)
