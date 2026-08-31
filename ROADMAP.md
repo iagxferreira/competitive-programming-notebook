@@ -363,7 +363,7 @@ version. Move each one up into its phase once you have solved it.
 - [ ] [`leetcode/0784-letter-case-permutation`](./leetcode/0784-letter-case-permutation/)
 - [ ] [`leetcode/0787-cheapest-flights-within-k-stops`](./leetcode/0787-cheapest-flights-within-k-stops/)
 - [ ] [`leetcode/0845-longest-mountain-in-array`](./leetcode/0845-longest-mountain-in-array/)
-- [ ] [`leetcode/0977-squares-of-a-sorted-array`](./leetcode/0977-squares-of-a-sorted-array/)
+- [x] [`leetcode/0977-squares-of-a-sorted-array`](./leetcode/0977-squares-of-a-sorted-array/)  `*` sorted from scratch; the input already being sorted is the whole follow-up
 - [ ] [`leetcode/1200-minimum-absolute-difference`](./leetcode/1200-minimum-absolute-difference/)
 - [ ] [`leetcode/1266-minimum-time-visiting-all-points`](./leetcode/1266-minimum-time-visiting-all-points/)
 - [x] [`leetcode/1365-how-many-numbers-are-smaller-than-the-current-number`](./leetcode/1365-how-many-numbers-are-smaller-than-the-current-number/)  `*` O(n^2) pairwise scan; the bounded value range makes it linear
