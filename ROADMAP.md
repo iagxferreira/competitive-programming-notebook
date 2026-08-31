@@ -333,6 +333,43 @@ once you have solved it.
 - [ ] [`leetcode/1143-longest-common-subsequence`](./leetcode/1143-longest-common-subsequence/)
 - [ ] [`leetcode/1235-maximum-profit-in-job-scheduling`](./leetcode/1235-maximum-profit-in-job-scheduling/)
 
+## Pattern study list
+
+*23 problems*
+
+Everything on the pattern-grouped study list that the repo did not
+already have. The other forty-odd entries on that list were already here,
+scattered across the phases above.
+
+Left unclassified like the two sections above, and for a sharper reason:
+the list you took these from states the pattern next to each problem.
+Reading them here, stripped of that label, is the harder and more useful
+version. Move each one up into its phase once you have solved it.
+
+- [ ] [`leetcode/0077-combinations`](./leetcode/0077-combinations/)
+- [ ] [`leetcode/0092-reverse-linked-list-ii`](./leetcode/0092-reverse-linked-list-ii/)
+- [ ] [`leetcode/0112-path-sum`](./leetcode/0112-path-sum/)
+- [ ] [`leetcode/0203-remove-linked-list-elements`](./leetcode/0203-remove-linked-list-elements/)
+- [ ] [`leetcode/0209-minimum-size-subarray-sum`](./leetcode/0209-minimum-size-subarray-sum/)
+- [ ] [`leetcode/0215-kth-largest-element-in-an-array`](./leetcode/0215-kth-largest-element-in-an-array/)
+- [ ] [`leetcode/0219-contains-duplicate-ii`](./leetcode/0219-contains-duplicate-ii/)
+- [ ] [`leetcode/0234-palindrome-linked-list`](./leetcode/0234-palindrome-linked-list/)
+- [ ] [`leetcode/0303-range-sum-query-immutable`](./leetcode/0303-range-sum-query-immutable/)
+- [ ] [`leetcode/0448-find-all-numbers-disappeared-in-an-array`](./leetcode/0448-find-all-numbers-disappeared-in-an-array/)
+- [ ] [`leetcode/0450-delete-node-in-a-bst`](./leetcode/0450-delete-node-in-a-bst/)
+- [ ] [`leetcode/0530-minimum-absolute-difference-in-bst`](./leetcode/0530-minimum-absolute-difference-in-bst/)
+- [ ] [`leetcode/0653-two-sum-iv-input-is-a-bst`](./leetcode/0653-two-sum-iv-input-is-a-bst/)
+- [ ] [`leetcode/0701-insert-into-a-binary-search-tree`](./leetcode/0701-insert-into-a-binary-search-tree/)
+- [ ] [`leetcode/0784-letter-case-permutation`](./leetcode/0784-letter-case-permutation/)
+- [ ] [`leetcode/0787-cheapest-flights-within-k-stops`](./leetcode/0787-cheapest-flights-within-k-stops/)
+- [ ] [`leetcode/0845-longest-mountain-in-array`](./leetcode/0845-longest-mountain-in-array/)
+- [ ] [`leetcode/0977-squares-of-a-sorted-array`](./leetcode/0977-squares-of-a-sorted-array/)
+- [ ] [`leetcode/1200-minimum-absolute-difference`](./leetcode/1200-minimum-absolute-difference/)
+- [ ] [`leetcode/1266-minimum-time-visiting-all-points`](./leetcode/1266-minimum-time-visiting-all-points/)
+- [ ] [`leetcode/1365-how-many-numbers-are-smaller-than-the-current-number`](./leetcode/1365-how-many-numbers-are-smaller-than-the-current-number/)
+- [ ] [`leetcode/1382-balance-a-binary-search-tree`](./leetcode/1382-balance-a-binary-search-tree/)
+- [ ] [`leetcode/2073-time-needed-to-buy-tickets`](./leetcode/2073-time-needed-to-buy-tickets/)
+
 ## The short version
 
 If you only do eighteen problems, do these. Fourteen are ones where your
