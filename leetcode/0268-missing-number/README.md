@@ -14,27 +14,35 @@ complexity and `O(n)` runtime complexity?
 
 ## Key insight
 
-<!-- Fill in AFTER solving, in your own words. Name the technique and say
-     what it buys you over the brute force. -->
+Sort, then walk the array: the first index where `nums[i] != i` is the
+missing value. If the scan runs to the end, the gap is `n` itself.
 
 ## Invariant
 
-<!-- What is true at every step of your loop or recursion? May be "none"
-     for a pure simulation - say so rather than inventing one. -->
+Everything scanned so far is exactly `0..i-1`, so the first mismatch is
+the first value that never appears.
 
 ## Complexity
 
-time O(?)   space O(?)
+time O(n log n)   space O(1)
 
 ## Pitfall
 
-<!-- Fill in AFTER solving: the specific way you got this wrong, or the
-     one you had to think hardest to avoid. Check the constraints for
-     overflow, empty input and the largest case before writing "none". -->
+The tail case is the one to get wrong: when nothing is missing inside the
+array the answer is `nums.length`, not `-1` and not `nums.length - 1`.
+The loop cannot return it, so the return after the loop carries it.
+
+`Arrays.sort(int[])` is dual-pivot quicksort with adversarial O(n^2)
+inputs. Harmless here, hackable on Codeforces - shuffle first or sort a
+boxed `Integer[]` if you reuse this shape under a contest clock.
+
+The follow-up is still open: O(n) time, O(1) space, no sorting. You have
+n+1 candidate values and exactly n of them present - identify the odd one
+out in a single pass instead of imposing an order first.
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-08-31   confidence: ?/5   (set your own)
 
 ## Origin
 
