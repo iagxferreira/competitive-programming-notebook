@@ -1,0 +1,42 @@
+# 542. 01 Matrix
+
+leetcode | Medium | array, dynamic-programming, breadth-first-search
+
+## Task
+
+Given an `m x n` binary matrix `mat`, return the distance of the nearest
+`0` for each cell.
+
+The distance between two cells sharing a common edge is `1`.
+
+`m == mat.length`   `n == mat[i].length`   `1 <= m, n <= 10^4`   `1 <= m
+* n <= 10^4`
+
+## Key insight
+
+<!-- Fill in AFTER solving, in your own words. Name the technique and say
+     what it buys you over the brute force. -->
+
+## Invariant
+
+<!-- What is true at every step of your loop or recursion? May be "none"
+     for a pure simulation - say so rather than inventing one. -->
+
+## Complexity
+
+time O(?)   space O(?)
+
+## Pitfall
+
+<!-- Fill in AFTER solving: the specific way you got this wrong, or the
+     one you had to think hardest to avoid. Check the constraints for
+     overflow, empty input and the largest case before writing "none". -->
+
+## Review
+
+last: never   confidence: 0/5
+
+## Origin
+
+New problem - not in the legacy archive. Added from the Blind 75 and
+Grind 75 lists.
