@@ -251,6 +251,88 @@ Problems added since the plan was written, deliberately left unclassified — na
 One problem (`leetcode/2884-modify-columns`) is a LeetCode Pandas
 exercise with no meaningful Java form, and is not in this list.
 
+## Blind 75 and Grind 75
+
+*68 problems*
+
+Everything on those two lists that was not already in the repo. The two
+overlap by 40, so 110 distinct problems, of which 68 were missing.
+Six more are LeetCode Premium (252, 253, 261, 269, 271, 323) and are
+left out because you cannot open them.
+
+Left unclassified on purpose, like the Unsorted section above - naming
+the phase would name the technique. Move each one up into its phase
+once you have solved it.
+
+- [ ] [`leetcode/0017-letter-combinations-of-a-phone-number`](./leetcode/0017-letter-combinations-of-a-phone-number/)
+- [ ] [`leetcode/0033-search-in-rotated-sorted-array`](./leetcode/0033-search-in-rotated-sorted-array/)
+- [ ] [`leetcode/0039-combination-sum`](./leetcode/0039-combination-sum/)
+- [ ] [`leetcode/0042-trapping-rain-water`](./leetcode/0042-trapping-rain-water/)
+- [ ] [`leetcode/0053-maximum-subarray`](./leetcode/0053-maximum-subarray/)
+- [ ] [`leetcode/0054-spiral-matrix`](./leetcode/0054-spiral-matrix/)
+- [ ] [`leetcode/0055-jump-game`](./leetcode/0055-jump-game/)
+- [ ] [`leetcode/0056-merge-intervals`](./leetcode/0056-merge-intervals/)
+- [ ] [`leetcode/0057-insert-interval`](./leetcode/0057-insert-interval/)
+- [ ] [`leetcode/0062-unique-paths`](./leetcode/0062-unique-paths/)
+- [ ] [`leetcode/0067-add-binary`](./leetcode/0067-add-binary/)
+- [ ] [`leetcode/0073-set-matrix-zeroes`](./leetcode/0073-set-matrix-zeroes/)
+- [ ] [`leetcode/0075-sort-colors`](./leetcode/0075-sort-colors/)
+- [ ] [`leetcode/0076-minimum-window-substring`](./leetcode/0076-minimum-window-substring/)
+- [ ] [`leetcode/0079-word-search`](./leetcode/0079-word-search/)
+- [ ] [`leetcode/0084-largest-rectangle-in-histogram`](./leetcode/0084-largest-rectangle-in-histogram/)
+- [ ] [`leetcode/0091-decode-ways`](./leetcode/0091-decode-ways/)
+- [ ] [`leetcode/0105-construct-binary-tree-from-preorder-and-inorder-traversal`](./leetcode/0105-construct-binary-tree-from-preorder-and-inorder-traversal/)
+- [ ] [`leetcode/0124-binary-tree-maximum-path-sum`](./leetcode/0124-binary-tree-maximum-path-sum/)
+- [ ] [`leetcode/0127-word-ladder`](./leetcode/0127-word-ladder/)
+- [ ] [`leetcode/0128-longest-consecutive-sequence`](./leetcode/0128-longest-consecutive-sequence/)
+- [ ] [`leetcode/0133-clone-graph`](./leetcode/0133-clone-graph/)
+- [ ] [`leetcode/0139-word-break`](./leetcode/0139-word-break/)
+- [ ] [`leetcode/0143-reorder-list`](./leetcode/0143-reorder-list/)
+- [ ] [`leetcode/0146-lru-cache`](./leetcode/0146-lru-cache/)
+- [ ] [`leetcode/0150-evaluate-reverse-polish-notation`](./leetcode/0150-evaluate-reverse-polish-notation/)
+- [ ] [`leetcode/0152-maximum-product-subarray`](./leetcode/0152-maximum-product-subarray/)
+- [ ] [`leetcode/0153-find-minimum-in-rotated-sorted-array`](./leetcode/0153-find-minimum-in-rotated-sorted-array/)
+- [ ] [`leetcode/0155-min-stack`](./leetcode/0155-min-stack/)
+- [ ] [`leetcode/0169-majority-element`](./leetcode/0169-majority-element/)
+- [ ] [`leetcode/0190-reverse-bits`](./leetcode/0190-reverse-bits/)
+- [ ] [`leetcode/0191-number-of-1-bits`](./leetcode/0191-number-of-1-bits/)
+- [ ] [`leetcode/0198-house-robber`](./leetcode/0198-house-robber/)
+- [ ] [`leetcode/0199-binary-tree-right-side-view`](./leetcode/0199-binary-tree-right-side-view/)
+- [ ] [`leetcode/0200-number-of-islands`](./leetcode/0200-number-of-islands/)
+- [ ] [`leetcode/0207-course-schedule`](./leetcode/0207-course-schedule/)
+- [ ] [`leetcode/0208-implement-trie-prefix-tree`](./leetcode/0208-implement-trie-prefix-tree/)
+- [ ] [`leetcode/0211-design-add-and-search-words-data-structure`](./leetcode/0211-design-add-and-search-words-data-structure/)
+- [ ] [`leetcode/0212-word-search-ii`](./leetcode/0212-word-search-ii/)
+- [ ] [`leetcode/0213-house-robber-ii`](./leetcode/0213-house-robber-ii/)
+- [ ] [`leetcode/0224-basic-calculator`](./leetcode/0224-basic-calculator/)
+- [ ] [`leetcode/0230-kth-smallest-element-in-a-bst`](./leetcode/0230-kth-smallest-element-in-a-bst/)
+- [ ] [`leetcode/0235-lowest-common-ancestor-of-a-binary-search-tree`](./leetcode/0235-lowest-common-ancestor-of-a-binary-search-tree/)
+- [ ] [`leetcode/0236-lowest-common-ancestor-of-a-binary-tree`](./leetcode/0236-lowest-common-ancestor-of-a-binary-tree/)
+- [ ] [`leetcode/0268-missing-number`](./leetcode/0268-missing-number/)
+- [ ] [`leetcode/0295-find-median-from-data-stream`](./leetcode/0295-find-median-from-data-stream/)
+- [ ] [`leetcode/0297-serialize-and-deserialize-binary-tree`](./leetcode/0297-serialize-and-deserialize-binary-tree/)
+- [ ] [`leetcode/0300-longest-increasing-subsequence`](./leetcode/0300-longest-increasing-subsequence/)
+- [ ] [`leetcode/0310-minimum-height-trees`](./leetcode/0310-minimum-height-trees/)
+- [ ] [`leetcode/0322-coin-change`](./leetcode/0322-coin-change/)
+- [ ] [`leetcode/0338-counting-bits`](./leetcode/0338-counting-bits/)
+- [ ] [`leetcode/0371-sum-of-two-integers`](./leetcode/0371-sum-of-two-integers/)
+- [ ] [`leetcode/0416-partition-equal-subset-sum`](./leetcode/0416-partition-equal-subset-sum/)
+- [ ] [`leetcode/0417-pacific-atlantic-water-flow`](./leetcode/0417-pacific-atlantic-water-flow/)
+- [ ] [`leetcode/0435-non-overlapping-intervals`](./leetcode/0435-non-overlapping-intervals/)
+- [ ] [`leetcode/0438-find-all-anagrams-in-a-string`](./leetcode/0438-find-all-anagrams-in-a-string/)
+- [ ] [`leetcode/0542-01-matrix`](./leetcode/0542-01-matrix/)
+- [ ] [`leetcode/0543-diameter-of-binary-tree`](./leetcode/0543-diameter-of-binary-tree/)
+- [ ] [`leetcode/0572-subtree-of-another-tree`](./leetcode/0572-subtree-of-another-tree/)
+- [ ] [`leetcode/0621-task-scheduler`](./leetcode/0621-task-scheduler/)
+- [ ] [`leetcode/0647-palindromic-substrings`](./leetcode/0647-palindromic-substrings/)
+- [ ] [`leetcode/0721-accounts-merge`](./leetcode/0721-accounts-merge/)
+- [ ] [`leetcode/0733-flood-fill`](./leetcode/0733-flood-fill/)
+- [ ] [`leetcode/0973-k-closest-points-to-origin`](./leetcode/0973-k-closest-points-to-origin/)
+- [ ] [`leetcode/0981-time-based-key-value-store`](./leetcode/0981-time-based-key-value-store/)
+- [ ] [`leetcode/0994-rotting-oranges`](./leetcode/0994-rotting-oranges/)
+- [ ] [`leetcode/1143-longest-common-subsequence`](./leetcode/1143-longest-common-subsequence/)
+- [ ] [`leetcode/1235-maximum-profit-in-job-scheduling`](./leetcode/1235-maximum-profit-in-job-scheduling/)
+
 ## The short version
 
 If you only do eighteen problems, do these. Fourteen are ones where your
