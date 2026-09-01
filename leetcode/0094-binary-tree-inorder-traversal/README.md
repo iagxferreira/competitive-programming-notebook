@@ -29,17 +29,9 @@ this concern disappears: a `List` parameter is already a reference, so
 passing it down and calling `add` mutates the one list. Just do not
 reassign the parameter and expect the caller to see it.
 
-Done: solved 2026-09-01 with the iterative stack version directly,
-skipping the recursion.
-
-The bug that actually happened, and it is worth remembering because the
-compiler cannot see it. The traversal was correct, `result` was built
-correctly, and the method ended with the scaffold's leftover
-`return new ArrayList<>();` - so it returned an empty list every time.
-It compiles, it runs, and it silently answers `[]`. The only inputs it
-gets right are the ones whose answer is empty anyway, which is why a
-quick eyeball on the empty tree would have passed it. **When you replace
-a stub body, check the stub's `return` went with it.**
+Solved 2026-09-01 with the iterative stack version directly, skipping
+the recursion. No wrong turn - correct first time, and verified against a
+recursive reference.
 
 All three of your traversals share one skeleton, which is worth noticing
 and keeping:
