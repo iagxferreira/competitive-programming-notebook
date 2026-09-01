@@ -2,8 +2,20 @@ import java.util.*;
 
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
-        // TODO: solve
-        return new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        TreeNode current = root;
+        while(current != null || !stack.isEmpty()){
+            if(current != null){
+                stack.push(current);
+                result.add(current.val);
+                current = current.left;
+            }else{
+                TreeNode node = stack.pop();
+                current = node.right;
+            }
+        }
+        return result;
     }
 }
 

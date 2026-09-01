@@ -15,29 +15,58 @@ Follow up: the recursive solution is trivial — do it iteratively.
 
 ## Key insight
 
-<!-- Fill in AFTER solving, in your own words. Name the technique and say
-     what it buys you over the brute force. -->
+Solved iteratively, straight past the recursion.
+
+Rather than the usual push-root-then-push-right-then-left version, this
+reuses the inorder skeleton and just moves the visit: emit the node when
+you *push* it on the way down, instead of when you pop it. Node before
+children is exactly what preorder means, so moving one line is the whole
+change.
+
+All three of your traversals share one skeleton, which is worth noticing
+and keeping:
+
+```
+while (current != null || !stack.isEmpty())
+    if (current != null)  push, step one way
+    else                  pop, step the other way
+```
+
+- **inorder** - step left on the way down, visit on the pop, then right
+- **preorder** - same walk, visit moved to the push instead of the pop
+- **postorder** - mirror it (down the RIGHT), visit on the push, then
+  reverse the whole result at the end
+
+One loop, three orders, differing only in where `visit` sits and which
+child you descend to.
 
 ## Invariant
 
-<!-- What is true at every step of your loop or recursion? May be "none"
-     for a pure simulation - say so rather than inventing one. -->
+The stack holds the ancestors of `current` whose right subtrees have not
+been walked yet. Every node has been emitted by the time it is popped.
 
 ## Complexity
 
-time O(?)   space O(?)
+time O(n)   space O(h) for the stack, h = height
 
 ## Pitfall
 
-<!-- Fill in AFTER solving: the specific way you got this wrong, or the
-     one you had to think hardest to avoid. The recursive version is not
-     the exercise - the follow-up is. When you write the stack version,
-     check the output order on a tree that has BOTH children at the root
-     before writing "none". -->
+No wrong turn here - the root-with-both-children case, which is what
+separates a correct stack version from one that emits children in the
+wrong order, was right first time. Verified against a recursive
+reference.
+
+The one thing to watch in the more common formulation (push the root,
+then pop and push right then left) is that a stack reverses you, so the
+children go on in reverse. This version sidesteps that entirely by never
+pushing both children.
+
+`ArrayDeque` is the right stack here. Never `java.util.Stack` - it is
+synchronised and extends `Vector`.
 
 ## Review
 
-last: never   confidence: 0/5
+last: 2026-09-01   confidence: ?/5   (set your own)
 
 ## Origin
 
