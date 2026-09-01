@@ -234,7 +234,7 @@ Save these. 0005 is expand-around-centre with fiddly index recovery. 0004 is the
 
 ## Unsorted - Recently added
 
-*7 problems*
+*8 problems*
 
 Problems added since the plan was written, deliberately left unclassified — naming the pattern here would give away the answer. Once you have solved one, move it up into the phase it belongs to.
 
@@ -245,6 +245,7 @@ Problems added since the plan was written, deliberately left unclassified — na
 - [x] [`leetcode/0700-search-in-a-binary-search-tree`](./leetcode/0700-search-in-a-binary-search-tree/)
 - [x] [`leetcode/1379-find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree`](./leetcode/1379-find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/)
 - [ ] [`leetcode/2529-maximum-count-of-positive-integer-and-negative-integer`](./leetcode/2529-maximum-count-of-positive-integer-and-negative-integer/)
+- [ ] [`leetcode/2351-first-letter-to-appear-twice`](./leetcode/2351-first-letter-to-appear-twice/)
 
 ---
 
