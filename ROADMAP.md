@@ -161,7 +161,7 @@ Start with 0206 - reverse is the primitive the rest are built from. Then the two
 
 The largest block. Recursion first (0104 through 0110), then BFS with the level-size snapshot, then the ordering-dependent ones. 0111 is the trap - it is not the mirror of 0104.
 
-- [ ] [`leetcode/0104-maximum-depth-of-binary-tree`](./leetcode/0104-maximum-depth-of-binary-tree/)
+- [x] [`leetcode/0104-maximum-depth-of-binary-tree`](./leetcode/0104-maximum-depth-of-binary-tree/)
 - [ ] [`leetcode/0100-same-tree`](./leetcode/0100-same-tree/)
 - [x] [`leetcode/0226-invert-binary-tree`](./leetcode/0226-invert-binary-tree/)
 - [ ] [`leetcode/0101-symmetric-tree`](./leetcode/0101-symmetric-tree/)
