@@ -2,8 +2,10 @@ import java.util.*;
 
 class Solution {
     public int maxDepth(TreeNode root) {
-        // TODO: solve
-        return 0;
+        if(root == null) return 0;
+        var leftDepth = maxDepth(root.left);
+        var rightDepth = maxDepth(root.right);
+        return 1 + Math.max(leftDepth, rightDepth);
     }
 }
 
