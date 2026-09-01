@@ -2,8 +2,21 @@ import java.util.*;
 
 class Solution {
     public List<Integer> postorderTraversal(TreeNode root) {
-        // TODO: solve
-        return new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
+        TreeNode current = root;
+        while(current != null || !stack.isEmpty()){
+            if(current != null){
+                result.add(current.val);
+                stack.push(current);
+                current = current.right;
+            }else{
+                current = stack.pop();
+                current = current.left;
+            }
+        }
+        Collections.reverse(result);
+        return result;
     }
 }
 
