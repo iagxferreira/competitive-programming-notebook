@@ -157,9 +157,9 @@ Start with 0206 - reverse is the primitive the rest are built from. Then the two
 
 ## Phase 9 - Trees
 
-*14 problems*
+*16 problems*
 
-The largest block. Recursion first (0104 through 0110), then BFS with the level-size snapshot, then the ordering-dependent ones. 0111 is the trap - it is not the mirror of 0104.
+The largest block. Recursion first (0104 through 0110), then the traversal trio 0094 / 0144 / 0145 - do all three iteratively, not just recursively - then BFS with the level-size snapshot, then the ordering-dependent ones. 0111 is the trap - it is not the mirror of 0104.
 
 - [x] [`leetcode/0104-maximum-depth-of-binary-tree`](./leetcode/0104-maximum-depth-of-binary-tree/)
 - [ ] [`leetcode/0100-same-tree`](./leetcode/0100-same-tree/)
@@ -167,6 +167,8 @@ The largest block. Recursion first (0104 through 0110), then BFS with the level-
 - [ ] [`leetcode/0101-symmetric-tree`](./leetcode/0101-symmetric-tree/)
 - [ ] [`leetcode/0110-balanced-binary-tree`](./leetcode/0110-balanced-binary-tree/)
 - [ ] [`leetcode/0094-binary-tree-inorder-traversal`](./leetcode/0094-binary-tree-inorder-traversal/)
+- [ ] [`leetcode/0144-binary-tree-preorder-traversal`](./leetcode/0144-binary-tree-preorder-traversal/)
+- [ ] [`leetcode/0145-binary-tree-postorder-traversal`](./leetcode/0145-binary-tree-postorder-traversal/)
 - [ ] [`leetcode/0102-binary-tree-level-order-traversal`](./leetcode/0102-binary-tree-level-order-traversal/)
 - [ ] [`hackerrank/tree-level-order-traversal`](./hackerrank/tree-level-order-traversal/)
 - [ ] [`leetcode/0111-minimum-depth-of-binary-tree`](./leetcode/0111-minimum-depth-of-binary-tree/)
