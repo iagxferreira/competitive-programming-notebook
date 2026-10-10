@@ -3,7 +3,7 @@
 # Run `make` on its own for the command list.
 #
 # Two problem shapes:
-#   stdin/stdout (beecrowd, codeforces, hackerrank) - Main.java has a main,
+#   stdin/stdout (beecrowd, codeforces, hackerrank) - java/Main.java has a main,
 #     so `make run` and `make test` work directly.
 #   class Solution (leetcode) - no main, nothing to execute. Use
 #     `make syntax`, or add a Main.java harness and `make run` finds it.
@@ -46,11 +46,11 @@ new:
 
 syntax: need-dir
 	@mkdir -p $(OUT)
-	$(JAVAC) -d $(OUT) $(DIR)/*.java
+	$(JAVAC) -d $(OUT) $(DIR)/java/*.java
 
 # Runs whichever class in the directory declares a main.
 run: syntax
-	@main=$$(grep -lE 'static void main' $(DIR)/*.java | head -1); \
+	@main=$$(grep -lE 'static void main' $(DIR)/java/*.java | head -1); \
 	 if [ -z "$$main" ]; then \
 	   echo "no main in $(DIR) - leetcode problems have none, use 'make syntax'"; exit 1; \
 	 fi; \
@@ -70,9 +70,9 @@ stress: need-dir
 check:
 	@mkdir -p $(OUT)
 	@fail=0; \
-	 for d in $$(find leetcode beecrowd hackerrank codeforces -mindepth 1 -maxdepth 1 -type d | sort); do \
-	   ls $$d/*.java >/dev/null 2>&1 || continue; \
-	   $(JAVAC) -nowarn -d $(OUT)/$$(basename $$d) $$d/*.java 2>/tmp/cp-javac.err || { \
+	 for d in $$(find leetcode beecrowd hackerrank codeforces -mindepth 2 -maxdepth 2 -type d | sort); do \
+	   ls $$d/java/*.java >/dev/null 2>&1 || continue; \
+	   $(JAVAC) -nowarn -d $(OUT)/$$(basename $$(dirname $$d)) $$d/java/*.java 2>/tmp/cp-javac.err || { \
 	     echo "FAIL: $$d"; head -3 /tmp/cp-javac.err; fail=1; }; \
 	 done; \
 	 if [ $$fail -eq 0 ]; then echo "all problems compile"; else exit 1; fi

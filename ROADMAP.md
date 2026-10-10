@@ -1,4 +1,9 @@
-# Roadmap
+# Java Practice Roadmap
+
+This checklist is an optional record of the Java re-solving track that
+predated the repository's language-agnostic scope. It is not a restriction on
+the language used for new solutions: add implementations in any language to
+their problem directories. Existing progress marks and notes are preserved.
 
 A recommended order for every problem in this repo. Pattern-first, not
 number-first: each phase installs one idea and the next depends on it.

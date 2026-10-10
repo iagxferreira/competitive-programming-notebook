@@ -7,9 +7,9 @@ set -euo pipefail
 dir="${1:?usage: tools/run.sh <problem-dir>}"
 out="$(mktemp -d)"
 
-javac -d "$out" "$dir"/*.java
+javac -d "$out" "$dir"/java/*.java
 
-main=$(grep -lE 'static void main' "$dir"/*.java | head -1 || true)
+main=$(grep -lE 'static void main' "$dir"/java/*.java | head -1 || true)
 if [[ -z "$main" ]]; then
     echo "no main in $dir (leetcode problems have none) - compiled only"
     exit 0

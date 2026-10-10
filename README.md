@@ -1,152 +1,78 @@
-# competitive-programming-notebook
+# Competitive Programming Solutions
 
-Every algorithm problem I have solved — across LeetCode, Beecrowd,
-HackerRank and Codeforces — being rebuilt from scratch in Java.
+A language-agnostic collection of competitive programming problems, solutions,
+notes, and tests. Problems are organized by platform; implementations may use
+whatever language best fits the problem or the author's current practice.
 
-The goal is not a solutions archive. It is to make Java the language I
-compete in: fast enough under a clock, familiar enough that I am thinking
-about the problem and never about the syntax.
+The repository brings together Java solutions and earlier solutions in Go,
+Python, Kotlin, and Rust. Those language implementations have been grouped by
+problem in the current tree. The `legacy-archive` tag remains an immutable
+historical snapshot of the original layout.
 
-Each problem starts as an empty file and an annotated card — the key
-insight, the invariant, the complexity, and the specific way I got it
-wrong the first time. I solve it again, in Java, properly.
+## Repository layout
 
-Sisyphus got strong pushing that rock. That is the point.
-
-## How this works
-
-Every problem is a directory:
-
-```
-leetcode/0015-3sum/
-    README.md       what the problem teaches, and where you went wrong
-    Solution.java   empty. you write this.
-```
-
-The README is not a solution write-up. It is a **recall card**: the key
-insight, the invariant that makes it work, the complexity, and the
-specific pitfall — written from your own earlier attempt in Go, Python,
-Kotlin or Rust. Read the card, close it, then solve from scratch.
-
-Nothing arrives pre-solved. Every one gets earned in Java.
-
-**Start here: [`ROADMAP.md`](./ROADMAP.md)** — every problem in a
-recommended order, pattern by pattern, with the eighteen highest-value
-ones called out. Tick the boxes as you go.
-
-## The archive
-
-These problems were originally solved between 2023 and 2026 in four
-languages. The code is not in the working tree, but none of it is lost —
-every card ends with the command to retrieve the original:
-
-```bash
-git show legacy-archive:legacy/go/leetcode/15-three-sum.go
+```text
+<platform>/<problem-id>-<slug>/
+    README.md              problem statement/reference and notes
+    in*.txt / out*.txt     sample or regression tests
+    java/                  Java implementation(s)
+    go/                    Go implementation(s), when present
+    python/                Python implementation(s), when present
+    kotlin/                Kotlin implementation(s), when present
+    rust/                  Rust implementation(s), when present
 ```
 
-`legacy-archive` is a tag on the last commit before the rewrite. Use it
-to diff your new solution against what you wrote the first time.
+Each problem directory is the shared home for all implementations of that
+problem. Add a language-named subdirectory and keep that language's sources
+and language-specific tests there. Keep judge-ready implementations
+self-contained when required by the platform. If a language needs a compiler,
+runtime, or test harness, document its command next to the solution or in the
+platform's tooling docs. Shared `in*.txt` / `out*.txt` samples and problem
+notes stay at the problem-directory root.
 
-## Layout
+Platforms currently represented include `leetcode/`, `beecrowd/`,
+`hackerrank/`, and `codeforces/`. Shared algorithms and utilities belong in
+`lib/` with the language included in the path when needed, for example
+`lib/go/` or `lib/python/`.
 
-| Directory | Holds |
-|---|---|
-| `leetcode/` | the bulk of it |
-| `beecrowd/` | the I/O and formatting drills |
-| `hackerrank/` | early warmups |
-| `codeforces/` | contest problems |
-| `lib/` | reusable snippets |
-| `tools/` | run, stress-test, scaffold |
+## Working with problems
 
-LeetCode ids are zero-padded to four digits so they sort correctly.
+Problem cards can record the task, approach, invariant, complexity, pitfalls,
+references, and review status. They are useful study notes, not a mandatory
+format: retain meaningful existing cards and avoid duplicating a full solution
+in prose. Record the language and any non-obvious assumptions when they help a
+reader understand an implementation.
 
-## Running
+## Running solutions
+
+There is no repository-wide build system across languages. The existing
+Makefile and scripts support the Java solutions:
 
 ```bash
 make run    DIR=beecrowd/1000-hello-world
-make run    DIR=... IN=in.txt           # feed a test file
-make syntax DIR=leetcode/0015-3sum      # compile only (leetcode has no main)
-make check                              # compile every problem
-
-tools/run.sh beecrowd/1000-hello-world  # run against all in*.txt, diff vs out*.txt
+make run    DIR=codeforces/0001a-theatre-square IN=in1.txt
+make syntax DIR=leetcode/0015-3sum
+make check
+tools/run.sh codeforces/0001a-theatre-square
 tools/stress.sh codeforces/0004a-watermelon 1000
-tools/new.sh leetcode 0146 lru-cache    # scaffold a new problem
 ```
 
-Two problem shapes, and they build differently:
+Java implementations live in each problem's `java/` directory. For other
+languages, use the relevant compiler/runtime directly and add problem-specific
+instructions when a command is not obvious. Tests should be kept close to the
+problem they exercise.
 
-- **stdin/stdout** (beecrowd, codeforces, hackerrank) — `Main.java` or
-  `Solution.java` has a `main`, so `make run` works directly.
-- **`class Solution`** (leetcode) — no `main`, nothing to execute. Use
-  `make syntax`, or add a `Main.java` harness to the directory and
-  `make run` will find and use it.
+## Historical solutions
 
-No Gradle, no Maven. Every problem is one self-contained file, exactly
-what you paste into the judge.
+The original multi-language work is available without checking out the tag:
 
-## Java in contests
+```bash
+git show legacy-archive:legacy/go/leetcode/15-three-sum.go
+git show legacy-archive:problems/easy/two-sum/README.md
+```
 
-Java is a first-class contest language — Codeforces, AtCoder, ICPC,
-LeetCode, HackerRank and Beecrowd all take it. Four things cost people
-problems, and all four are handled in `Template.java`:
-
-**Scanner is too slow.** It is the most common cause of a Java TLE on a
-solution that is algorithmically correct. Use `BufferedReader` +
-`StringTokenizer` (what the template does), and build output into a
-`StringBuilder` rather than calling `println` in a loop.
-
-**`Arrays.sort(int[])` is hackable.** It is dual-pivot quicksort with
-adversarial O(n²) inputs, and people on Codeforces construct them
-deliberately. Shuffle before sorting, or sort a boxed `Integer[]`, which
-uses TimSort. The template has a `sort` helper that shuffles.
-
-**Recursion overflows early.** The default stack dies around depth 10⁴,
-which a DFS over 10⁵ nodes will hit. Run your work on a thread with a
-bigger stack — the template starts one with 256MB.
-
-**No extra time limit.** Most judges, Codeforces included, apply the same
-limit to every language, and Java runs roughly 1.5–2.5× slower than C++.
-Setters normally ensure the intended solution passes in Java, but you
-have less headroom, so constant factors matter: prefer primitive arrays
-over boxed collections, and `ArrayDeque` over `Stack` or `LinkedList`.
-
-One more, specific to the Beecrowd set: **always pass `Locale.US`** to
-`printf` / `String.format`. On a pt_BR system `%.2f` prints a decimal
-comma, which is an instant wrong answer that looks perfectly correct on
-screen.
-
-## Stress testing
-
-For any problem where you are unsure, write three files and let the
-machine find your counterexample:
-
-- `Brute.java` — obviously correct, too slow
-- `Gen.java` — random input, seeded from `args[0]`
-- `Main.java` — the real one
-
-Then `tools/stress.sh <dir>`. This is the single highest-leverage habit
-in competitive programming and it is why `Brute.java` is worth writing
-even when you are confident.
-
-## Status
-
-Every card is written. Most solutions are still empty — that is the work
-in front of me, not a permanent state. Solved ones stay solved, and the
-Review line on each card tracks when to come back to it.
-
-Four problems (`0049`, `0167`, `0238`, `0424`) had no prior attempt at
-all — they were `TODO` scaffolds in the old Kotlin lab, so there is
-nothing to diff a new solution against, and their cards say so. `0049`
-has since been solved fresh.
-
-One (`2884`) is a LeetCode Pandas problem with no meaningful Java form;
-it has a card but intentionally no `Solution.java`.
-
-Seventy-two problems were added later and were never solved in any
-language, so their cards have no `## Origin` line — there is nothing to
-retrieve. Twelve moved in from `algorithm-studies`, which is now scoped to
-building and using data structures. The other sixty close gaps that the
-roadmap itself had flagged: no number theory, no union-find, no minimum
-spanning tree, no Fenwick tree, no monotonic deque, and a single
-Codeforces problem in a repo whose stated goal is competing. See
-**Contest gaps** in [`ROADMAP.md`](./ROADMAP.md).
+The Go, Python, Kotlin, and Rust implementations are imported under their
+matching platform/problem directories and language subdirectories. When
+restoring another historical implementation, preserve its language and mark
+its origin where relevant; do not overwrite an existing implementation just
+because the problem matches.

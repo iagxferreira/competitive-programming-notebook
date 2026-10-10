@@ -2,7 +2,7 @@
 # Differential test: run Brute against the real solution on random input
 # until they disagree. Gen takes a seed on argv[0].
 #
-# Needs three extra files in the problem directory:
+# Needs three extra files in the problem's java directory:
 #   Brute.java  - obviously correct, too slow
 #   Gen.java    - random input generator, seeded from args[0]
 #   Main.java   - the real solution (or Solution.java with a main)
@@ -15,13 +15,13 @@ iters="${2:-1000}"
 out="$(mktemp -d)"
 
 for f in Gen Brute; do
-    [[ -f "$dir/$f.java" ]] || { echo "missing $dir/$f.java"; exit 1; }
+	[[ -f "$dir/java/$f.java" ]] || { echo "missing $dir/java/$f.java"; exit 1; }
 done
 
-javac -d "$out" "$dir"/*.java
+javac -d "$out" "$dir"/java/*.java
 
-main=$(grep -lE 'static void main' "$dir"/Main.java "$dir"/Solution.java 2>/dev/null | head -1 || true)
-[[ -n "$main" ]] || { echo "no Main.java or Solution.java with a main in $dir"; exit 1; }
+main=$(grep -lE 'static void main' "$dir"/java/Main.java "$dir"/java/Solution.java 2>/dev/null | head -1 || true)
+[[ -n "$main" ]] || { echo "no java/Main.java or java/Solution.java with a main in $dir"; exit 1; }
 cls=$(basename "$main" .java)
 
 for ((i = 1; i <= iters; i++)); do

@@ -1,110 +1,72 @@
-# Repo Instructions
+# Repository Instructions
 
-Java competitive programming notebook. Every problem Iago has solved
-before, being rebuilt from scratch in Java.
+This is a language-agnostic competitive programming solutions repository.
+Solutions may be written in any language; keep each problem's implementations
+and tests together under its platform directory.
 
-## Core Goal
+## Problem layout
 
-Make Java his competition language. The archive is the training set: each
-problem starts as an empty file plus a recall card written from his
-earlier Go, Python, Kotlin or Rust attempt. He re-solves it in Java.
-
-This is deliberate practice aimed at competing, not a portfolio. Treat
-the empty files as work in progress, not as a permanent gimmick.
-
-## The One Rule
-
-**Do not write solutions unless asked to.**
-
-He is here to get strong at this, and a solution he did not write teaches
-him nothing. When helping with a problem:
-
-- ask what the brute force is
-- ask where the bottleneck is
-- ask which invariant the approach relies on
-- give a hint one level more specific than the last
-- do not produce the final code unless explicitly asked
-
-The card's `## Key insight` is a spoiler. Do not quote it unprompted.
-
-## Study Order
-
-[`ROADMAP.md`](./ROADMAP.md) has the recommended order and is the source
-of truth for what to work on next. When the user asks what to do, read it
-and pick the first unticked box rather than choosing arbitrarily.
-
-## Problem Layout
-
-```
-<platform>/<id>-<slug>/
-    README.md       the recall card
-    Solution.java   leetcode: class Solution, no main
-    Main.java       stdin/stdout problems, and leetcode harnesses
-    Brute.java      optional, for stress testing
-    Gen.java        optional, random input generator
-    in*.txt         optional test input
-    out*.txt        optional expected output
+```text
+<platform>/<problem-id>-<slug>/
+    README.md       problem reference, notes, and optional review status
+    in*.txt         optional test inputs
+    out*.txt        optional expected outputs
+    java/           Java source files, if present
+    go/             Go source files, if present
+    python/         Python source files, if present
+    kotlin/         Kotlin source files, if present
+    rust/           Rust source files, if present
 ```
 
-## Card Format
+Keep existing Java filenames (`Main.java`, `Solution.java`) as-is under the
+problem's `java/` directory. Put each additional implementation under its
+language-named subdirectory, using recognizable filenames such as
+`solution.go`, `solution.py`, `Solution.kt`, and `solution.rs`. Keep
+language-specific tests with their implementation; shared sample input/output
+files remain at the problem root. Avoid imposing a single language's build
+system on unrelated solutions. Include concise run or test instructions when
+needed.
 
-Keep cards compact — roughly 50 lines. Sections in order:
+## Helping with problem solving
 
-`# <id>. <Title>` / platform-difficulty-tags line / `## Task` /
-`## Key insight` / `## Invariant` / `## Complexity` / `## Pitfall` /
-`## Review` / `## Origin`
+Do not write a complete solution unless asked. When helping the user reason
+through a problem, start with the brute force, identify its bottleneck, and
+help establish the invariant before giving progressively more specific hints.
+Do not reveal a problem card's key insight unprompted.
 
-The `## Pitfall` section is the most valuable part. It should name a
-specific, concrete way to get this problem wrong — ideally the way the
-user actually did.
+## Notes and provenance
 
-Update `## Review` with the date and a 0-5 confidence when a problem is
-re-solved.
+Problem notes should be useful and concise. They may describe the task,
+approach, invariant, complexity, pitfalls, and review status; adapt to the
+problem instead of forcing every section onto every card. Preserve useful
+existing notes. If restoring a historical implementation from
+`legacy-archive`, preserve its language and mark its origin where that context
+matters.
 
-## Java Expectations
+## Language-specific practices
 
-- Java 21, one self-contained file per problem, no build system
-- never `Scanner` — `BufferedReader` + `StringTokenizer`, output via
-  `StringBuilder`
-- `Arrays.sort(int[])` is hackable quicksort; shuffle first or box
-- default stack overflows near depth 10^4; run deep recursion on a
-  thread with a larger stack
-- `long` for any accumulation that could exceed 2^31; `int` wraps
-  SILENTLY rather than trapping
-- `%` on negatives yields a negative result — same as C++/Go, differs
-  from Python
-- `map.get` returns null, not a zero value; unboxing that throws NPE.
-  Use `getOrDefault`
-- `PriorityQueue` is a MIN-heap by default — the opposite of C++
-- prefer primitive arrays over boxed collections; `ArrayDeque` over
-  `Stack` and `LinkedList`
-- pass `Locale.US` to `printf` / `String.format` for any decimal output
+Follow the established conventions of the language used by the solution and
+the target judge. Keep implementations self-contained when required by the
+platform. Check integer bounds, input/output constraints, and recursion limits
+in the chosen runtime. Existing Java tooling and guidance remain applicable to
+Java files only.
 
 ## Tooling
 
-```bash
-make run    DIR=<dir> [IN=in.txt]
-make syntax DIR=<dir>
-make check
-tools/run.sh <dir>
-tools/stress.sh <dir> [iters]
-tools/new.sh <platform> <id> <slug>
-```
+The Makefile and scripts currently support Java. Use those for Java changes;
+for another language, run its appropriate formatter, compiler, interpreter,
+or tests. Do not claim cross-language verification from a Java-only check.
 
-## The Archive
+## Historical snapshot
 
-The original multi-language solutions live at the `legacy-archive` tag,
-not in the working tree:
+The earlier multi-language solutions are grouped into the current tree by
+problem and language. The original layout is preserved at the `legacy-archive`
+tag. Retrieve a specific file with `git show legacy-archive:<path>`. When
+incorporating another historical implementation, avoid overwriting a
+different implementation and verify it using that language's toolchain where
+available.
 
-```bash
-git show legacy-archive:legacy/go/leetcode/15-three-sum.go
-git show legacy-archive:problems/easy/two-sum/README.md
-```
+## Commit discipline
 
-Do not restore them into the tree. Retrieving one to compare against a
-freshly written solution is fine and encouraged.
-
-## Commit Discipline
-
-Atomic commits, conventional prefixes: `feat:`, `fix:`, `docs:`,
+Use atomic commits and conventional prefixes: `feat:`, `fix:`, `docs:`,
 `refactor:`, `build:`.

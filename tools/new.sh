@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Scaffold a new problem directory.
-#   tools/new.sh leetcode 0146 lru-cache        -> Solution.java (no main)
-#   tools/new.sh codeforces 1900a some-problem  -> Main.java from the template
+#   tools/new.sh leetcode 0146 lru-cache        -> java/Solution.java (no main)
+#   tools/new.sh codeforces 1900a some-problem  -> java/Main.java from template
 set -euo pipefail
 
 platform="${1:?usage: tools/new.sh <platform> <id> <slug>}"
@@ -15,9 +15,10 @@ root="$(cd "$(dirname "$0")/.." && pwd)"
 
 [[ -d "$dir" ]] && { echo "$dir already exists"; exit 1; }
 mkdir -p "$dir"
+mkdir -p "$dir/java"
 
 if [[ "$platform" == "leetcode" ]]; then
-    cat > "$dir/Solution.java" <<'TPL'
+    cat > "$dir/java/Solution.java" <<'TPL'
 import java.util.*;
 
 class Solution {
@@ -31,7 +32,7 @@ else
     sed -e 's/^public class Template {/public class Main {/' \
         -e 's/Template::run/Main::run/' \
         -e 's|^// Contest template.*|// Solution.|' \
-        "$root/Template.java" > "$dir/Main.java"
+        "$root/Template.java" > "$dir/java/Main.java"
 fi
 
 # Card heading: strip the zero-padding (0146 -> 146) and title-case the
