@@ -62,6 +62,23 @@ languages, use the relevant compiler/runtime directly and add problem-specific
 instructions when a command is not obvious. Tests should be kept close to the
 problem they exercise.
 
+## Scaffolding a problem
+
+`templates/` contains stdin/stdout and judge-class starting points for Java,
+Go, Python, Kotlin, and Rust. `make new` creates a problem directory (or adds
+an implementation to an existing one) and never overwrites an existing source:
+
+```bash
+make new P=leetcode ID=0146 SLUG=lru-cache L=python
+make new P=codeforces ID=1900a SLUG=some-problem L=java
+make new P=hackerrank ID= SLUG=simple-array-sum L=kotlin
+make scaffold-test
+```
+
+`L` defaults to `java`. LeetCode receives a judge-class template; other
+platforms receive a stdin/stdout template. Direct use is also available as
+`tools/new.sh <platform> <id> <slug> [language]`.
+
 ## Historical solutions
 
 The original multi-language work is available without checking out the tag:

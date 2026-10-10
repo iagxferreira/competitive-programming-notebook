@@ -16,13 +16,14 @@ OUT   := /tmp/cp-build
 JAVAFLAGS ?= -Xss256m
 
 N ?= 1000
+L ?= java
 
 .DEFAULT_GOAL := help
 
 help:
 	@echo ''
-	@echo '  make new P=leetcode ID=0409 SLUG=longest-palindrome'
-	@echo '                              scaffold a problem (ID may be empty)'
+	@echo '  make new P=leetcode ID=0146 SLUG=lru-cache L=python'
+	@echo '                              scaffold a problem/language (L defaults to java)'
 	@echo ''
 	@echo '  make syntax DIR=<dir>       compile one problem'
 	@echo '  make run    DIR=<dir>       compile and run it'
@@ -31,6 +32,8 @@ help:
 	@echo '  make test   DIR=<dir>       run every in*.txt, diff vs out*.txt'
 	@echo '  make stress DIR=<dir> [N=1000]'
 	@echo '                              Brute.java vs your solution on random input'
+	@echo ''
+	@echo '  make scaffold-test          verify all language scaffolds'
 	@echo ''
 	@echo '  make check                  compile every problem in the repo'
 	@echo ''
@@ -42,7 +45,10 @@ need-dir:
 new:
 	@test -n "$(P)"    || { echo 'usage: make new P=<platform> ID=<id> SLUG=<slug>'; exit 1; }
 	@test -n "$(SLUG)" || { echo 'usage: make new P=<platform> ID=<id> SLUG=<slug>'; exit 1; }
-	@tools/new.sh "$(P)" "$(ID)" "$(SLUG)"
+	@tools/new.sh "$(P)" "$(ID)" "$(SLUG)" "$(L)"
+
+scaffold-test:
+	@tools/test-new.sh
 
 syntax: need-dir
 	@mkdir -p $(OUT)
@@ -77,4 +83,4 @@ check:
 	 done; \
 	 if [ $$fail -eq 0 ]; then echo "all problems compile"; else exit 1; fi
 
-.PHONY: help need-dir new syntax run test stress check
+.PHONY: help need-dir new scaffold-test syntax run test stress check

@@ -53,9 +53,11 @@ Java files only.
 
 ## Tooling
 
-The Makefile and scripts currently support Java. Use those for Java changes;
-for another language, run its appropriate formatter, compiler, interpreter,
-or tests. Do not claim cross-language verification from a Java-only check.
+The Makefile's run/check commands currently support Java. The scaffold tool
+supports Java, Go, Python, Kotlin, and Rust using `templates/<language>/`;
+choose the right template shape for the target platform. For other language
+changes, run the appropriate formatter, compiler, interpreter, or tests. Do
+not claim cross-language verification from a Java-only check.
 
 ## Historical snapshot
 

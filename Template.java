@@ -1,4 +1,4 @@
-// Contest template. Copy into a problem directory as Main.java.
+// Java contest template reference. New scaffolds use templates/java/Main.java.
 //
 // Scanner is far too slow for competitive input and is the most common
 // cause of a Java TLE on a solution that is algorithmically correct.

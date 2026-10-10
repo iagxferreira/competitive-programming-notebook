@@ -1,66 +1,72 @@
 #!/usr/bin/env bash
-# Scaffold a new problem directory.
-#   tools/new.sh leetcode 0146 lru-cache        -> java/Solution.java (no main)
-#   tools/new.sh codeforces 1900a some-problem  -> java/Main.java from template
+# Scaffold a problem or add a language implementation to an existing problem.
+#   tools/new.sh leetcode 0146 lru-cache java
+#   tools/new.sh codeforces 1900a some-problem go
+#   tools/new.sh hackerrank '' simple-array-sum python
 set -euo pipefail
 
-platform="${1:?usage: tools/new.sh <platform> <id> <slug>}"
-id="${2?usage: tools/new.sh <platform> <id> <slug>}"
-slug="${3:?}"
+usage() {
+    printf 'usage: %s <platform> <id> <slug> [java|go|python|kotlin|rust]\n' "$0" >&2
+    exit 2
+}
 
-# HackerRank problems have no numeric id; pass "" and the dash is dropped
-# rather than producing a directory called "-some-slug".
-dir="$platform/${id:+$id-}$slug"
-root="$(cd "$(dirname "$0")/.." && pwd)"
+[[ $# -ge 3 && $# -le 4 ]] || usage
+platform="$1"
+id="$2"
+slug="$3"
+language="${4:-java}"
+case "$language" in
+    java|go|python|kotlin|rust) ;;
+    *) printf 'unsupported language: %s\n' "$language" >&2; usage ;;
+esac
 
-[[ -d "$dir" ]] && { echo "$dir already exists"; exit 1; }
-mkdir -p "$dir"
-mkdir -p "$dir/java"
+script_dir="$(cd "$(dirname "$0")" && pwd)"
+root="${CP_ROOT:-$(dirname "$script_dir")}"
+problem="$root/$platform/${id:+$id-}$slug"
+template_dir="$script_dir/../templates/$language"
 
 if [[ "$platform" == "leetcode" ]]; then
-    cat > "$dir/java/Solution.java" <<'TPL'
-import java.util.*;
-
-class Solution {
-    public int solve() {
-        // TODO: solve
-        return 0;
-    }
-}
-TPL
+    case "$language" in
+        java) template="Solution.java" ;;
+        go) template="solution.go" ;;
+        python) template="Solution.py" ;;
+        kotlin) template="Solution.kt" ;;
+        rust) template="Solution.rs" ;;
+    esac
 else
-    sed -e 's/^public class Template {/public class Main {/' \
-        -e 's/Template::run/Main::run/' \
-        -e 's|^// Contest template.*|// Solution.|' \
-        "$root/Template.java" > "$dir/java/Main.java"
+    case "$language" in
+        java) template="Main.java" ;;
+        go) template="main.go" ;;
+        python) template="main.py" ;;
+        kotlin) template="Main.kt" ;;
+        rust) template="main.rs" ;;
+    esac
 fi
 
-# Card heading: strip the zero-padding (0146 -> 146) and title-case the
-# slug, to match the existing cards. Fix acronyms by hand.
-heading_id="$(echo "$id" | sed 's/^0*\([0-9]\)/\1/')"
-heading_name="$(echo "${slug//-/ }" | sed 's/\b\(.\)/\u\1/g')"
-heading="${heading_id:+$heading_id. }$heading_name"
+source="$problem/$language/$template"
+[[ -f "$template_dir/$template" ]] || { printf 'missing template: %s\n' "$template_dir/$template" >&2; exit 1; }
+[[ ! -e "$source" ]] || { printf 'source already exists: %s\n' "$source" >&2; exit 1; }
 
-cat > "$dir/README.md" <<TPL
+mkdir -p "$(dirname "$source")"
+cp "$template_dir/$template" "$source"
+
+if [[ ! -e "$problem/README.md" ]]; then
+    heading_id="$(printf '%s' "$id" | sed 's/^0*\([0-9]\)/\1/')"
+    heading_name="$(printf '%s' "${slug//-/ }" | sed 's/\b\(.[^ ]*\)/\u\1/g')"
+    heading="${heading_id:+$heading_id. }$heading_name"
+    cat > "$problem/README.md" <<TPL
 # $heading
 
 $platform | ? | ?
 
 ## Task
 
-## Key insight
-
-## Invariant
-
-## Complexity
-
-time O(?)   space O(?)
-
-## Pitfall
+## Notes
 
 ## Review
 
 last: never   confidence: 0/5
 TPL
+fi
 
-echo "created $dir"
+printf 'created %s\n' "$source"
