@@ -13,3 +13,14 @@ func maxProfit(prices []int) int {
 
 	return profit
 }
+
+func newMaxProfit(prices []int) int {
+	profit := 0
+	price := math.MaxInt32
+	for _, current := range prices {
+		price = min(price, current)
+		profit = max(profit, current-price)
+	}
+
+	return profit
+}
