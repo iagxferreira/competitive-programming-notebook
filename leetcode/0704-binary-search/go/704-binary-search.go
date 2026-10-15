@@ -5,11 +5,15 @@ func binarySearch(items []int, low, high, target int) int {
 		return -1
 	}
 	mid := (low + high) / 2
+
 	if items[mid] == target {
 		return mid
-	} else if target > items[mid] {
+	}
+
+	if target > items[mid] {
 		return binarySearch(items, mid+1, high, target)
 	}
+
 	return binarySearch(items, low, mid-1, target)
 }
 
