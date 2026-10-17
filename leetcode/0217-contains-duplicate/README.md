@@ -35,11 +35,3 @@ Shuffle first, or sort a boxed `Integer[]` which uses TimSort.
 ## Review
 
 last: 2026-08-31   confidence: ?/5   (set your own)
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/217-contains-duplicate.go
-
-Full study essay from the Kotlin lab (~300 lines):
-
-    git show legacy-archive:problems/easy/contains-duplicate/README.md

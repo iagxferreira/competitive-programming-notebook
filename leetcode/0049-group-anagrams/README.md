@@ -46,14 +46,10 @@ fine — just do not build anything on top of it that assumes an order.
 
 ## Status
 
-Solved fresh on 2026-08-31, with the sorted-characters key. There is no
-prior attempt to diff against: the Kotlin original was a `TODO` scaffold,
-so the Origin command below returns an empty body.
+Solved fresh on 2026-08-31, with the sorted-characters key. There was no
+prior implementation to compare against; the Kotlin original was a `TODO`
+scaffold.
 
 ## Review
 
 last: 2026-08-31   confidence: ?/5   (set your own)
-
-## Origin
-
-git show legacy-archive:src/main/kotlin/algorithms/problems/medium/group_anagrams/GroupAnagrams.kt

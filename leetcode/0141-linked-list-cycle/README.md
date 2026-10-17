@@ -36,7 +36,3 @@ values are not a cycle.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/141.cicled-list.py

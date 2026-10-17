@@ -27,7 +27,3 @@ trailing newline are both part of the expected output.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1000.kt

@@ -35,7 +35,3 @@ which is why the outer traversal is needed at all.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/1367.linked-list-in-binary-tree.py

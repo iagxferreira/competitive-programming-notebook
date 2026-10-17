@@ -29,7 +29,3 @@ mistake. Again use pi = 3.14159 as specified.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1011.kt

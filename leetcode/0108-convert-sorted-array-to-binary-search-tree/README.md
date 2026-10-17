@@ -31,7 +31,3 @@ the habit worth building, even though n is small here.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/108-sorted-array-to-bst.go

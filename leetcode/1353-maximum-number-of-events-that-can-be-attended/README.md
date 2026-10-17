@@ -42,7 +42,3 @@ Note this file is named 1363 in the archive; the problem is 1353.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/1363-maximum-meetings.go

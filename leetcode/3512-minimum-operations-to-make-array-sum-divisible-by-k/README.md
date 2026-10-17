@@ -29,7 +29,3 @@ than trapping, so the result is plausible-looking garbage.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/3512-min-operations.go

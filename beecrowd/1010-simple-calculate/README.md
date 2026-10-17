@@ -29,7 +29,3 @@ variable and ignore it.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1010.kt

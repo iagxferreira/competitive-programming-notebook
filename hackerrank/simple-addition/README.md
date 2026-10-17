@@ -27,7 +27,3 @@ is ever returned. Widen to `long` at the parameter, not at the return —
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/hackerrank/sum.kt

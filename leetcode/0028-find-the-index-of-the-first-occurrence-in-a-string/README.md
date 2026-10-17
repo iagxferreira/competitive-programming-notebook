@@ -35,7 +35,3 @@ does not exist for array index arithmetic elsewhere.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/28-first-string-occurrence.go

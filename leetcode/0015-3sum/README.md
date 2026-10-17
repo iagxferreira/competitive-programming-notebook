@@ -34,7 +34,3 @@ to zero unless all are zero.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/15-three-sum.go

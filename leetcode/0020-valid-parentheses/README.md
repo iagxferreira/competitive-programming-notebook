@@ -29,7 +29,3 @@ version covers all three, plus an odd-length early exit.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/20-valid-parenthesis.go

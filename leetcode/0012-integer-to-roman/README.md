@@ -33,7 +33,3 @@ wrong — and also why it teaches you less. Redo it greedily.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/12-integer-to-roman.go

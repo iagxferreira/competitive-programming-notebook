@@ -40,7 +40,3 @@ greedy first-fit is provably correct here.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/1282.group-the-people.py

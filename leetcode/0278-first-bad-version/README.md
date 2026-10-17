@@ -38,7 +38,3 @@ Your Go version has the overflow-prone form; Go's 64-bit int hid it.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/278-first-bad-version.go

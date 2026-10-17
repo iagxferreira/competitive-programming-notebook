@@ -36,7 +36,3 @@ Balance is required at EVERY node, not just the root.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/110.balanced-binary-tree.py

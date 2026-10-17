@@ -40,7 +40,3 @@ exactly this reason, and a heavier frame or a deeper input tips it.
 ## Review
 
 last: 2026-09-01   confidence: ?/5   (set your own)
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/104-maximum-depth-bst.go

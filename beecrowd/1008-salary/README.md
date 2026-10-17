@@ -30,7 +30,3 @@ need `%%`. Use `Locale.US` here too.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1008.kt

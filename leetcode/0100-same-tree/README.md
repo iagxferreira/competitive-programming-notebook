@@ -28,8 +28,3 @@ them in the right order.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/100-same-tree.go
-git show legacy-archive:legacy/python/leetcode/100.same-tree.py

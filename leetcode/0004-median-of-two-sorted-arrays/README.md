@@ -33,7 +33,3 @@ range. Use sentinels of ±infinity for the empty-side cases.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/4-median-of-two-arrays.go

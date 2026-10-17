@@ -29,7 +29,3 @@ exactly that.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/2011.final-value.py

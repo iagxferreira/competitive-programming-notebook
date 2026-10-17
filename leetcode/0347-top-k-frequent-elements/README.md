@@ -31,7 +31,3 @@ Using a max-heap of everything is O(n log n) again and misses the point.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/347-top-k-elements.go

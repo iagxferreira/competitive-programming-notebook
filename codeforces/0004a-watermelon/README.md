@@ -30,7 +30,3 @@ where the edge case, not the idea, is what is being tested.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/codeforces/4a.py

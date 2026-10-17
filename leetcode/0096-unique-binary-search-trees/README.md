@@ -36,7 +36,3 @@ constraint n >= 1 saves it.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/96-unique-bst.go

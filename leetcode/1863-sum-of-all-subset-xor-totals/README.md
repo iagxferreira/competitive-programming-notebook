@@ -34,7 +34,3 @@ for.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/1863.subset-xor.py

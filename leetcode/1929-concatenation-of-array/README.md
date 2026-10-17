@@ -27,7 +27,3 @@ survive but the constant does not.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/1929-array-concatenation.go

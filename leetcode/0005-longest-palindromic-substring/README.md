@@ -38,7 +38,3 @@ Empty input must return "" before the loop indexes anything.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/5.longest-palindromic-substring.py

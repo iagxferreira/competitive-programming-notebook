@@ -34,7 +34,3 @@ reverse-in-k-groups. Make it muscle memory.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/206-reverse-linked-list.go

@@ -28,7 +28,3 @@ The three-way comparison needs all three branches. Writing it as
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/hackerrank/compare-triplets.kt

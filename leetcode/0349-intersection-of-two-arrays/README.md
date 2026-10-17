@@ -30,7 +30,3 @@ If both inputs were sorted, two pointers would give O(1) extra space.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/349-intersection-of-two-arrays.go

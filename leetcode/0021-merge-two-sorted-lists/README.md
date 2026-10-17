@@ -32,7 +32,3 @@ Do not forget to attach the non-empty remainder at the end.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/21-merge-two-sorted-lists.go

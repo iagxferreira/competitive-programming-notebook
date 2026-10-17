@@ -34,7 +34,3 @@ Bounds are inclusive on both ends.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/938.range-sum-bst.py

@@ -41,7 +41,3 @@ binary search is the primitive you need to own outright.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/35-search-insert.go

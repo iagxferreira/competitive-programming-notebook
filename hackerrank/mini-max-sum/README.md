@@ -35,7 +35,3 @@ loop anyway. The sort was dead work; drop it.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/hackerrank/min-max-sum.go

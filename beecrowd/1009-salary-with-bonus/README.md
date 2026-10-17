@@ -28,7 +28,3 @@ two-word name, `>>` silently desynchronises everything after it. Prefer
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1009.kt

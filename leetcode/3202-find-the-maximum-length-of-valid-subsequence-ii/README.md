@@ -38,7 +38,3 @@ Reset the dp array for each t — `Arrays.fill(dp, 0)`.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/3202-maximum-length-subsequence-ii.go

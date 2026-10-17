@@ -31,7 +31,3 @@ not in Java's 32-bit one — it wraps silently.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/9-is-palindrome.go

@@ -37,7 +37,3 @@ of error, and drops O(n^2) to O(n).
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/hackerrank/diagonal-difference.kt

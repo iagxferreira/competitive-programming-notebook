@@ -36,7 +36,3 @@ pass to build and one to total.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/1512.good-pairs.py

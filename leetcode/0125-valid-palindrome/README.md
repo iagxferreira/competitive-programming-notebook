@@ -39,11 +39,3 @@ is dead weight — return true directly.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/125-valid-palindrome.go
-
-Full study essay from the Kotlin lab (~300 lines):
-
-    git show legacy-archive:problems/easy/valid-palindrome/README.md

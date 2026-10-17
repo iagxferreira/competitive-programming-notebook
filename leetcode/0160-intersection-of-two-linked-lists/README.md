@@ -35,7 +35,3 @@ Compare node references with `==`, never values or `.equals`.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/160-get-intersection-node.go

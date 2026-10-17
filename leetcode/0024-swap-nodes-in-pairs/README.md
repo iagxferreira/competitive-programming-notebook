@@ -34,7 +34,3 @@ swap. Your Python version gets all of this right.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/24.swap-pairs.py

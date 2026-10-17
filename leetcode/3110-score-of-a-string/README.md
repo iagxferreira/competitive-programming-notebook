@@ -32,7 +32,3 @@ against, unlike in C++.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/3110-score-of-string.go

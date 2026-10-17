@@ -34,11 +34,3 @@ loss.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/121-max-profit.go
-
-Full study essay from the Kotlin lab (~300 lines):
-
-    git show legacy-archive:problems/easy/best-time-to-buy-and-sell-stock/README.md

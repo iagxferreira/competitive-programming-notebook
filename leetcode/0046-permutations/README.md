@@ -36,7 +36,3 @@ problems need. Redo this one recursively.
 ## Review
 
 last: 2026-08-29   confidence: ?/5   (set your own)
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/46-permutations.go

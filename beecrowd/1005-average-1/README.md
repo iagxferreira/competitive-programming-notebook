@@ -32,7 +32,3 @@ argument is mandatory, see 1002.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1005.kt

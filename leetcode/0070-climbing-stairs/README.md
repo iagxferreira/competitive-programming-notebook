@@ -33,7 +33,3 @@ unconditionally, which is out of bounds if n were 0.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/70-climbing-stairs.go

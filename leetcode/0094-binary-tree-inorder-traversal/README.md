@@ -53,7 +53,3 @@ child you descend to.
 ## Review
 
 last: 2026-09-01   confidence: ?/5   (set your own)
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/94-binary-tree-inorder-traversal.go

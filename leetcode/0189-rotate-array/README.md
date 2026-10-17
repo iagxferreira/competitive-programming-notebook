@@ -37,7 +37,3 @@ entirely, which is why it is the one to remember.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/189.rotate-array.py

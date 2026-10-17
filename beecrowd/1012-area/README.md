@@ -28,7 +28,3 @@ scores zero. Note the circle uses C as its radius, not A.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1012.kt

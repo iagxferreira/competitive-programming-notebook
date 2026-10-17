@@ -42,7 +42,3 @@ NOT SOLVED. Kotlin lab scaffold with a `TODO` body.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:src/main/kotlin/algorithms/problems/medium/longest_repeating_character_replacement/LongestRepeatingCharacterReplacement.kt

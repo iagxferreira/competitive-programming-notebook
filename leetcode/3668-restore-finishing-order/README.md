@@ -35,7 +35,3 @@ lookup.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/3668.finish-order.py

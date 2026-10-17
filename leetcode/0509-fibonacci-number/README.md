@@ -31,7 +31,3 @@ the two-variable loop.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/509-fibonacci-number.go
