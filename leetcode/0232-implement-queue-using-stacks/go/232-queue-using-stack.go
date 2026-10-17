@@ -43,11 +43,3 @@ func (this *MyQueue) Empty() bool {
 	return len(this.insertStack) == 0 && len(this.consultStack) == 0
 }
 
-/**
- * Your MyQueue object will be instantiated and called as such:
- * obj := Constructor();
- * obj.Push(x);
- * param_2 := obj.Pop();
- * param_3 := obj.Peek();
- * param_4 := obj.Empty();
- */
