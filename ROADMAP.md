@@ -21,21 +21,21 @@ a `TODO` scaffold in the old Kotlin lab and you have no prior attempt.
 
 Zero algorithmic content. The point is to make the template, `Locale.US`, and fast reading automatic before anything hard depends on them. If you fumble I/O later you will not know whether your algorithm or your reader is wrong.
 
-- [ ] [`beecrowd/1000-hello-world`](./beecrowd/1000-hello-world/)
-- [ ] [`beecrowd/1001-extremely-basic`](./beecrowd/1001-extremely-basic/)
-- [ ] [`beecrowd/1002-area-of-a-circle`](./beecrowd/1002-area-of-a-circle/)
-- [ ] [`beecrowd/1003-simple-sum`](./beecrowd/1003-simple-sum/)
-- [ ] [`beecrowd/1004-simple-product`](./beecrowd/1004-simple-product/)
-- [ ] [`beecrowd/1005-average-1`](./beecrowd/1005-average-1/)
-- [ ] [`beecrowd/1006-average-2`](./beecrowd/1006-average-2/)
-- [ ] [`beecrowd/1007-difference`](./beecrowd/1007-difference/)
-- [ ] [`beecrowd/1008-salary`](./beecrowd/1008-salary/)
-- [ ] [`beecrowd/1009-salary-with-bonus`](./beecrowd/1009-salary-with-bonus/)
-- [ ] [`beecrowd/1010-simple-calculate`](./beecrowd/1010-simple-calculate/)
-- [ ] [`beecrowd/1011-sphere`](./beecrowd/1011-sphere/)
-- [ ] [`beecrowd/1012-area`](./beecrowd/1012-area/)
-- [ ] [`beecrowd/1013-the-greatest`](./beecrowd/1013-the-greatest/)
-- [ ] [`hackerrank/simple-addition`](./hackerrank/simple-addition/)
+- [x] [`beecrowd/1000-hello-world`](./beecrowd/1000-hello-world/)
+- [x] [`beecrowd/1001-extremely-basic`](./beecrowd/1001-extremely-basic/)
+- [x] [`beecrowd/1002-area-of-a-circle`](./beecrowd/1002-area-of-a-circle/)
+- [x] [`beecrowd/1003-simple-sum`](./beecrowd/1003-simple-sum/)
+- [x] [`beecrowd/1004-simple-product`](./beecrowd/1004-simple-product/)
+- [x] [`beecrowd/1005-average-1`](./beecrowd/1005-average-1/)
+- [x] [`beecrowd/1006-average-2`](./beecrowd/1006-average-2/)
+- [x] [`beecrowd/1007-difference`](./beecrowd/1007-difference/)
+- [x] [`beecrowd/1008-salary`](./beecrowd/1008-salary/)
+- [x] [`beecrowd/1009-salary-with-bonus`](./beecrowd/1009-salary-with-bonus/)
+- [x] [`beecrowd/1010-simple-calculate`](./beecrowd/1010-simple-calculate/)
+- [x] [`beecrowd/1011-sphere`](./beecrowd/1011-sphere/)
+- [x] [`beecrowd/1012-area`](./beecrowd/1012-area/)
+- [x] [`beecrowd/1013-the-greatest`](./beecrowd/1013-the-greatest/)
+- [x] [`hackerrank/simple-addition`](./hackerrank/simple-addition/)
 
 ## Phase 1 - Array and string fluency
 
@@ -43,30 +43,30 @@ Zero algorithmic content. The point is to make the template, `Locale.US`, and fa
 
 Low-thought reps to get Java's array and string idioms under your fingers. Do these fast - if one takes more than ten minutes, the card will tell you what you are missing.
 
-- [ ] [`codeforces/0004a-watermelon`](./codeforces/0004a-watermelon/)
-- [ ] [`hackerrank/simple-array-sum`](./hackerrank/simple-array-sum/)
-- [ ] [`hackerrank/compare-the-triplets`](./hackerrank/compare-the-triplets/)
-- [ ] [`hackerrank/reverse-array`](./hackerrank/reverse-array/)
-- [ ] [`hackerrank/plus-minus`](./hackerrank/plus-minus/)
-- [ ] [`hackerrank/mini-max-sum`](./hackerrank/mini-max-sum/)
-- [ ] [`hackerrank/diagonal-difference`](./hackerrank/diagonal-difference/)
-- [ ] [`hackerrank/staircase`](./hackerrank/staircase/)
-- [ ] [`leetcode/1929-concatenation-of-array`](./leetcode/1929-concatenation-of-array/)
-- [ ] [`leetcode/1920-build-array-from-permutation`](./leetcode/1920-build-array-from-permutation/)
-- [ ] [`leetcode/1470-shuffle-the-array`](./leetcode/1470-shuffle-the-array/)
-- [ ] [`leetcode/0066-plus-one`](./leetcode/0066-plus-one/)
+- [x] [`codeforces/0004a-watermelon`](./codeforces/0004a-watermelon/)
+- [x] [`hackerrank/simple-array-sum`](./hackerrank/simple-array-sum/)
+- [x] [`hackerrank/compare-the-triplets`](./hackerrank/compare-the-triplets/)
+- [x] [`hackerrank/reverse-array`](./hackerrank/reverse-array/)
+- [x] [`hackerrank/plus-minus`](./hackerrank/plus-minus/)
+- [x] [`hackerrank/mini-max-sum`](./hackerrank/mini-max-sum/)
+- [x] [`hackerrank/diagonal-difference`](./hackerrank/diagonal-difference/)
+- [x] [`hackerrank/staircase`](./hackerrank/staircase/)
+- [x] [`leetcode/1929-concatenation-of-array`](./leetcode/1929-concatenation-of-array/)
+- [x] [`leetcode/1920-build-array-from-permutation`](./leetcode/1920-build-array-from-permutation/)
+- [x] [`leetcode/1470-shuffle-the-array`](./leetcode/1470-shuffle-the-array/)
+- [x] [`leetcode/0066-plus-one`](./leetcode/0066-plus-one/)
 - [x] [`leetcode/0412-fizz-buzz`](./leetcode/0412-fizz-buzz/)
-- [ ] [`leetcode/2011-final-value-of-variable-after-performing-operations`](./leetcode/2011-final-value-of-variable-after-performing-operations/)
-- [ ] [`leetcode/2769-find-the-maximum-achievable-number`](./leetcode/2769-find-the-maximum-achievable-number/)
-- [ ] [`leetcode/2469-convert-the-temperature`](./leetcode/2469-convert-the-temperature/)
-- [ ] [`leetcode/2894-divisible-and-non-divisible-sums-difference`](./leetcode/2894-divisible-and-non-divisible-sums-difference/)
-- [ ] [`leetcode/3190-find-minimum-operations-to-make-all-elements-divisible-by-three`](./leetcode/3190-find-minimum-operations-to-make-all-elements-divisible-by-three/)
-- [ ] [`leetcode/3512-minimum-operations-to-make-array-sum-divisible-by-k`](./leetcode/3512-minimum-operations-to-make-array-sum-divisible-by-k/)
-- [ ] [`leetcode/3110-score-of-a-string`](./leetcode/3110-score-of-a-string/)  `*` floating point for an integer problem
-- [ ] [`leetcode/2942-find-words-containing-character`](./leetcode/2942-find-words-containing-character/)
-- [ ] [`leetcode/3136-valid-word`](./leetcode/3136-valid-word/)
-- [ ] [`leetcode/0058-length-of-last-word`](./leetcode/0058-length-of-last-word/)  `*` trimmed and split the whole string to read its tail
-- [ ] [`leetcode/3467-transform-array-by-parity`](./leetcode/3467-transform-array-by-parity/)  `*` sorted a two-valued array instead of counting
+- [x] [`leetcode/2011-final-value-of-variable-after-performing-operations`](./leetcode/2011-final-value-of-variable-after-performing-operations/)
+- [x] [`leetcode/2769-find-the-maximum-achievable-number`](./leetcode/2769-find-the-maximum-achievable-number/)
+- [x] [`leetcode/2469-convert-the-temperature`](./leetcode/2469-convert-the-temperature/)
+- [x] [`leetcode/2894-divisible-and-non-divisible-sums-difference`](./leetcode/2894-divisible-and-non-divisible-sums-difference/)
+- [x] [`leetcode/3190-find-minimum-operations-to-make-all-elements-divisible-by-three`](./leetcode/3190-find-minimum-operations-to-make-all-elements-divisible-by-three/)
+- [x] [`leetcode/3512-minimum-operations-to-make-array-sum-divisible-by-k`](./leetcode/3512-minimum-operations-to-make-array-sum-divisible-by-k/)
+- [x] [`leetcode/3110-score-of-a-string`](./leetcode/3110-score-of-a-string/)  `*` floating point for an integer problem
+- [x] [`leetcode/2942-find-words-containing-character`](./leetcode/2942-find-words-containing-character/)
+- [x] [`leetcode/3136-valid-word`](./leetcode/3136-valid-word/)
+- [x] [`leetcode/0058-length-of-last-word`](./leetcode/0058-length-of-last-word/)  `*` trimmed and split the whole string to read its tail
+- [x] [`leetcode/3467-transform-array-by-parity`](./leetcode/3467-transform-array-by-parity/)  `*` sorted a two-valued array instead of counting
 
 ## Phase 2 - Binary search
 
@@ -75,8 +75,8 @@ Low-thought reps to get Java's array and string idioms under your fingers. Do th
 First real primitive, and the one you will reuse most. Own lower-bound binary search outright - not `Arrays.binarySearch`, the loop. Get the boundary convention and the overflow-safe midpoint into muscle memory here and they stay correct forever.
 
 - [x] [`leetcode/0704-binary-search`](./leetcode/0704-binary-search/)  `*` recursive, with the overflow-prone (lo+hi)/2 midpoint
-- [ ] [`leetcode/0035-search-insert-position`](./leetcode/0035-search-insert-position/)  `*` linear scan where O(log n) was explicitly required
-- [ ] [`leetcode/0278-first-bad-version`](./leetcode/0278-first-bad-version/)
+- [x] [`leetcode/0035-search-insert-position`](./leetcode/0035-search-insert-position/)  `*` linear scan where O(log n) was explicitly required
+- [x] [`leetcode/0278-first-bad-version`](./leetcode/0278-first-bad-version/)
 
 ## Phase 3 - Two pointers
 
@@ -84,14 +84,14 @@ First real primitive, and the one you will reuse most. Own lower-bound binary se
 
 The second primitive. Every one of these rests on the same exchange argument: moving a pointer discards only candidates that provably cannot be the answer. If you cannot state why a move is safe, you have memorised it rather than understood it.
 
-- [ ] [`leetcode/0125-valid-palindrome`](./leetcode/0125-valid-palindrome/)
-- [ ] [`leetcode/0026-remove-duplicates-from-sorted-array`](./leetcode/0026-remove-duplicates-from-sorted-array/)
-- [ ] [`leetcode/0027-remove-element`](./leetcode/0027-remove-element/)
-- [ ] [`leetcode/0088-merge-sorted-array`](./leetcode/0088-merge-sorted-array/)
+- [x] [`leetcode/0125-valid-palindrome`](./leetcode/0125-valid-palindrome/)
+- [x] [`leetcode/0026-remove-duplicates-from-sorted-array`](./leetcode/0026-remove-duplicates-from-sorted-array/)
+- [x] [`leetcode/0027-remove-element`](./leetcode/0027-remove-element/)
+- [x] [`leetcode/0088-merge-sorted-array`](./leetcode/0088-merge-sorted-array/)
 - [ ] [`leetcode/0167-two-sum-ii-input-array-is-sorted`](./leetcode/0167-two-sum-ii-input-array-is-sorted/)  `(never solved)`
-- [ ] [`leetcode/0011-container-with-most-water`](./leetcode/0011-container-with-most-water/)
-- [ ] [`leetcode/0015-3sum`](./leetcode/0015-3sum/)
-- [ ] [`leetcode/0189-rotate-array`](./leetcode/0189-rotate-array/)  `*` allocated a second array; the O(1) triple-reversal is the point
+- [x] [`leetcode/0011-container-with-most-water`](./leetcode/0011-container-with-most-water/)
+- [x] [`leetcode/0015-3sum`](./leetcode/0015-3sum/)
+- [x] [`leetcode/0189-rotate-array`](./leetcode/0189-rotate-array/)  `*` allocated a second array; the O(1) triple-reversal is the point
 
 ## Phase 4 - Hashing and counting
 
@@ -102,16 +102,16 @@ You have already done 0001. The rest drill the same trade - space for time - plu
 - [x] [`leetcode/0001-two-sum`](./leetcode/0001-two-sum/) already solved, ported from your C++
 - [x] [`leetcode/0217-contains-duplicate`](./leetcode/0217-contains-duplicate/)
 - [x] [`leetcode/0242-valid-anagram`](./leetcode/0242-valid-anagram/)
-- [ ] [`leetcode/0349-intersection-of-two-arrays`](./leetcode/0349-intersection-of-two-arrays/)
-- [ ] [`leetcode/0387-first-unique-character-in-a-string`](./leetcode/0387-first-unique-character-in-a-string/)
-- [ ] [`leetcode/1512-number-of-good-pairs`](./leetcode/1512-number-of-good-pairs/)
-- [ ] [`leetcode/2956-find-common-elements-between-two-arrays`](./leetcode/2956-find-common-elements-between-two-arrays/)
-- [ ] [`leetcode/3668-restore-finishing-order`](./leetcode/3668-restore-finishing-order/)  `*` membership test against a list - quietly quadratic
-- [ ] [`leetcode/3760-count-distinct-characters`](./leetcode/3760-count-distinct-characters/)
-- [ ] [`leetcode/2325-decode-the-message`](./leetcode/2325-decode-the-message/)
-- [ ] [`leetcode/3541-find-most-frequent-vowel-and-consonant`](./leetcode/3541-find-most-frequent-vowel-and-consonant/)
+- [x] [`leetcode/0349-intersection-of-two-arrays`](./leetcode/0349-intersection-of-two-arrays/)
+- [x] [`leetcode/0387-first-unique-character-in-a-string`](./leetcode/0387-first-unique-character-in-a-string/)
+- [x] [`leetcode/1512-number-of-good-pairs`](./leetcode/1512-number-of-good-pairs/)
+- [x] [`leetcode/2956-find-common-elements-between-two-arrays`](./leetcode/2956-find-common-elements-between-two-arrays/)
+- [x] [`leetcode/3668-restore-finishing-order`](./leetcode/3668-restore-finishing-order/)  `*` membership test against a list - quietly quadratic
+- [x] [`leetcode/3760-count-distinct-characters`](./leetcode/3760-count-distinct-characters/)
+- [x] [`leetcode/2325-decode-the-message`](./leetcode/2325-decode-the-message/)
+- [x] [`leetcode/3541-find-most-frequent-vowel-and-consonant`](./leetcode/3541-find-most-frequent-vowel-and-consonant/)
 - [x] [`leetcode/0049-group-anagrams`](./leetcode/0049-group-anagrams/)  `*` sorted key; the 26-count key drops the log factor
-- [ ] [`leetcode/1282-group-the-people-given-the-group-size-they-belong-to`](./leetcode/1282-group-the-people-given-the-group-size-they-belong-to/)
+- [x] [`leetcode/1282-group-the-people-given-the-group-size-they-belong-to`](./leetcode/1282-group-the-people-given-the-group-size-they-belong-to/)
 
 ## Phase 5 - Sliding window
 
@@ -136,10 +136,10 @@ One problem, but the prefix/suffix decomposition it teaches shows up constantly.
 
 0020 is the base case; 0232 teaches amortised analysis; 0225 you never actually solved; 0032 is a Hard that falls out of a stack of indices plus one sentinel.
 
-- [ ] [`leetcode/0020-valid-parentheses`](./leetcode/0020-valid-parentheses/)
-- [ ] [`leetcode/0232-implement-queue-using-stacks`](./leetcode/0232-implement-queue-using-stacks/)
-- [ ] [`leetcode/0225-implement-stack-using-queues`](./leetcode/0225-implement-stack-using-queues/)  `*` backed the stack with a slice - never honored the queue-only constraint
-- [ ] [`leetcode/0032-longest-valid-parentheses`](./leetcode/0032-longest-valid-parentheses/)
+- [x] [`leetcode/0020-valid-parentheses`](./leetcode/0020-valid-parentheses/)
+- [x] [`leetcode/0232-implement-queue-using-stacks`](./leetcode/0232-implement-queue-using-stacks/)
+- [x] [`leetcode/0225-implement-stack-using-queues`](./leetcode/0225-implement-stack-using-queues/)  `*` backed the stack with a slice - never honored the queue-only constraint
+- [x] [`leetcode/0032-longest-valid-parentheses`](./leetcode/0032-longest-valid-parentheses/)
 
 ## Phase 8 - Linked lists
 
@@ -147,18 +147,18 @@ One problem, but the prefix/suffix decomposition it teaches shows up constantly.
 
 Start with 0206 - reverse is the primitive the rest are built from. Then the two-pointer trio, then splicing. 0023 at the end is a Hard that needs the heap or divide-and-conquer you will have by then.
 
-- [ ] [`leetcode/0206-reverse-linked-list`](./leetcode/0206-reverse-linked-list/)
-- [ ] [`leetcode/0876-middle-of-the-linked-list`](./leetcode/0876-middle-of-the-linked-list/)
-- [ ] [`leetcode/0141-linked-list-cycle`](./leetcode/0141-linked-list-cycle/)
-- [ ] [`leetcode/0021-merge-two-sorted-lists`](./leetcode/0021-merge-two-sorted-lists/)
-- [ ] [`leetcode/0019-remove-nth-node-from-end-of-list`](./leetcode/0019-remove-nth-node-from-end-of-list/)
-- [ ] [`leetcode/0024-swap-nodes-in-pairs`](./leetcode/0024-swap-nodes-in-pairs/)
+- [x] [`leetcode/0206-reverse-linked-list`](./leetcode/0206-reverse-linked-list/)
+- [x] [`leetcode/0876-middle-of-the-linked-list`](./leetcode/0876-middle-of-the-linked-list/)
+- [x] [`leetcode/0141-linked-list-cycle`](./leetcode/0141-linked-list-cycle/)
+- [x] [`leetcode/0021-merge-two-sorted-lists`](./leetcode/0021-merge-two-sorted-lists/)
+- [x] [`leetcode/0019-remove-nth-node-from-end-of-list`](./leetcode/0019-remove-nth-node-from-end-of-list/)
+- [x] [`leetcode/0024-swap-nodes-in-pairs`](./leetcode/0024-swap-nodes-in-pairs/)
 - [x] [`leetcode/0002-add-two-numbers`](./leetcode/0002-add-two-numbers/)
-- [ ] [`leetcode/0061-rotate-list`](./leetcode/0061-rotate-list/)
-- [ ] [`leetcode/0160-intersection-of-two-linked-lists`](./leetcode/0160-intersection-of-two-linked-lists/)  `*` hash set; the O(1)-space pointer switch is the lesson
-- [ ] [`leetcode/1290-convert-binary-number-in-a-linked-list-to-integer`](./leetcode/1290-convert-binary-number-in-a-linked-list-to-integer/)
-- [ ] [`leetcode/2807-insert-greatest-common-divisors-in-linked-list`](./leetcode/2807-insert-greatest-common-divisors-in-linked-list/)
-- [ ] [`leetcode/0023-merge-k-sorted-lists`](./leetcode/0023-merge-k-sorted-lists/)
+- [x] [`leetcode/0061-rotate-list`](./leetcode/0061-rotate-list/)
+- [x] [`leetcode/0160-intersection-of-two-linked-lists`](./leetcode/0160-intersection-of-two-linked-lists/)  `*` hash set; the O(1)-space pointer switch is the lesson
+- [x] [`leetcode/1290-convert-binary-number-in-a-linked-list-to-integer`](./leetcode/1290-convert-binary-number-in-a-linked-list-to-integer/)
+- [x] [`leetcode/2807-insert-greatest-common-divisors-in-linked-list`](./leetcode/2807-insert-greatest-common-divisors-in-linked-list/)
+- [x] [`leetcode/0023-merge-k-sorted-lists`](./leetcode/0023-merge-k-sorted-lists/)
 
 ## Phase 9 - Trees
 
@@ -167,21 +167,21 @@ Start with 0206 - reverse is the primitive the rest are built from. Then the two
 The largest block. Recursion first (0104 through 0110), then the traversal trio 0094 / 0144 / 0145 - do all three iteratively, not just recursively - then BFS with the level-size snapshot, then the ordering-dependent ones. 0111 is the trap - it is not the mirror of 0104.
 
 - [x] [`leetcode/0104-maximum-depth-of-binary-tree`](./leetcode/0104-maximum-depth-of-binary-tree/)
-- [ ] [`leetcode/0100-same-tree`](./leetcode/0100-same-tree/)
+- [x] [`leetcode/0100-same-tree`](./leetcode/0100-same-tree/)
 - [x] [`leetcode/0226-invert-binary-tree`](./leetcode/0226-invert-binary-tree/)
-- [ ] [`leetcode/0101-symmetric-tree`](./leetcode/0101-symmetric-tree/)
-- [ ] [`leetcode/0110-balanced-binary-tree`](./leetcode/0110-balanced-binary-tree/)
+- [x] [`leetcode/0101-symmetric-tree`](./leetcode/0101-symmetric-tree/)
+- [x] [`leetcode/0110-balanced-binary-tree`](./leetcode/0110-balanced-binary-tree/)
 - [x] [`leetcode/0094-binary-tree-inorder-traversal`](./leetcode/0094-binary-tree-inorder-traversal/)
 - [x] [`leetcode/0144-binary-tree-preorder-traversal`](./leetcode/0144-binary-tree-preorder-traversal/)
 - [x] [`leetcode/0145-binary-tree-postorder-traversal`](./leetcode/0145-binary-tree-postorder-traversal/)
-- [ ] [`leetcode/0102-binary-tree-level-order-traversal`](./leetcode/0102-binary-tree-level-order-traversal/)
+- [x] [`leetcode/0102-binary-tree-level-order-traversal`](./leetcode/0102-binary-tree-level-order-traversal/)
 - [ ] [`hackerrank/tree-level-order-traversal`](./hackerrank/tree-level-order-traversal/)
-- [ ] [`leetcode/0111-minimum-depth-of-binary-tree`](./leetcode/0111-minimum-depth-of-binary-tree/)
-- [ ] [`leetcode/0098-validate-binary-search-tree`](./leetcode/0098-validate-binary-search-tree/)
-- [ ] [`leetcode/0108-convert-sorted-array-to-binary-search-tree`](./leetcode/0108-convert-sorted-array-to-binary-search-tree/)
-- [ ] [`leetcode/0938-range-sum-of-bst`](./leetcode/0938-range-sum-of-bst/)
-- [ ] [`leetcode/1038-binary-search-tree-to-greater-sum-tree`](./leetcode/1038-binary-search-tree-to-greater-sum-tree/)
-- [ ] [`leetcode/1367-linked-list-in-binary-tree`](./leetcode/1367-linked-list-in-binary-tree/)
+- [x] [`leetcode/0111-minimum-depth-of-binary-tree`](./leetcode/0111-minimum-depth-of-binary-tree/)
+- [x] [`leetcode/0098-validate-binary-search-tree`](./leetcode/0098-validate-binary-search-tree/)
+- [x] [`leetcode/0108-convert-sorted-array-to-binary-search-tree`](./leetcode/0108-convert-sorted-array-to-binary-search-tree/)
+- [x] [`leetcode/0938-range-sum-of-bst`](./leetcode/0938-range-sum-of-bst/)
+- [x] [`leetcode/1038-binary-search-tree-to-greater-sum-tree`](./leetcode/1038-binary-search-tree-to-greater-sum-tree/)
+- [x] [`leetcode/1367-linked-list-in-binary-tree`](./leetcode/1367-linked-list-in-binary-tree/)
 
 ## Phase 10 - Greedy and heaps
 
@@ -189,9 +189,9 @@ The largest block. Recursion first (0104 through 0110), then the traversal trio 
 
 Greedy needs an exchange argument, not intuition. For each, write down why the greedy choice cannot be beaten before you code it. Java's PriorityQueue is a min-heap by default, which is what both heap problems want.
 
-- [ ] [`leetcode/0121-best-time-to-buy-and-sell-stock`](./leetcode/0121-best-time-to-buy-and-sell-stock/)
-- [ ] [`leetcode/0347-top-k-frequent-elements`](./leetcode/0347-top-k-frequent-elements/)  `*` full sort, the one complexity the problem asks you to beat
-- [ ] [`leetcode/1353-maximum-number-of-events-that-can-be-attended`](./leetcode/1353-maximum-number-of-events-that-can-be-attended/)
+- [x] [`leetcode/0121-best-time-to-buy-and-sell-stock`](./leetcode/0121-best-time-to-buy-and-sell-stock/)
+- [x] [`leetcode/0347-top-k-frequent-elements`](./leetcode/0347-top-k-frequent-elements/)  `*` full sort, the one complexity the problem asks you to beat
+- [x] [`leetcode/1353-maximum-number-of-events-that-can-be-attended`](./leetcode/1353-maximum-number-of-events-that-can-be-attended/)
 
 ## Phase 11 - Dynamic programming
 
@@ -199,10 +199,10 @@ Greedy needs an exchange argument, not intuition. For each, write down why the g
 
 Your weakest area by volume - four problems is not much DP. Do these, then go get more elsewhere. State the recurrence and the base case in words before writing any array.
 
-- [ ] [`leetcode/0070-climbing-stairs`](./leetcode/0070-climbing-stairs/)
-- [ ] [`leetcode/0509-fibonacci-number`](./leetcode/0509-fibonacci-number/)  `*` memoised into global mutable state
-- [ ] [`leetcode/0096-unique-binary-search-trees`](./leetcode/0096-unique-binary-search-trees/)
-- [ ] [`leetcode/3202-find-the-maximum-length-of-valid-subsequence-ii`](./leetcode/3202-find-the-maximum-length-of-valid-subsequence-ii/)
+- [x] [`leetcode/0070-climbing-stairs`](./leetcode/0070-climbing-stairs/)
+- [x] [`leetcode/0509-fibonacci-number`](./leetcode/0509-fibonacci-number/)  `*` memoised into global mutable state
+- [x] [`leetcode/0096-unique-binary-search-trees`](./leetcode/0096-unique-binary-search-trees/)
+- [x] [`leetcode/3202-find-the-maximum-length-of-valid-subsequence-ii`](./leetcode/3202-find-the-maximum-length-of-valid-subsequence-ii/)
 
 ## Phase 12 - Backtracking and bits
 
@@ -211,8 +211,8 @@ Your weakest area by volume - four problems is not much DP. Do these, then go ge
 0046 is your only backtracking problem, so make it count - the undo step is the whole discipline. The bit problems are short but the counting argument in 1863 is worth deriving rather than accepting.
 
 - [x] [`leetcode/0046-permutations`](./leetcode/0046-permutations/)  `*` iterative insertion instead of backtracking
-- [ ] [`leetcode/0136-single-number`](./leetcode/0136-single-number/)
-- [ ] [`leetcode/1863-sum-of-all-subset-xor-totals`](./leetcode/1863-sum-of-all-subset-xor-totals/)
+- [x] [`leetcode/0136-single-number`](./leetcode/0136-single-number/)
+- [x] [`leetcode/1863-sum-of-all-subset-xor-totals`](./leetcode/1863-sum-of-all-subset-xor-totals/)
 
 ## Phase 13 - Math, strings and simulation
 
@@ -220,15 +220,15 @@ Your weakest area by volume - four problems is not much DP. Do these, then go ge
 
 The leftovers, and mostly specification-reading exercises. 0007 and 0008 are really overflow problems; treat them as such.
 
-- [ ] [`leetcode/0009-palindrome-number`](./leetcode/0009-palindrome-number/)
-- [ ] [`leetcode/0007-reverse-integer`](./leetcode/0007-reverse-integer/)
-- [ ] [`leetcode/0008-string-to-integer-atoi`](./leetcode/0008-string-to-integer-atoi/)
-- [ ] [`leetcode/0013-roman-to-integer`](./leetcode/0013-roman-to-integer/)
-- [ ] [`leetcode/0012-integer-to-roman`](./leetcode/0012-integer-to-roman/)  `*` table lookup; the greedy subtractive walk is what generalises
-- [ ] [`leetcode/0014-longest-common-prefix`](./leetcode/0014-longest-common-prefix/)
-- [ ] [`leetcode/0028-find-the-index-of-the-first-occurrence-in-a-string`](./leetcode/0028-find-the-index-of-the-first-occurrence-in-a-string/)
-- [ ] [`leetcode/0006-zigzag-conversion`](./leetcode/0006-zigzag-conversion/)
-- [ ] [`leetcode/0048-rotate-image`](./leetcode/0048-rotate-image/)
+- [x] [`leetcode/0009-palindrome-number`](./leetcode/0009-palindrome-number/)
+- [x] [`leetcode/0007-reverse-integer`](./leetcode/0007-reverse-integer/)
+- [x] [`leetcode/0008-string-to-integer-atoi`](./leetcode/0008-string-to-integer-atoi/)
+- [x] [`leetcode/0013-roman-to-integer`](./leetcode/0013-roman-to-integer/)
+- [x] [`leetcode/0012-integer-to-roman`](./leetcode/0012-integer-to-roman/)  `*` table lookup; the greedy subtractive walk is what generalises
+- [x] [`leetcode/0014-longest-common-prefix`](./leetcode/0014-longest-common-prefix/)
+- [x] [`leetcode/0028-find-the-index-of-the-first-occurrence-in-a-string`](./leetcode/0028-find-the-index-of-the-first-occurrence-in-a-string/)
+- [x] [`leetcode/0006-zigzag-conversion`](./leetcode/0006-zigzag-conversion/)
+- [x] [`leetcode/0048-rotate-image`](./leetcode/0048-rotate-image/)
 
 ## Phase 14 - The two hard ones left
 
@@ -236,8 +236,8 @@ The leftovers, and mostly specification-reading exercises. 0007 and 0008 are rea
 
 Save these. 0005 is expand-around-centre with fiddly index recovery. 0004 is the single biggest gap in the archive - you solved it by sorting, which ignores the only reason it exists. Do it with the partition binary search.
 
-- [ ] [`leetcode/0005-longest-palindromic-substring`](./leetcode/0005-longest-palindromic-substring/)
-- [ ] [`leetcode/0004-median-of-two-sorted-arrays`](./leetcode/0004-median-of-two-sorted-arrays/)  `*` sorted and merged; the binary search is the entire reason it is Hard
+- [x] [`leetcode/0005-longest-palindromic-substring`](./leetcode/0005-longest-palindromic-substring/)
+- [x] [`leetcode/0004-median-of-two-sorted-arrays`](./leetcode/0004-median-of-two-sorted-arrays/)  `*` sorted and merged; the binary search is the entire reason it is Hard
 
 ## Unsorted - Recently added
 
@@ -315,7 +315,7 @@ once you have solved it.
 - [ ] [`leetcode/0213-house-robber-ii`](./leetcode/0213-house-robber-ii/)
 - [ ] [`leetcode/0224-basic-calculator`](./leetcode/0224-basic-calculator/)
 - [ ] [`leetcode/0230-kth-smallest-element-in-a-bst`](./leetcode/0230-kth-smallest-element-in-a-bst/)
-- [ ] [`leetcode/0235-lowest-common-ancestor-of-a-binary-search-tree`](./leetcode/0235-lowest-common-ancestor-of-a-binary-search-tree/)
+- [x] [`leetcode/0235-lowest-common-ancestor-of-a-binary-search-tree`](./leetcode/0235-lowest-common-ancestor-of-a-binary-search-tree/)
 - [ ] [`leetcode/0236-lowest-common-ancestor-of-a-binary-tree`](./leetcode/0236-lowest-common-ancestor-of-a-binary-tree/)
 - [x] [`leetcode/0268-missing-number`](./leetcode/0268-missing-number/)
 - [ ] [`leetcode/0295-find-median-from-data-stream`](./leetcode/0295-find-median-from-data-stream/)
@@ -335,7 +335,7 @@ once you have solved it.
 - [ ] [`leetcode/0621-task-scheduler`](./leetcode/0621-task-scheduler/)
 - [ ] [`leetcode/0647-palindromic-substrings`](./leetcode/0647-palindromic-substrings/)
 - [ ] [`leetcode/0721-accounts-merge`](./leetcode/0721-accounts-merge/)
-- [ ] [`leetcode/0733-flood-fill`](./leetcode/0733-flood-fill/)
+- [x] [`leetcode/0733-flood-fill`](./leetcode/0733-flood-fill/)
 - [ ] [`leetcode/0973-k-closest-points-to-origin`](./leetcode/0973-k-closest-points-to-origin/)
 - [x] [`leetcode/0981-time-based-key-value-store`](./leetcode/0981-time-based-key-value-store/)
 - [ ] [`leetcode/0994-rotting-oranges`](./leetcode/0994-rotting-oranges/)
@@ -453,18 +453,18 @@ The biggest gap of the lot. Contest problems are stated as stories and
 judged on a clock, which is a different skill from anything on LeetCode.
 Each has its sample as `in1.txt` / `out1.txt`, so `tools/run.sh` works.
 
-- [ ] [`codeforces/0001a-theatre-square`](./codeforces/0001a-theatre-square/)  `*` long overflow and integer ceiling
-- [ ] [`codeforces/0004c-registration-system`](./codeforces/0004c-registration-system/)
-- [ ] [`codeforces/0025a-iq-test`](./codeforces/0025a-iq-test/)
-- [ ] [`codeforces/0050a-domino-piling`](./codeforces/0050a-domino-piling/)
-- [ ] [`codeforces/0071a-way-too-long-words`](./codeforces/0071a-way-too-long-words/)  char + int is addition, not concatenation
-- [ ] [`codeforces/0096a-football`](./codeforces/0096a-football/)
-- [ ] [`codeforces/0112a-petya-and-strings`](./codeforces/0112a-petya-and-strings/)
-- [ ] [`codeforces/0118a-string-task`](./codeforces/0118a-string-task/)
-- [ ] [`codeforces/0158a-next-round`](./codeforces/0158a-next-round/)
-- [ ] [`codeforces/0158b-taxi`](./codeforces/0158b-taxi/)  `*` a greedy whose leftovers need proving
-- [ ] [`codeforces/0231a-team`](./codeforces/0231a-team/)
-- [ ] [`codeforces/0282a-bit-plus-plus`](./codeforces/0282a-bit-plus-plus/)
+- [x] [`codeforces/0001a-theatre-square`](./codeforces/0001a-theatre-square/)  `*` long overflow and integer ceiling
+- [x] [`codeforces/0004c-registration-system`](./codeforces/0004c-registration-system/)
+- [x] [`codeforces/0025a-iq-test`](./codeforces/0025a-iq-test/)
+- [x] [`codeforces/0050a-domino-piling`](./codeforces/0050a-domino-piling/)
+- [x] [`codeforces/0071a-way-too-long-words`](./codeforces/0071a-way-too-long-words/)  char + int is addition, not concatenation
+- [x] [`codeforces/0096a-football`](./codeforces/0096a-football/)
+- [x] [`codeforces/0112a-petya-and-strings`](./codeforces/0112a-petya-and-strings/)
+- [x] [`codeforces/0118a-string-task`](./codeforces/0118a-string-task/)
+- [x] [`codeforces/0158a-next-round`](./codeforces/0158a-next-round/)
+- [x] [`codeforces/0158b-taxi`](./codeforces/0158b-taxi/)  `*` a greedy whose leftovers need proving
+- [x] [`codeforces/0231a-team`](./codeforces/0231a-team/)
+- [x] [`codeforces/0282a-bit-plus-plus`](./codeforces/0282a-bit-plus-plus/)
 
 ### HackerRank - the rest of the prep kit
 
@@ -489,18 +489,18 @@ Continues Phase 0. I/O and specification drills; every card carries a
 different formatting failure rather than repeating `Locale.US` twelve
 times.
 
-- [ ] [`beecrowd/1014-consumption`](./beecrowd/1014-consumption/)
-- [ ] [`beecrowd/1015-distance-between-two-points`](./beecrowd/1015-distance-between-two-points/)
-- [ ] [`beecrowd/1016-distance`](./beecrowd/1016-distance/)
-- [ ] [`beecrowd/1017-fuel-spent`](./beecrowd/1017-fuel-spent/)
-- [ ] [`beecrowd/1018-banknotes`](./beecrowd/1018-banknotes/)
-- [ ] [`beecrowd/1019-time-conversion`](./beecrowd/1019-time-conversion/)
-- [ ] [`beecrowd/1020-age-in-days`](./beecrowd/1020-age-in-days/)
-- [ ] [`beecrowd/1021-banknotes-and-coins`](./beecrowd/1021-banknotes-and-coins/)  `*` money in integer cents
-- [ ] [`beecrowd/1035-selection-test-1`](./beecrowd/1035-selection-test-1/)
-- [ ] [`beecrowd/1036-bhaskaras-formula`](./beecrowd/1036-bhaskaras-formula/)
-- [ ] [`beecrowd/1037-interval`](./beecrowd/1037-interval/)
-- [ ] [`beecrowd/1038-snack`](./beecrowd/1038-snack/)
+- [x] [`beecrowd/1014-consumption`](./beecrowd/1014-consumption/)
+- [x] [`beecrowd/1015-distance-between-two-points`](./beecrowd/1015-distance-between-two-points/)
+- [x] [`beecrowd/1016-distance`](./beecrowd/1016-distance/)
+- [x] [`beecrowd/1017-fuel-spent`](./beecrowd/1017-fuel-spent/)
+- [x] [`beecrowd/1018-banknotes`](./beecrowd/1018-banknotes/)
+- [x] [`beecrowd/1019-time-conversion`](./beecrowd/1019-time-conversion/)
+- [x] [`beecrowd/1020-age-in-days`](./beecrowd/1020-age-in-days/)
+- [x] [`beecrowd/1021-banknotes-and-coins`](./beecrowd/1021-banknotes-and-coins/)  `*` money in integer cents
+- [x] [`beecrowd/1035-selection-test-1`](./beecrowd/1035-selection-test-1/)
+- [x] [`beecrowd/1036-bhaskaras-formula`](./beecrowd/1036-bhaskaras-formula/)
+- [x] [`beecrowd/1037-interval`](./beecrowd/1037-interval/)
+- [x] [`beecrowd/1038-snack`](./beecrowd/1038-snack/)
 
 ## The short version
 
@@ -508,20 +508,20 @@ If you only do eighteen problems, do these. Fourteen are ones where your
 old solution passed but sidestepped the lesson; four you never solved at
 all. This is the highest-value work in the repo.
 
-- [ ] [`leetcode/0004-median-of-two-sorted-arrays`](./leetcode/0004-median-of-two-sorted-arrays/) - sorted and merged; the binary search is the entire reason it is Hard
-- [ ] [`leetcode/0012-integer-to-roman`](./leetcode/0012-integer-to-roman/) - table lookup; the greedy subtractive walk is what generalises
-- [ ] [`leetcode/0035-search-insert-position`](./leetcode/0035-search-insert-position/) - linear scan where O(log n) was explicitly required
-- [ ] [`leetcode/0046-permutations`](./leetcode/0046-permutations/) - iterative insertion instead of backtracking
-- [ ] [`leetcode/0058-length-of-last-word`](./leetcode/0058-length-of-last-word/) - trimmed and split the whole string to read its tail
-- [ ] [`leetcode/0160-intersection-of-two-linked-lists`](./leetcode/0160-intersection-of-two-linked-lists/) - hash set; the O(1)-space pointer switch is the lesson
-- [ ] [`leetcode/0189-rotate-array`](./leetcode/0189-rotate-array/) - allocated a second array; the O(1) triple-reversal is the point
-- [ ] [`leetcode/0225-implement-stack-using-queues`](./leetcode/0225-implement-stack-using-queues/) - backed the stack with a slice - never honored the queue-only constraint
-- [ ] [`leetcode/0347-top-k-frequent-elements`](./leetcode/0347-top-k-frequent-elements/) - full sort, the one complexity the problem asks you to beat
-- [ ] [`leetcode/0509-fibonacci-number`](./leetcode/0509-fibonacci-number/) - memoised into global mutable state
+- [x] [`leetcode/0004-median-of-two-sorted-arrays`](./leetcode/0004-median-of-two-sorted-arrays/) - sorted and merged; the binary search is the entire reason it is Hard
+- [x] [`leetcode/0012-integer-to-roman`](./leetcode/0012-integer-to-roman/) - table lookup; the greedy subtractive walk is what generalises
+- [x] [`leetcode/0035-search-insert-position`](./leetcode/0035-search-insert-position/) - linear scan where O(log n) was explicitly required
+- [x] [`leetcode/0046-permutations`](./leetcode/0046-permutations/) - iterative insertion instead of backtracking
+- [x] [`leetcode/0058-length-of-last-word`](./leetcode/0058-length-of-last-word/) - trimmed and split the whole string to read its tail
+- [x] [`leetcode/0160-intersection-of-two-linked-lists`](./leetcode/0160-intersection-of-two-linked-lists/) - hash set; the O(1)-space pointer switch is the lesson
+- [x] [`leetcode/0189-rotate-array`](./leetcode/0189-rotate-array/) - allocated a second array; the O(1) triple-reversal is the point
+- [x] [`leetcode/0225-implement-stack-using-queues`](./leetcode/0225-implement-stack-using-queues/) - backed the stack with a slice - never honored the queue-only constraint
+- [x] [`leetcode/0347-top-k-frequent-elements`](./leetcode/0347-top-k-frequent-elements/) - full sort, the one complexity the problem asks you to beat
+- [x] [`leetcode/0509-fibonacci-number`](./leetcode/0509-fibonacci-number/) - memoised into global mutable state
 - [x] [`leetcode/0704-binary-search`](./leetcode/0704-binary-search/) - recursive, with the overflow-prone (lo+hi)/2 midpoint
-- [ ] [`leetcode/3110-score-of-a-string`](./leetcode/3110-score-of-a-string/) - floating point for an integer problem
-- [ ] [`leetcode/3467-transform-array-by-parity`](./leetcode/3467-transform-array-by-parity/) - sorted a two-valued array instead of counting
-- [ ] [`leetcode/3668-restore-finishing-order`](./leetcode/3668-restore-finishing-order/) - membership test against a list - quietly quadratic
+- [x] [`leetcode/3110-score-of-a-string`](./leetcode/3110-score-of-a-string/) - floating point for an integer problem
+- [x] [`leetcode/3467-transform-array-by-parity`](./leetcode/3467-transform-array-by-parity/) - sorted a two-valued array instead of counting
+- [x] [`leetcode/3668-restore-finishing-order`](./leetcode/3668-restore-finishing-order/) - membership test against a list - quietly quadratic
 - [x] [`leetcode/0049-group-anagrams`](./leetcode/0049-group-anagrams/) - solved fresh, sorted key
 - [ ] [`leetcode/0167-two-sum-ii-input-array-is-sorted`](./leetcode/0167-two-sum-ii-input-array-is-sorted/) - never solved
 - [ ] [`leetcode/0238-product-of-array-except-self`](./leetcode/0238-product-of-array-except-self/) - never solved
