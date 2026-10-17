@@ -31,8 +31,3 @@ more clearly.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/rust/hackerrank/staircase.rs
-git show legacy-archive:legacy/go/hackerrank/staircase.go

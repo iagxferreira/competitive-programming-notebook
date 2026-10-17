@@ -25,7 +25,3 @@ time O(1)   space O(1)
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1003.kt

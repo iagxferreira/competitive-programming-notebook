@@ -29,7 +29,3 @@ element exists. Your Go version does both.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/26-remove-duplicates.go

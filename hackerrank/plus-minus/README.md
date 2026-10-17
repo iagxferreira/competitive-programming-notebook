@@ -30,7 +30,3 @@ decimal the grader checks.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/rust/hackerrank/plus_minus.rs

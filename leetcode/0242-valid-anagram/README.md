@@ -34,11 +34,3 @@ just scan the counts at the end.
 ## Review
 
 last: 2026-08-31   confidence: ?/5   (set your own)
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/242-is-anagram.go
-
-Full study essay from the Kotlin lab (~300 lines):
-
-    git show legacy-archive:problems/easy/valid-anagram/README.md

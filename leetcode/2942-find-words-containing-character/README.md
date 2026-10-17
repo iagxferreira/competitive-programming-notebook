@@ -28,7 +28,3 @@ Your Go version breaks correctly.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/2942-find-words-containing.go

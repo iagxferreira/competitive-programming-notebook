@@ -35,7 +35,3 @@ to where it started.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/225-stacks-using-queue.go

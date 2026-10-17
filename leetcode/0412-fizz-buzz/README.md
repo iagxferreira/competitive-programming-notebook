@@ -30,8 +30,3 @@ Branch order is the entire problem. Your Go version tests
 ## Review
 
 last: 2026-08-29   confidence: ?/5   (set your own)
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/412-fizz-buzz.go
-git show legacy-archive:legacy/rust/leetcode/412-fizz_buzz.rs

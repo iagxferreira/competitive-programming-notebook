@@ -37,7 +37,3 @@ test the ranges explicitly.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/3136-valid-word.go

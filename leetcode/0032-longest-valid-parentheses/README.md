@@ -33,7 +33,3 @@ Your Go version also redefines a local `max` helper; Java has `Math.max`.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/32-longest-valid-parenthesis.go

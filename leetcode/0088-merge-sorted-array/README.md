@@ -34,7 +34,3 @@ Backwards is the entire lesson. Forwards needs a temporary buffer.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/88-merge-sorted-array.go

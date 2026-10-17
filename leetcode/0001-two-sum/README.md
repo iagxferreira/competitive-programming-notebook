@@ -33,12 +33,3 @@ element against itself.
 ## Review
 
 last: 2026-08-28   confidence: ?/5   (ported from your C++ — set your own confidence)
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/1-two-sum.go
-git show legacy-archive:legacy/python/leetcode/1.two-sum.py
-
-Full study essay from the Kotlin lab (~300 lines):
-
-    git show legacy-archive:problems/easy/two-sum/README.md

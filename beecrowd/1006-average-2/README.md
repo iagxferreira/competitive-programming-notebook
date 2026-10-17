@@ -28,7 +28,3 @@ precision on purpose to catch copy-paste.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1006.kt

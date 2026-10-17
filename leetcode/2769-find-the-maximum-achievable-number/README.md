@@ -28,7 +28,3 @@ gap closes by 2 each time.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/2769-maximum-achievable.go

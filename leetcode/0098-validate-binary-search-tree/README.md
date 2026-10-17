@@ -38,8 +38,3 @@ recursion with those as sentinels then rejects a valid tree.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/98-valid-bst.go
-git show legacy-archive:legacy/python/leetcode/98.valid-bst.py

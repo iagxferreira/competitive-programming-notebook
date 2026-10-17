@@ -1,6 +1,6 @@
 package leetcode
 
-// Restored from legacy-archive; the original filename used the incorrect ID 1363.
+// The original filename used the incorrect problem ID 1363.
 
 import (
 	"container/heap"

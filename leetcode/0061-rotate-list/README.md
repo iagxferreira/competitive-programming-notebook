@@ -36,7 +36,3 @@ which will time out rather than report a wrong answer.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/61.rotate-list.py

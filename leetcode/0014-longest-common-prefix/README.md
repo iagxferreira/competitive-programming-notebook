@@ -34,7 +34,3 @@ even though it is asymptotically worse.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/14-longest-common-prefix.go

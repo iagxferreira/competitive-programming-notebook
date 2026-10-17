@@ -33,7 +33,3 @@ input, but the same habit breaks on UTF-8.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/387-first-uniq-char.go

@@ -33,7 +33,3 @@ keep the Pandas skill alive, re-solve it in `solution.py`.
 ## Review
 
 last: never   confidence: n/a
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/2884.double-salary.py

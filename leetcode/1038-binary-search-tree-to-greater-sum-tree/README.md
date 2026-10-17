@@ -40,7 +40,3 @@ instance — reset it at the top of the public method.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/1038.bst-to-gst.py

@@ -29,7 +29,3 @@ but the same off-by-one corrupts data in other two-pointer problems.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/hackerrank/reverse-array.kt

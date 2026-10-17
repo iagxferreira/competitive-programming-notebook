@@ -32,8 +32,3 @@ right, storing index+1 so the comparison stays a clean `>`.
 ## Review
 
 last: 2026-08-29   confidence: ?/5   (128-entry last-seen table — set your own confidence)
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/3-longest-substring.go
-git show legacy-archive:legacy/rust/leetcode/3-longest_substring.rs

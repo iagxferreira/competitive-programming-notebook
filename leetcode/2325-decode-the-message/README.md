@@ -38,7 +38,3 @@ Skip spaces when assigning letters but preserve them when decoding.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/2325-decode-message.go

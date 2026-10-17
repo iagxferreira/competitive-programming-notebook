@@ -35,7 +35,3 @@ that at this problem's bound (n <= 1000) `old + n * new` stays under
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/1920-build-array-from-permutation.go

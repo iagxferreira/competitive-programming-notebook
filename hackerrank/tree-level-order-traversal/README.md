@@ -37,7 +37,3 @@ right otherwise, which is what puts duplicates on the right.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/hackerrank/level_order.go

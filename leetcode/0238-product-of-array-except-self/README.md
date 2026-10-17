@@ -40,7 +40,3 @@ NOT SOLVED. Kotlin lab scaffold with a `TODO` body.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:src/main/kotlin/algorithms/problems/medium/product_of_array_except_self/ProductOfArrayExceptSelf.kt

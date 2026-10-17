@@ -37,7 +37,3 @@ or accumulate in `long` and range-check at the end.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/7-reverse-integer.go

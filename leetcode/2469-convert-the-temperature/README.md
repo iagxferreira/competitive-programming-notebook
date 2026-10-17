@@ -29,7 +29,3 @@ gives 1.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/2469.convert-temperature.py

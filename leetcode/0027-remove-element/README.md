@@ -32,7 +32,3 @@ hit, which is faster when matches are rare.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/27-remove-element.go

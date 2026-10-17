@@ -34,7 +34,3 @@ for large inputs even when the true max fits. In real code just use
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1013.kt

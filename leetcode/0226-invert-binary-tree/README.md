@@ -36,7 +36,3 @@ temporary first, or swap the two references and then recurse.
 ## Review
 
 last: 2026-08-29   confidence: ?/5   (post-order swap — set your own confidence)
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/226-invert-binary-tree.go

@@ -35,7 +35,3 @@ Get the boundary discipline right: with `hi = n - 1`, the loop is
 ## Review
 
 last: 2026-08-31   confidence: ?/5   (set your own)
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/704-binary-search.go

@@ -33,7 +33,3 @@ this card's title.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/3760-max-distinct.go

@@ -32,7 +32,3 @@ that is the whole reason the input is given as digits.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/66-plus-one.go

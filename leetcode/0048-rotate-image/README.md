@@ -34,7 +34,3 @@ twice and returns the original matrix.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/48-rotate-image.go

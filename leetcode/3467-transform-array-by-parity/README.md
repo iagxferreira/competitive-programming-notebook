@@ -33,7 +33,3 @@ Python, where `-3 % 2` is 1.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/3467.transform-by-parity.py

@@ -36,7 +36,3 @@ and Peek — factor it into one helper.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/232-queue-using-stack.go

@@ -30,7 +30,3 @@ explicit branch.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/19-remove-nth-list.go

@@ -28,7 +28,3 @@ The result is an integer; compute it as one.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1007.kt

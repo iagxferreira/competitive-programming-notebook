@@ -30,7 +30,3 @@ length up front.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/1290-convert-binary-from-list.go

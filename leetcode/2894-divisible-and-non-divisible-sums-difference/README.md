@@ -29,7 +29,3 @@ even so no precision is lost.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/2894-sum-difference.go

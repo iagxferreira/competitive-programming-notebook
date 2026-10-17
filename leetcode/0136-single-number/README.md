@@ -33,7 +33,3 @@ Seed the accumulator at 0, the XOR identity.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/136-single-number.go

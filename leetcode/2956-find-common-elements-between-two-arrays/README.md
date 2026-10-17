@@ -38,7 +38,3 @@ Since values are bounded and small, two boolean arrays beat hash sets.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/2956-find-intersection.go

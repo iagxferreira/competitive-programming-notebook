@@ -30,7 +30,3 @@ answer.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/3190-minimum-operations.go

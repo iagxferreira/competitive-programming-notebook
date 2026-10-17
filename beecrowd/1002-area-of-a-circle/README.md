@@ -38,7 +38,3 @@ Your Kotlin version dodged it by going through BigDecimal.toString().
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/kotlin/beecrowd/1002.kt

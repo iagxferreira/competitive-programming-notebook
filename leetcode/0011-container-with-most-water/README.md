@@ -32,7 +32,3 @@ On ties move either pointer; both are safe.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/11-container-water.go

@@ -34,7 +34,3 @@ consistently or the pairings desynchronise.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/python/leetcode/101.symmetric-tree.py

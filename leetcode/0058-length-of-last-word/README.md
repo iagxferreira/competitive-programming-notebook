@@ -31,7 +31,3 @@ Trailing whitespace is the entire test here; `"hello   "` must return 5.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/58-length-of-last-string.go

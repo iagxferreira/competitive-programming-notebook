@@ -42,7 +42,3 @@ Handle the single-node list, which has no pairs.
 ## Review
 
 last: never   confidence: 0/5
-
-## Origin
-
-git show legacy-archive:legacy/go/leetcode/2807-insert-gcd.go
