@@ -1,14 +1,23 @@
-#include <algorithm>
-#include <cstddef>
 #include <vector>
 
 class Solution {
 public:
-  void merge(std::vector<int> &nums1, int m, std::vector<int> &nums2, int n) {
-    for (std::size_t i = m, j = 0; j < n; j++) {
-      nums1[i] = nums2[j];
-      i++;
+  void merge(std::vector<int> &first, int firstLimit, std::vector<int> &second,
+             int secondLimit) {
+    int left = firstLimit - 1;
+    int right = secondLimit - 1;
+    int write = firstLimit + secondLimit - 1;
+    while (right >= 0) {
+      if (left >= 0 && first[left] > second[right]) {
+        first[write] = first[left];
+        left--;
+        write--;
+        continue;
+      }
+
+      first[write] = second[right];
+      right--;
+      write--;
     }
-    std::sort(nums1.begin(), nums1.end());
   }
 };
