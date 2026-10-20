@@ -1,30 +1,31 @@
 # 20. Valid Parentheses
 
-leetcode | easy | stack
+leetcode | easy | stack, strings
 
 ## Task
 
-Is the bracket string correctly matched and nested?
+Determine whether every opening bracket in a string is closed by the
+correct bracket type and in the correct order.
 
 ## Key insight
 
-Nesting means last-opened must be first-closed. That is the definition of
-a stack. Push openers; on a closer, the top must be its partner.
+TODO
 
 ## Invariant
 
-The stack holds exactly the openers that are still unmatched, innermost
-on top.
+TODO
 
 ## Complexity
 
-time O(n)   space O(n)
+TODO
 
 ## Pitfall
 
-Three ways to fail, and you need all three: wrong partner on top, closer
-arriving on an empty stack, and a non-empty stack at the end. Your Go
-version covers all three, plus an odd-length early exit.
+TODO
+
+## Status
+
+NOT SOLVED. C++ scaffold.
 
 ## Review
 
